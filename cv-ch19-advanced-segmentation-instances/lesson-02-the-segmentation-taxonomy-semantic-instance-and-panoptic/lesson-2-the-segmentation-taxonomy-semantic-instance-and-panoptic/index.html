@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel="stylesheet" href="style.css">
+<title>The Segmentation Taxonomy</title>
+<script>
+window.MathJax = {
+    tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+<div class="lesson-container">
+
+<!-- SECTION 1: Intro -->
+<section id="section1" class="visible">
+    <div class="image-placeholder">
+        <img src="images/1.jpg" alt="Crowded city street with cars merged into a single color blob">
+    </div>
+    <h1>The Segmentation Taxonomy</h1>
+    <h2>The Counting Problem</h2>
+
+    <p>In our previous lessons, we mastered Semantic Segmentation. We taught networks to look at an image and paint every pixel based on its category. Every pixel belonging to a car became blue; every pixel belonging to the road became grey.</p>
+    <div class="continue-button" onclick="showNextSection(2)">Continue</div>
+</section>
+
+<!-- SECTION 2: When Car Isn't Enough (Problem) -->
+<section id="section2">
+    <h2>When 'Car' Isn't Enough</h2>
+    <p>But there is a major limitation to this approach. Imagine you are building a traffic monitoring system to count how many cars pass a toll booth.</p>
+    <div class="continue-button" onclick="showNextSection(3)">Continue</div>
+</section>
+
+<!-- SECTION 3: The Blob Problem -->
+<section id="section3">
+    <p>If two cars are driving side-by-side and overlapping in the camera view, a Semantic Segmentation model will just see a big blob of 'car' pixels. It doesn't know there are two distinct objects. It just knows those pixels are vehicles.</p>
+    <div class="continue-button" onclick="showNextSection(4)">Continue</div>
+</section>
+
+<!-- SECTION 4: Evolution Diagram -->
+<section id="section4">
+    <p>To solve this, we need to evolve our approach. We need to move from asking 'What class is this pixel?' to asking 'Which specific object does this pixel belong to?'.</p>
+    <div class="visual-placeholder">
+        <img src="images/2.jpg" alt="Diagram showing semantic, instance, and panoptic workflows side-by-side">
+        <p class="image-caption">Evolution from semantic (classes) to instance (IDs) to panoptic (unified view).</p>
+    </div>
+    <div class="continue-button" onclick="showNextSection(5)">Continue</div>
+</section>
+
+<!-- SECTION 5: Three Types Intro -->
+<section id="section5">
+    <p>This leads us to the three main types of segmentation tasks: Semantic, Instance, and Panoptic.</p>
+    <div class="continue-button" onclick="showNextSection(6)">Continue</div>
+</section>
+
+<!-- SECTION 6: The Triple View Intro -->
+<section id="section6">
+    <h2>The Triple View</h2>
+    <p>To understand the difference, let's look at the exact same street scene processed in three different ways.</p>
+    <div class="continue-button" onclick="showNextSection(7)">Continue</div>
+</section>
+
+<!-- SECTION 7: Semantic View -->
+<section id="section7">
+    <p>First, <strong>Semantic Segmentation</strong>. As we discussed, this is the 'stuff' view. All cars are blue. The sky is cyan. The road is purple. The network says: 'I see 50,000 pixels of Car.'</p>
+    <div class="continue-button" onclick="showNextSection(8)">Continue</div>
+</section>
+
+<!-- SECTION 8: Instance View -->
+<section id="section8">
+    <p>Second, <strong>Instance Segmentation</strong>. Here, the network cares about distinct objects. Car A is painted Red. Car B is painted Green. Crucially, the background (sky, road) is ignored entirely—it's usually blacked out. The network says: 'I see Car #1 and Car #2.'</p>
+    <div class="continue-button" onclick="showNextSection(9)">Continue</div>
+</section>
+
+<!-- SECTION 9: Panoptic View + Interactive -->
+<section id="section9">
+    <p>Third, <strong>Panoptic Segmentation</strong>. This is the best of both worlds. We get the background labels (road, sky) <em>and</em> the specific object IDs (Red Car, Green Car). The network says: 'I see everything.'</p>
+    <!-- START INTERACTIVE MODULE: THE TRIPLE VIEW -->
+<div class="triple-view-container">
+  <div class="canvas-wrapper">
+      <canvas id="segmentationCanvas" width="860" height="400"></canvas>
+      <div id="segTooltip" class="seg-tooltip"></div>
+  </div>
+  <div class="legend">
+      <div class="legend-item"><span class="dot semantic"></span> Semantic (Class)</div>
+      <div class="legend-item"><span class="dot instance"></span> Instance (ID)</div>
+      <div class="legend-item"><span class="dot panoptic"></span> Panoptic (Unified)</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const canvas = document.getElementById('segmentationCanvas');
+  const ctx = canvas.getContext('2d');
+  const tooltip = document.getElementById('segTooltip');
+  const wrapper = document.querySelector('.canvas-wrapper');
+
+  // Scene Definitions
+  const SCENE = {
+      sky: { y: 0, height: 200, color: '#63b3ed', semanticColor: '#63b3ed', label: 'Sky', type: 'stuff' },
+      road: { y: 200, height: 200, color: '#805ad5', semanticColor: '#805ad5', label: 'Road', type: 'stuff' },
+      cars: [
+          { id: 'Car_01', x: 50,  y: 220, w: 180, h: 100, color: '#e53e3e', semanticColor: '#2b6cb0' }, // Red / Dk Blue
+          { id: 'Car_02', x: 300, y: 240, w: 180, h: 100, color: '#48bb78', semanticColor: '#2b6cb0' }, // Green / Dk Blue
+          { id: 'Car_03', x: 580, y: 210, w: 180, h: 100, color: '#ed8936', semanticColor: '#2b6cb0' }  // Orange / Dk Blue
+      ]
+  };
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let isHovering = false;
+
+  // Helper to draw a stylized car
+  function drawCar(ctx, x, y, w, h, color) {
+      ctx.fillStyle = color;
+      // Body
+      ctx.fillRect(x, y + h*0.4, w, h*0.6);
+      // Cabin (Trapezoid)
+      ctx.beginPath();
+      ctx.moveTo(x + w*0.2, y + h*0.4);
+      ctx.lineTo(x + w*0.8, y + h*0.4);
+      ctx.lineTo(x + w*0.7, y);
+      ctx.lineTo(x + w*0.3, y);
+      ctx.closePath();
+      ctx.fill();
+      // Wheels
+      ctx.fillStyle = '#1a202c';
+      ctx.beginPath();
+      ctx.arc(x + w*0.25, y + h, h*0.2, 0, Math.PI*2);
+      ctx.arc(x + w*0.75, y + h, h*0.2, 0, Math.PI*2);
+      ctx.fill();
+  }
+
+  function drawScene(viewType, regionX, regionWidth) {
+      ctx.save();
+      // Clip to the specific vertical strip
+      ctx.beginPath();
+      ctx.rect(regionX, 0, regionWidth, canvas.height);
+      ctx.clip();
+
+      // 1. Background
+      if (viewType === 'instance') {
+          // Instance view ignores stuff -> Black background
+          ctx.fillStyle = '#000000';
+          ctx.fillRect(regionX, 0, regionWidth, canvas.height);
+      } else {
+          // Semantic & Panoptic show stuff
+          ctx.fillStyle = SCENE.sky.color;
+          ctx.fillRect(regionX, SCENE.sky.y, regionWidth, SCENE.sky.height);
+          ctx.fillStyle = SCENE.road.color;
+          ctx.fillRect(regionX, SCENE.road.y, regionWidth, SCENE.road.height);
+      }
+
+      // 2. Objects (Cars)
+      SCENE.cars.forEach(car => {
+          let carColor;
+          if (viewType === 'semantic') {
+              carColor = car.semanticColor; // All cars are same blue
+          } else {
+              carColor = car.color; // Distinct instance colors
+          }
+          drawCar(ctx, car.x, car.y, car.w, car.h, carColor);
+      });
+
+      // 3. Draw Zone Labels
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.fillRect(regionX + 10, 10, 140, 30);
+      ctx.strokeStyle = '#cbd5e1';
+      ctx.strokeRect(regionX + 10, 10, 140, 30);
+      
+      ctx.fillStyle = '#2d3748';
+      ctx.font = 'bold 14px sans-serif';
+      let label = '';
+      if(viewType === 'semantic') label = '1. Semantic';
+      else if(viewType === 'instance') label = '2. Instance';
+      else label = '3. Panoptic';
+      ctx.fillText(label, regionX + 20, 30);
+
+      ctx.restore();
+  }
+
+  function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      const w = canvas.width;
+      const h = canvas.height;
+      const third = w / 3;
+
+      // Draw Left (Semantic)
+      drawScene('semantic', 0, third);
+      
+      // Draw Middle (Instance)
+      drawScene('instance', third, third);
+      
+      // Draw Right (Panoptic)
+      drawScene('panoptic', third * 2, third);
+
+      // Draw Dividers
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(third, 0); ctx.lineTo(third, h);
+      ctx.moveTo(third * 2, 0); ctx.lineTo(third * 2, h);
+      ctx.stroke();
+
+      // Draw Mouse Scanner Line
+      if (isHovering) {
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.8)';
+          ctx.lineWidth = 1;
+          ctx.setLineDash([5, 5]);
+          ctx.beginPath();
+          ctx.moveTo(mouseX, 0);
+          ctx.lineTo(mouseX, h);
+          ctx.stroke();
+          ctx.setLineDash([]);
+      }
+  }
+
+  function checkCollisions(mx, my, zoneIndex) {
+      // Hit detection
+      let hitCar = null;
+      // Check cars (reverse order for z-index)
+      for (let i = SCENE.cars.length - 1; i >= 0; i--) {
+          const car = SCENE.cars[i];
+          // Simple bounding box for the drawing logic
+          // Note: drawing adds wheels/cabin, roughly expanding the rect
+          if (mx >= car.x && mx <= car.x + car.w && 
+              my >= car.y && my <= car.y + car.h * 1.2) {
+              hitCar = car;
+              break;
+          }
+      }
+
+      // Determine output based on Zone rules
+      let title = '';
+      let info = '';
+
+      if (hitCar) {
+          // WE HIT A CAR
+          if (zoneIndex === 0) { // Semantic
+              title = 'Class';
+              info = 'Car';
+          } else if (zoneIndex === 1) { // Instance
+              title = 'Instance ID';
+              info = hitCar.id;
+          } else { // Panoptic
+              title = 'Panoptic Data';
+              info = `Class: Car <br> ID: ${hitCar.id}`;
+          }
+      } else {
+          // WE HIT BACKGROUND (Stuff)
+          if (zoneIndex === 1) { // Instance
+              // Instance ignores background
+              return null; 
+          }
+          
+          // Determine Sky or Road
+          const isSky = my < SCENE.road.y;
+          const label = isSky ? 'Sky' : 'Road';
+
+          if (zoneIndex === 0) { // Semantic
+              title = 'Class';
+              info = label;
+          } else { // Panoptic
+              title = 'Panoptic Data';
+              info = `Class: ${label} <br> ID: Null (Stuff)`;
+          }
+      }
+
+      return { title, info };
+  }
+
+  // Event Listeners
+  canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      // Scale for canvas resolution vs display size
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+
+      mouseX = (e.clientX - rect.left) * scaleX;
+      mouseY = (e.clientY - rect.top) * scaleY;
+      isHovering = true;
+
+      const third = canvas.width / 3;
+      const zoneIndex = Math.floor(mouseX / third);
+
+      const data = checkCollisions(mouseX, mouseY, zoneIndex);
+
+      if (data) {
+          tooltip.style.display = 'block';
+          tooltip.style.left = (e.clientX - rect.left) + 'px';
+          tooltip.style.top = (e.clientY - rect.top) + 'px';
+          tooltip.innerHTML = `<span class="label">${data.title}</span>${data.info}`;
+      } else {
+          tooltip.style.display = 'none';
+      }
+
+      draw();
+  });
+
+  canvas.addEventListener('mouseleave', () => {
+      isHovering = false;
+      tooltip.style.display = 'none';
+      draw();
+  });
+
+  // Initial Draw
+  draw();
+})();
+</script>
+<!-- END INTERACTIVE MODULE -->
+    <div class="continue-button" onclick="showNextSection(10)">Continue</div>
+</section>
+
+<!-- SECTION 10: Quiz - Blurring Background -->
+<section id="section10">
+    <p>This distinction is vital for how we design our network architectures and loss functions.</p>
+    <div class="test-your-knowledge">
+        <h3>Check Your Understanding</h3>
+        <h4>If you were building a system to blur the background for video calls, which segmentation type is the minimum requirement?</h4>
+        <div class="multiple-choice">
+            <div class="choice-option" data-correct="false" onclick="selectChoice(this, false, 'Instance segmentation focuses on detecting objects (like people), but it often ignores the background entirely. While you could use it to find the person, Semantic segmentation is usually sufficient and faster for just separating person from background.')">Instance Segmentation</div>
+            
+            <div class="choice-option" data-correct="true" onclick="selectChoice(this, true, 'Correct! You only need to distinguish pixels that are Person from pixels that are Background. You don not need to know if there are two distinct people in the frame, just that they are not the background.')">Semantic Segmentation</div>
+            
+            <div class="choice-option" data-correct="false" onclick="selectChoice(this, false, 'This would work, but it is overkill. You do not need unique IDs for every object in the room just to blur the background.')">Panoptic Segmentation</div>
+        </div>
+    </div>
+    <div class="continue-button" id="continue-section10" onclick="showNextSection(11)" style="display:none;">Continue</div>
+</section>
+
+<!-- SECTION 11: Things vs Stuff Intro -->
+<section id="section11">
+    <h2>Things vs. Stuff</h2>
+    <p>To formalize these definitions, computer vision researchers introduced two very important terms: <strong>Things</strong> and <strong>Stuff</strong>.</p>
+    <div class="continue-button" onclick="showNextSection(12)">Continue</div>
+</section>
+
+<!-- SECTION 12: Things Definition -->
+<section id="section12">
+    <p><strong>Things</strong> are countable objects. Cars, people, chairs, apples. These have a defined shape and size. In Panoptic segmentation, 'Things' get an Instance ID.</p>
+    <div class="continue-button" onclick="showNextSection(13)">Continue</div>
+</section>
+
+<!-- SECTION 13: Stuff Definition + Vocab -->
+<section id="section13">
+    <p><strong>Stuff</strong> is amorphous or uncountable regions. Sky, grass, road, water. You generally don't say 'I see three grasses' or 'two skies'. In Panoptic segmentation, 'Stuff' only gets a semantic label.</p>
+    <div class="vocab-section">
+        <h3>Build Your Vocab</h3>
+        <h4>Panoptic Segmentation</h4>
+        <p>A unification of semantic and instance segmentation. It assigns a semantic label to every pixel in the image, and for pixels belonging to 'Thing' classes (countable objects), it also assigns a unique instance ID.</p>
+    </div>
+    <div class="continue-button" onclick="showNextSection(14)">Continue</div>
+</section>
+
+<!-- SECTION 14: Label Interactive -->
+<section id="section14">
+    <p>Let's try to label a room yourself to see how the data structure changes.</p>
+    <!-- START INTERACTIVE MODULE: LABEL THE SCENE -->
+<div class="label-scene-container">
+    
+  <!-- Header / Instructions -->
+  <div class="scene-header">
+      <h4 id="scenePhaseTitle">Phase 1: Semantic Labeling</h4>
+      <p id="sceneInstruction">Select a brush and paint the objects. Notice how 'Things' (Chairs) look identical.</p>
+  </div>
+
+  <!-- Main Workspace -->
+  <div class="workspace" id="workspace">
+      
+      <!-- Canvas Layer -->
+      <canvas id="roomCanvas" width="800" height="450"></canvas>
+
+      <!-- Phase 1 UI: Brushes -->
+      <div id="brushToolbar" class="toolbar visible">
+          <button class="tool-btn" onclick="labelGame.selectTool('chair')" id="btnChair">
+              <span class="color-swatch blue"></span> Paint Chairs (Things)
+          </button>
+          <button class="tool-btn" onclick="labelGame.selectTool('rug')" id="btnRug">
+              <span class="color-swatch orange"></span> Paint Rug (Stuff)
+          </button>
+      </div>
+
+      <!-- Phase 2 UI: Tags -->
+      <div id="tagToolbar" class="toolbar hidden">
+          <div class="draggable-tag" draggable="true" id="tag1" data-id="1">ID: Chair_01</div>
+          <div class="draggable-tag" draggable="true" id="tag2" data-id="2">ID: Chair_02</div>
+          <div class="draggable-tag" draggable="true" id="tag3" data-id="3">ID: Chair_03</div>
+      </div>
+
+      <!-- Feedback Toast -->
+      <div id="feedbackToast" class="feedback-toast">Rug is 'Stuff'. No Instance IDs allowed!</div>
+      
+      <!-- Success Overlay -->
+      <div id="successOverlay" class="success-overlay">
+          <div class="success-content">
+              <h3>✓ Labeling Complete!</h3>
+              <p>You successfully separated 'Things' with IDs while leaving 'Stuff' as a semantic region.</p>
+          </div>
+      </div>
+
+  </div>
+</div>
+
+<script>
+const labelGame = (function() {
+  const canvas = document.getElementById('roomCanvas');
+  const ctx = canvas.getContext('2d');
+  const workspace = document.getElementById('workspace');
+  
+  // State
+  let phase = 1; // 1 = Semantic, 2 = Instance
+  let currentTool = null; // 'chair' or 'rug'
+  
+  // Objects Definition
+  // Coordinates relative to 800x450 canvas
+  const OBJECTS = [
+      // RUG (Stuff)
+      { 
+          id: 'rug', type: 'stuff', label: 'Rug',
+          x: 400, y: 350, w: 500, h: 140, 
+          color: '#ed8936', painted: false, 
+          shape: 'ellipse' 
+      },
+      // CHAIR 1 (Thing)
+      { 
+          id: 'c1', type: 'thing', label: 'Chair',
+          x: 180, y: 280, w: 80, h: 120, 
+          color: '#4299e1', painted: false, tagged: false,
+          shape: 'rect' 
+      },
+      // CHAIR 2 (Thing) - Middle back
+      { 
+          id: 'c2', type: 'thing', label: 'Chair',
+          x: 400, y: 240, w: 80, h: 120, 
+          color: '#4299e1', painted: false, tagged: false,
+          shape: 'rect' 
+      },
+      // CHAIR 3 (Thing) - Right
+      { 
+          id: 'c3', type: 'thing', label: 'Chair',
+          x: 620, y: 290, w: 80, h: 120, 
+          color: '#4299e1', painted: false, tagged: false,
+          shape: 'rect' 
+      }
+  ];
+
+  // --- DRAWING FUNCTIONS ---
+
+  function drawRoom() {
+      // Clear
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Wall
+      ctx.fillStyle = '#e2e8f0';
+      ctx.fillRect(0, 0, canvas.width, 250);
+      
+      // Floor
+      ctx.fillStyle = '#f7fafc';
+      ctx.fillRect(0, 250, canvas.width, 200);
+      
+      // Floor line
+      ctx.strokeStyle = '#cbd5e1';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(0, 250); ctx.lineTo(canvas.width, 250);
+      ctx.stroke();
+  }
+
+  function drawObject(obj) {
+      ctx.save();
+      
+      // Set Style
+      if (obj.painted) {
+          ctx.fillStyle = obj.color;
+          ctx.strokeStyle = '#2d3748';
+          ctx.lineWidth = 2;
+      } else {
+          ctx.fillStyle = '#cbd5e1'; // Unpainted gray
+          ctx.strokeStyle = '#94a3b8';
+          ctx.lineWidth = 2;
+          ctx.setLineDash([5, 5]); // Dashed outline for unpainted
+      }
+
+      // Draw Shape
+      if (obj.shape === 'ellipse') {
+          ctx.beginPath();
+          ctx.ellipse(obj.x, obj.y, obj.w/2, obj.h/2, 0, 0, 2 * Math.PI);
+          ctx.fill();
+          ctx.stroke();
+      } else if (obj.shape === 'rect') {
+          const legW = 10;
+          const legH = 40;
+          
+          // Draw Legs (Darker)
+          ctx.fillStyle = obj.painted ? darkenColor(obj.color, -20) : '#a0aec0';
+          // Front Left
+          ctx.fillRect(obj.x - obj.w/2, obj.y + obj.h/2, legW, legH);
+          // Front Right
+          ctx.fillRect(obj.x + obj.w/2 - legW, obj.y + obj.h/2, legW, legH);
+          
+          // Reset fill for body
+          if (obj.painted) ctx.fillStyle = obj.color;
+          else ctx.fillStyle = '#cbd5e1';
+
+          // Draw Seat
+          ctx.fillRect(obj.x - obj.w/2, obj.y, obj.w, obj.h/2);
+          ctx.strokeRect(obj.x - obj.w/2, obj.y, obj.w, obj.h/2);
+          
+          // Draw Backrest
+          ctx.fillRect(obj.x - obj.w/2, obj.y - obj.h/2, obj.w, obj.h/2);
+          ctx.strokeRect(obj.x - obj.w/2, obj.y - obj.h/2, obj.w, obj.h/2);
+      }
+
+      ctx.restore();
+  }
+
+  // --- LOGIC HELPERS ---
+
+  // Simple Hit Test
+  function isHit(obj, mx, my) {
+      if (obj.shape === 'ellipse') {
+          // Ellipse equation: (x-h)^2/a^2 + (y-k)^2/b^2 <= 1
+          const dx = mx - obj.x;
+          const dy = my - obj.y;
+          return ((dx*dx) / ((obj.w/2)*(obj.w/2))) + ((dy*dy) / ((obj.h/2)*(obj.h/2))) <= 1;
+      } else {
+          // Rect hit test (including the whole bounding box height)
+          return mx >= obj.x - obj.w/2 && mx <= obj.x + obj.w/2 &&
+                 my >= obj.y - obj.h/2 && my <= obj.y + obj.h/2 + 40; // +40 for legs
+      }
+  }
+
+  function render() {
+      drawRoom();
+      // Draw rug first (bottom layer)
+      drawObject(OBJECTS[0]);
+      // Draw chairs
+      for(let i=1; i<OBJECTS.length; i++) drawObject(OBJECTS[i]);
+  }
+
+  function checkPhase1Completion() {
+      const allPainted = OBJECTS.every(o => o.painted);
+      if (allPainted && phase === 1) {
+          setTimeout(startPhase2, 1000);
+      }
+  }
+
+  function startPhase2() {
+      phase = 2;
+      document.getElementById('scenePhaseTitle').innerText = "Phase 2: Instance Tagging";
+      document.getElementById('sceneInstruction').innerText = "Drag IDs to the Chairs. Try to tag the Rug and see what happens.";
+      
+      // Swap toolbars
+      document.getElementById('brushToolbar').classList.remove('visible');
+      document.getElementById('brushToolbar').classList.add('hidden');
+      
+      document.getElementById('tagToolbar').classList.remove('hidden');
+      document.getElementById('tagToolbar').classList.add('visible');
+  }
+
+  function showToast(msg) {
+      const toast = document.getElementById('feedbackToast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+  }
+
+  function createPlacedTag(x, y, text) {
+      const tag = document.createElement('div');
+      tag.className = 'placed-tag';
+      tag.innerText = text;
+      tag.style.left = x + 'px';
+      tag.style.top = y + 'px';
+      workspace.appendChild(tag);
+  }
+
+  function darkenColor(col, amt) {
+      // Mock darken function, actually just returning a hardcoded dark blue for simplicity
+      // in a real app use HSL manipulation.
+      return '#2b6cb0'; 
+  }
+
+  // --- INTERACTION HANDLERS ---
+
+  // Phase 1: Click to Paint
+  canvas.addEventListener('mousedown', (e) => {
+      if (phase !== 1 || !currentTool) return;
+
+      const rect = canvas.getBoundingClientRect();
+      // Simple scaling
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const mx = (e.clientX - rect.left) * scaleX;
+      const my = (e.clientY - rect.top) * scaleY;
+
+      // Check hits (reverse order for z-index)
+      let hitObj = null;
+      for (let i = OBJECTS.length - 1; i >= 0; i--) {
+          if (isHit(OBJECTS[i], mx, my)) {
+              hitObj = OBJECTS[i];
+              break;
+          }
+      }
+
+      if (hitObj) {
+          if (currentTool === 'chair' && hitObj.type === 'thing') {
+              hitObj.painted = true;
+              render();
+              checkPhase1Completion();
+          } else if (currentTool === 'rug' && hitObj.type === 'stuff') {
+              hitObj.painted = true;
+              render();
+              checkPhase1Completion();
+          } else {
+              // Wrong tool feedback
+              showToast(`Use the ${hitObj.type === 'thing' ? 'Chair' : 'Rug'} brush for this!`);
+          }
+      }
+  });
+
+  // Phase 2: Drag and Drop
+  // Note: We are using native HTML5 Drag and Drop on the divs
+  const draggables = document.querySelectorAll('.draggable-tag');
+  
+  draggables.forEach(drag => {
+      drag.addEventListener('dragstart', (e) => {
+          e.dataTransfer.setData('text/plain', e.target.id);
+          e.dataTransfer.effectAllowed = 'move';
+      });
+  });
+
+  workspace.addEventListener('dragover', (e) => {
+      e.preventDefault(); // Allow dropping
+      e.dataTransfer.dropEffect = 'move';
+  });
+
+  workspace.addEventListener('drop', (e) => {
+      e.preventDefault();
+      if (phase !== 2) return;
+
+      const tagId = e.dataTransfer.getData('text/plain');
+      const tagElem = document.getElementById(tagId);
+      if(!tagElem) return;
+
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const mx = (e.clientX - rect.left) * scaleX;
+      const my = (e.clientY - rect.top) * scaleY;
+
+      // Check hits
+      let hitObj = null;
+      for (let i = OBJECTS.length - 1; i >= 0; i--) {
+          if (isHit(OBJECTS[i], mx, my)) {
+              hitObj = OBJECTS[i];
+              break;
+          }
+      }
+
+      if (hitObj) {
+          if (hitObj.type === 'stuff') {
+              // Reject Stuff
+              showToast("Rug is 'Stuff' (Background). It has no Instance ID!");
+          } else if (hitObj.type === 'thing') {
+              if (hitObj.tagged) {
+                  showToast("Already tagged!");
+              } else {
+                  // Success Tag
+                  hitObj.tagged = true;
+                  tagElem.style.display = 'none'; // Hide toolbar tag
+                  createPlacedTag(hitObj.x / scaleX, hitObj.y / scaleY, tagElem.innerText); // Visual tag
+                  
+                  // Check Win
+                  const chairs = OBJECTS.filter(o => o.type === 'thing');
+                  if (chairs.every(c => c.tagged)) {
+                      document.getElementById('successOverlay').classList.add('visible');
+                  }
+              }
+          }
+      }
+  });
+
+  // Initial Render
+  render();
+
+  // Export for HTML onclick
+  return {
+      selectTool: (tool) => {
+          currentTool = tool;
+          // Update UI
+          document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
+          if(tool === 'chair') document.getElementById('btnChair').classList.add('active');
+          if(tool === 'rug') document.getElementById('btnRug').classList.add('active');
+      }
+  };
+
+})();
+</script>
+<!-- END INTERACTIVE MODULE -->
+    <div class="continue-button" onclick="showNextSection(15)">Continue</div>
+</section>
+
+<!-- SECTION 15: Stop and Think -->
+<section id="section15">
+    <div class="stop-think-section">
+        <h3>Stop & Think</h3>
+        <h4>In a Panoptic Segmentation task, does the 'Sky' need an Instance ID? Why or why not?</h4>
+        <div id="st-sky-answer" style="display:none;" class="animate-in">
+            <strong>Answer:</strong> No. The sky is classified as 'Stuff'. It is an amorphous region. Even if you see blue sky between two clouds, it is all considered the same 'Sky' region. You cannot count 'one sky, two skies' in a single image.
+        </div>
+        <button class="reveal-button" onclick="revealAnswer('st-sky-answer')">Reveal Answer</button>
+    </div>
+    <div class="continue-button" onclick="showNextSection(16)">Continue</div>
+</section>
+
+<!-- SECTION 16: Why It Matters Intro -->
+<section id="section16">
+    <h2>Why It Matters</h2>
+    <p>You might wonder: Why go through the trouble of Panoptic segmentation? Isn't it computationally expensive?</p>
+    <div class="continue-button" onclick="showNextSection(17)">Continue</div>
+</section>
+
+<!-- SECTION 17: Cost vs Value -->
+<section id="section17">
+    <p>It is, but for robotics and autonomous driving, it is non-negotiable.</p>
+    <div class="continue-button" onclick="showNextSection(18)">Continue</div>
+</section>
+
+<!-- SECTION 18: Semantic Necessity -->
+<section id="section18">
+    <p>Consider a self-driving car. It needs <strong>Semantic Segmentation</strong> ('Stuff') to identify the drivable surface—the road. It needs to know where the lane lines end and the sidewalk begins.</p>
+    <div class="continue-button" onclick="showNextSection(19)">Continue</div>
+</section>
+
+<!-- SECTION 19: Instance Necessity + Robot Brain -->
+<section id="section19">
+    <p>However, it simultaneously needs <strong>Instance Segmentation</strong> ('Things') to track pedestrians. If a group of three people is crossing the street, the car must track them individually to predict their movements. Treating them as one 'human blob' could lead to dangerous navigation errors.</p>
+    <div class="image-placeholder">
+        <img src="images/3.jpg" alt="Robot brain overlay showing semantic drivable zones and instance boxes around pedestrians">
+        <p class="image-caption">Panoptic reasoning inside a vehicle: drivable zone plus distinct pedestrian tracks.</p>
+    </div>
+    <div class="continue-button" onclick="showNextSection(20)">Continue</div>
+</section>
+
+<!-- SECTION 20: Why It Matters Box -->
+<section id="section20">
+    <div class="why-it-matters">
+        <h3>Why It Matters</h3>
+        <p>Panoptic segmentation provides the most complete understanding of a scene possible for a machine. It answers both 'What is this surface?' and 'How many distinct objects are there?', bridging the gap between raw pixel classification and object reasoning.</p>
+    </div>
+    <div class="continue-button" onclick="showNextSection(21)">Continue</div>
+</section>
+
+<!-- SECTION 21: Output Formalism -->
+<section id="section21">
+    <h2>Output Formalism</h2>
+    <p>Mathematically, we can think of the output of Panoptic Segmentation as mapping every pixel \( (x, y) \) to a pair of values:</p>
+    <div class="continue-button" onclick="showNextSection(22)">Continue</div>
+</section>
+
+<!-- SECTION 22: The Formula -->
+<section id="section22">
+    <p>$$ P(x,y) = (l, z) $$</p>
+    <div class="continue-button" onclick="showNextSection(23)">Continue</div>
+</section>
+
+<!-- SECTION 23: Variable Definitions -->
+<section id="section23">
+    <p>Where \( l \) is the <strong>Semantic Label</strong> (e.g., Car, Road, Sky) and \( z \) is the <strong>Instance ID</strong> (e.g., 0, 1, 2...).</p>
+    <div class="continue-button" onclick="showNextSection(24)">Continue</div>
+</section>
+
+<!-- SECTION 24: FAQ -->
+<section id="section24">
+    <p>For 'Stuff' classes like the sky, the Instance ID \( z \) is usually set to a specific 'void' or 'null' value, because the sky is just the sky.</p>
+    <div class="faq-section">
+        <h3>Frequently Asked Question</h3>
+        <h4>Can a pixel belong to two instances in Panoptic Segmentation?</h4>
+        <p><strong>Answer:</strong> No. This is a key rule. In Panoptic segmentation, every pixel gets exactly one label and one ID. Unlike object detection where bounding boxes can overlap, panoptic segmentation requires the model to resolve the conflict and decide exactly which object owns that specific pixel.</p>
+    </div>
+    <div class="continue-button" onclick="showNextSection(25)">Continue</div>
+</section>
+
+<!-- SECTION 25: Review and Final Quiz -->
+<section id="section25">
+    <h2>Review and Reflect</h2>
+    <p>We have established the hierarchy of segmentation tasks. To summarize:</p>
+    <ol>
+        <li><strong>Semantic Segmentation:</strong> Labels every pixel by class. Great for 'Stuff', bad for counting 'Things'.</li>
+        <li><strong>Instance Segmentation:</strong> Detects and masks individual objects. Great for counting 'Things', often ignores 'Stuff'.</li>
+        <li><strong>Panoptic Segmentation:</strong> The combination. Every pixel gets a class label and, if it's a countable object, an instance ID.</li>
+    </ol>
+    <p>Now that we know <em>what</em> we want to achieve (distinguishing instances), in the next lesson we will look at the most famous architecture designed to solve this: <strong>Mask R-CNN</strong>.</p>
+    
+    <div class="test-your-knowledge">
+        <h3>Test Your Knowledge</h3>
+        <h4>You are building a calorie counter app that counts individual apples in a bowl from a photo. Which segmentation type is most appropriate?</h4>
+        <div class="multiple-choice">
+            <div class="choice-option" data-correct="false" onclick="selectChoice(this, false, 'If the apples are touching (which they usually are in a bowl), semantic segmentation will merge them into one big red apple blob. You wont be able to count them accurately.')">Semantic Segmentation</div>
+            
+            <div class="choice-option" data-correct="true" onclick="selectChoice(this, true, 'Correct! You need to separate Apple 1 from Apple 2 to count them. You do not really care about the table or the bowl (the stuff) for the calorie count, just the distinct apple instances.')">Instance Segmentation</div>
+            
+            <div class="choice-option" data-correct="false" onclick="selectChoice(this, false, 'Classification will just tell you There are apples in this image. It will not tell you how many or where they are.')">Classification</div>
+        </div>
+    </div>
+    <!-- No continue button needed, just the completion button below -->
+</section>
+
+<button id="markCompletedBtn" class="mark-completed-button" onclick="toggleCompleted()">✓ Mark as Completed</button>
+</div>
+
+<script>
+let currentSection = 1;
+const totalSections = 25; // Adjusted based on the number of reveals
+
+updateProgress();
+
+function showNextSection(nextSectionId) {
+    const nextSectionElement = document.getElementById(`section${nextSectionId}`);
+    const currentButton = event && event.target;
+    if (!nextSectionElement) return;
+    
+    // Hide the button that was just clicked
+    if (currentButton && currentButton.classList.contains('continue-button')) {
+        currentButton.style.display = 'none';
+    }
+    
+    nextSectionElement.classList.add('visible');
+    currentSection = nextSectionId;
+    updateProgress();
+    
+    // Scroll to the new section
+    setTimeout(() => { 
+        nextSectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+    }, 200);
+
+    // Show completion button if last section
+    if (currentSection === totalSections) {
+        const completedButton = document.getElementById('markCompletedBtn');
+        if (completedButton) completedButton.classList.add('show');
+    }
+}
+
+function updateProgress() {
+    const progressBar = document.getElementById('progressBar');
+    const progress = (currentSection / totalSections) * 100;
+    progressBar.style.width = `${progress}%`;
+}
+
+function revealAnswer(id) {
+    const revealText = document.getElementById(id);
+    const revealButton = event && event.target;
+    if (revealText) {
+        revealText.style.display = "block";
+        revealText.classList.add('animate-in');
+    }
+    if (revealButton) {
+        revealButton.style.display = "none";
+    }
+}
+
+function selectChoice(element, isCorrect, explanation) {
+    const choices = element.parentNode.querySelectorAll('.choice-option');
+    choices.forEach(choice => {
+        choice.classList.remove('selected', 'correct', 'incorrect');
+        const existing = choice.querySelector('.choice-explanation');
+        if (existing) existing.remove();
+    });
+    
+    element.classList.add('selected');
+    element.classList.add(isCorrect ? 'correct' : 'incorrect');
+    
+    const explanationDiv = document.createElement('div');
+    explanationDiv.className = 'choice-explanation';
+    explanationDiv.style.display = 'block';
+    explanationDiv.innerHTML = `<strong>${isCorrect ? 'Correct!' : 'Not quite.'}</strong> ${explanation}`;
+    element.appendChild(explanationDiv);
+    
+    // Only show continue button if answer is correct
+    if (!isCorrect) return;
+    
+    // Special handling for the mid-lesson quiz to reveal the Continue button
+    const parentSection = element.closest('section');
+    if (parentSection && parentSection.id === 'section10') {
+        const continueButton = document.getElementById('continue-section10');
+        if (continueButton && continueButton.style.display === 'none') {
+            setTimeout(() => {
+                continueButton.style.display = 'block';
+                continueButton.classList.add('show-with-animation');
+            }, 800);
+        }
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') {
+        const btn = document.querySelector(`#section${currentSection} .continue-button`);
+        if (btn && btn.style.display !== 'none') {
+            e.preventDefault();
+            btn.click();
+        }
+    }
+});
+
+document.documentElement.style.scrollBehavior = 'smooth';
+
+/* Completion Logic */
+function toggleCompleted() {
+    const button = document.getElementById('markCompletedBtn');
+    if (!button) return;
+    const isCompleted = button.classList.contains('completed');
+    if (!isCompleted) {
+        try {
+            if (window.parent && window.parent.ProgressTracker) {
+                // Mock IDs - in a real app these would be dynamic
+                let courseId = 'computer-vision';
+                let pathId = 'segmentation';
+                let moduleId = 'cv-ch22-m1-foundations';
+                let lessonId = 'cv-ch22-l1-segmentation-taxonomy';
+                
+                // Try to get IDs from URL
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('course')) courseId = urlParams.get('course');
+                if (urlParams.get('path')) pathId = urlParams.get('path');
+                if (urlParams.get('module')) moduleId = urlParams.get('module');
+                if (urlParams.get('lesson')) lessonId = urlParams.get('lesson');
+                
+                window.parent.ProgressTracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
+            }
+        } catch (error) {
+            console.error('Error with ProgressTracker:', error);
+        }
+        button.classList.add('completed');
+        button.innerHTML = '✅ Completed!';
+        triggerCelebration();
+        localStorage.setItem('lesson_cv-ch22-m1-l1_completed', 'true');
+    }
+}
+
+function triggerCelebration() {
+    createConfetti();
+    showSuccessMessage();
+}
+
+function createConfetti() {
+    const confettiContainer = document.createElement('div');
+    confettiContainer.className = 'confetti-container';
+    document.body.appendChild(confettiContainer);
+    const emojis = ['🎉', '🎊', '✨', '🌟', '🎈', '🏆', '👏', '🥳'];
+    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7'];
+    for (let i = 0; i < 40; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            if (Math.random() > 0.6) {
+                confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            } else {
+                confetti.innerHTML = '●';
+                confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+            document.querySelector('.confetti-container').appendChild(confetti);
+        }, i * 50);
+    }
+    setTimeout(() => { if (confettiContainer.parentNode) confettiContainer.parentNode.removeChild(confettiContainer); }, 5000);
+}
+
+function showSuccessMessage() {
+    const successMessage = document.createElement('div');
+    successMessage.className = 'success-message';
+    successMessage.innerHTML = '🎉 Lesson Completed! Great Job! 🎉';
+    document.body.appendChild(successMessage);
+    setTimeout(() => { if (successMessage.parentNode) successMessage.parentNode.removeChild(successMessage); }, 2500);
+}
+
+window.addEventListener('load', function() {
+    const button = document.getElementById('markCompletedBtn');
+    if (!button) return;
+    // Check local storage for basic state persistence
+    const isCompleted = localStorage.getItem('lesson_cv-ch22-m1-l1_completed') === 'true';
+    if (isCompleted) {
+        button.classList.add('completed');
+        button.innerHTML = '✅ Completed!';
+    }
+});
+</script>
+</body>
+</html>

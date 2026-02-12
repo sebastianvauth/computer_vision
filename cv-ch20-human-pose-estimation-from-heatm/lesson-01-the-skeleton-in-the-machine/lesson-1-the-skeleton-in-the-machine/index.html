@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel="stylesheet" href="style.css">
+<title>The Skeleton in the Machine</title>
+<script>
+window.MathJax = {
+    tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+<div class="lesson-container">
+
+<!-- SECTION 1: Intro -->
+<section id="section1" class="visible">
+    <div class="image-placeholder">
+        <img src="images/1.jpg" alt="Dashboard visualization showing pedestrians with overlayed pose skeletons." loading="lazy">
+        <p class="image-caption">From self-driving cars to AR filters, modern systems read body language by tracking skeletons frame by frame.</p>
+    </div>
+    <h1>The Skeleton in the Machine</h1>
+    <h2>Seeing Beyond the Box</h2>
+    <p>Welcome to Chapter 20! Let's start with a question: How does a self-driving car distinguish between a pedestrian who is waiting to cross the street and one who is just standing on the sidewalk talking on their phone? Or, on a lighter note, how does TikTok know exactly where to place that funny filter on your face, even when you move around?</p>
+    <div class="continue-button" onclick="showNextSection(2)">Continue</div>
+</section>
+
+<!-- SECTION 2: What is HPE -->
+<section id="section2">
+    <h2>What is Human Pose Estimation?</h2>
+    <p>The answer lies in <strong>Human Pose Estimation (HPE)</strong>. While object detection draws a box around a person, HPE goes a step further.</p>
+    <div class="continue-button" onclick="showNextSection(3)">Continue</div>
+</section>
+
+<!-- SECTION 3: Vocab - Keypoint -->
+<section id="section3">
+    <p>HPE identifies specific anatomical <strong>Keypoints</strong> (like your left elbow, right knee, or the tip of your nose) to reconstruct an articulated "skeleton" of the body.</p>
+    <div class="vocab-section">
+        <h3>Build Your Vocab</h3>
+        <h4>Keypoint</h4>
+        <p>An anatomical landmark on the body, such as a joint (elbow, knee) or a facial feature (eye, nose), that the computer vision model tries to locate.</p>
+    </div>
+    <div class="continue-button" onclick="showNextSection(4)">Continue</div>
+</section>
+
+<!-- SECTION 4: Schemas Intro -->
+<section id="section4">
+    <p>It sounds straightforward—just connect the dots, right? But first, we have to agree on <em>which</em> dots to connect. This is where things get tricky.</p>
+    <div class="continue-button" onclick="showNextSection(5)">Continue</div>
+</section>
+
+<!-- SECTION 5: Schemas Visual & Vocab -->
+<section id="section5">
+    <p>Different datasets use different templates, or <strong>Keypoint Schemas</strong>. Look at the comparison below. On the left, the COCO dataset schema might define the hips differently than the MPII dataset on the right.</p>
+    <div class="image-placeholder">
+        <img src="images/2.jpg" alt="Side-by-side skeleton annotations comparing COCO and MPII keypoint schemas on a runner." loading="lazy">
+        <p class="image-caption">COCO and MPII disagree on hip placement—schema shifts like this can break evaluation if you are not careful.</p>
+    </div>
+    <div class="vocab-section">
+        <h3>Build Your Vocab</h3>
+        <h4>Keypoint Schema</h4>
+        <p>The template or definition that specifies which keypoints are tracked in a dataset and how they are connected to form a skeleton.</p>
+    </div>
+    <div class="continue-button" onclick="showNextSection(6)">Continue</div>
+</section>
+
+<!-- SECTION 6: Quiz - Schema Failure -->
+<section id="section6">
+    <p>Because of these differences, a model trained to find 17 keypoints (COCO) will be confused if you evaluate it against a dataset that expects 16 keypoints (MPII).</p>
+    <div class="test-your-knowledge">
+        <h3>Test Your Knowledge</h3>
+        <h4>Why might a model trained on the COCO dataset fail when tested on MPII data?</h4>
+        <div class="multiple-choice">
+            <div class="choice-option" data-correct="false" onclick="selectChoice(this, false, 'Image color isn\'t the primary issue here; modern models can handle various image formats.')">Because MPII images are black and white.</div>
+            <div class="choice-option" data-correct="true" onclick="selectChoice(this, true, 'Exactly. If the model is looking for two hip points but the ground truth only provides one central point, the model cannot be accurately evaluated.')">Because they use different skeletal definitions (schemas).</div>
+            <div class="choice-option" data-correct="false" onclick="selectChoice(this, false, 'COCO stands for Common Objects in Context, but it is a primary dataset for human pose estimation as well.')">Because COCO only contains images of objects, not people.</div>
+        </div>
+    </div>
+    <div class="continue-button" id="continue-after-quiz-1" onclick="showNextSection(7)" style="display: none;">Continue</div>
+</section>
+
+<!-- SECTION 7: Real World Challenges Intro -->
+<section id="section7">
+    <h2>Real-World Challenges</h2>
+    <p>If we were only analyzing photos of people standing in a 'T-pose' against a white background, HPE would be solved. But the real world is messy.</p>
+    <div class="continue-button" onclick="showNextSection(8)">Continue</div>
+</section>
+
+<!-- SECTION 8: The 3 Challenges & Meme -->
+<section id="section8">
+    <p>Three major challenges constantly try to break our models:</p>
+    <ul>
+        <li><strong>Occlusion:</strong> Parts of the body are hidden. This could be a person standing behind a desk, or even an arm blocking the view of the chest.</li>
+        <li><strong>Truncation:</strong> The person is partially out of the frame. If a photo only shows a person from the waist up, the ankles simply don't exist in the image.</li>
+        <li><strong>Crowds:</strong> Multiple people interacting, overlapping, and tangling limbs.</li>
+    </ul>
+    <div class="image-placeholder">
+        <img src="images/3.jpg" alt="Chaotic Twister-style scene illustrating occlusion, truncation, and crowds for pose models." loading="lazy">
+        <p class="image-caption">Occlusion, truncation, and crowds turn pose estimation into a tangled game of Twister for any model.</p>
+    </div>
+    <div class="continue-button" onclick="showNextSection(9)">Continue</div>
+</section>
+
+<!-- SECTION 9: Stop and Think (Occlusion) -->
+<section id="section9">
+    <div class="check-your-knowledge">
+        <h3>Stop And Think</h3>
+        <h4>If a person is standing behind a desk and their legs are occluded (hidden), how can a model guess where the knees are?</h4>
+        <div id="cuy-occlusion-answer" style="display:none;" class="animate-in">
+            <strong>Answer:</strong> The model uses context! Even if the knees aren't visible pixels, the position of the shoulders, head, and visible torso provides strong clues about where the legs <em>should</em> be. This is why models need to learn structural reasoning, not just pixel detection.
+        </div>
+        <button class="reveal-button" onclick="revealAnswer('cuy-occlusion-answer')">Reveal Answer</button>
+    </div>
+    <div class="continue-button" onclick="showNextSection(10)">Continue</div>
+</section>
+
+<!-- SECTION 10: Measuring Success Intro -->
+<section id="section10">
+    <h2>Measuring Success: PCKh</h2>
+    <p>So, we've built a model. How do we know if it's good? We can't just measure the distance in pixels between the predicted joint and the real joint.</p>
+    <div class="continue-button" onclick="showNextSection(11)">Continue</div>
+</section>
+
+<!-- SECTION 11: The Pixel Problem -->
+<section id="section11">
+    <p>Think about it: An error of 10 pixels is tiny if the person is standing right in front of the camera (filling the frame). But if the person is 50 meters away and only 50 pixels tall, a 10-pixel error is huge!</p>
+    <div class="continue-button" onclick="showNextSection(12)">Continue</div>
+</section>
+
+<!-- SECTION 12: Scale Invariance -->
+<section id="section12">
+    <p>We need a metric that is <strong>Scale Invariant</strong>. Enter <strong>PCKh</strong> (Percentage of Correct Keypoints - head-normalized).</p>
+    <div class="continue-button" onclick="showNextSection(13)">Continue</div>
+</section>
+
+<!-- SECTION 13: Formula -->
+<section id="section13">
+    <p>Instead of a fixed pixel limit, we use the person's head size as a ruler. A prediction is considered 'correct' if it falls within a circle radius defined by a fraction of the head size.</p>
+    <p>The threshold is usually defined as:</p>
+    <p>\[ \text{Threshold} = \alpha \times \text{Head Size} \]</p>
+    <div class="continue-button" onclick="showNextSection(14)">Continue</div>
+</section>
+
+<!-- SECTION 14: Interactive & Quiz -->
+<section id="section14">
+    <p>Let's visualize this. Use the slider below to adjust the strictness (alpha) of the evaluation.</p>
+    <div class="pckh-interactive-module">
+      <canvas id="pckhCanvas" style="width: 100%; height: 350px;"></canvas>
+
+      <div class="controls-container">
+          <span class="slider-label">Alpha:</span>
+          <input type="range" id="alphaSlider" min="0.1" max="1.5" step="0.1" value="0.5">
+          <span class="value-display" id="alphaValue">0.5</span>
+      </div>
+
+      <div class="legend">
+          <div class="legend-item">
+              <span class="dot" style="border: 2px solid #cbd5e0; background: white;"></span> Head Size (Reference)
+          </div>
+          <div class="legend-item">
+              <span class="dot" style="background: rgba(102, 126, 234, 0.3);"></span> Accepted Error Zone
+          </div>
+      </div>
+
+      <script>
+      (function() {
+          const canvas = document.getElementById('pckhCanvas');
+          if (!canvas) return;
+
+          const ctx = canvas.getContext('2d');
+          if (!ctx) return;
+
+          const slider = document.getElementById('alphaSlider');
+          const valueDisplay = document.getElementById('alphaValue');
+
+          // Configuration
+          let alpha = 0.5;
+          let canvasWidth = 600;
+          let canvasHeight = 350;
+
+          // Stick Figure Data (using percentages for responsive positioning)
+          const figures = [
+              { xPercent: 0.25, yPercent: 0.86, scale: 1.0, label: "Foreground (Large)" },
+              { xPercent: 0.75, yPercent: 0.80, scale: 0.4, label: "Background (Small)" }
+          ];
+
+      function syncCanvasSize() {
+          if (!canvas) return false;
+          const rect = canvas.getBoundingClientRect();
+          if (!rect.width || !rect.height) return false;
+
+          canvasWidth = rect.width;
+          canvasHeight = rect.height;
+
+          const dpr = window.devicePixelRatio || 1;
+          canvas.width = Math.round(canvasWidth * dpr);
+          canvas.height = Math.round(canvasHeight * dpr);
+          ctx.setTransform(1, 0, 0, 1, 0, 0);
+          ctx.scale(dpr, dpr);
+          return true;
+      }
+
+          // Drawing Helper Functions
+          function drawStickFigure(ctx, startX, startY, scale) {
+              const headRadius = 25 * scale;
+              const bodyLen = 70 * scale;
+              const limbLen = 50 * scale;
+              
+              // Keypoint coordinates relative to startX, startY (which is the feet center approx)
+              // Let's build from Head down to anchor it properly
+              const headCenter = { x: startX, y: startY - (bodyLen + limbLen + headRadius*2) };
+              const neck = { x: startX, y: headCenter.y + headRadius };
+              const hip = { x: startX, y: neck.y + bodyLen };
+              
+              // Arms
+              const leftShoulder = { x: neck.x - 10 * scale, y: neck.y + 5 * scale };
+              const rightShoulder = { x: neck.x + 10 * scale, y: neck.y + 5 * scale };
+              const leftElbow = { x: leftShoulder.x - limbLen * 0.7, y: leftShoulder.y + limbLen * 0.7 };
+              const rightElbow = { x: rightShoulder.x + limbLen * 0.7, y: rightShoulder.y + limbLen * 0.7 };
+              const leftWrist = { x: leftElbow.x - limbLen * 0.5, y: leftElbow.y + limbLen * 0.8 };
+              const rightWrist = { x: rightElbow.x + limbLen * 0.5, y: rightElbow.y + limbLen * 0.8 };
+  
+              // Legs
+              const leftHip = { x: hip.x - 10 * scale, y: hip.y };
+              const rightHip = { x: hip.x + 10 * scale, y: hip.y };
+              const leftKnee = { x: leftHip.x - 5 * scale, y: leftHip.y + limbLen };
+              const rightKnee = { x: rightHip.x + 5 * scale, y: rightHip.y + limbLen };
+              const leftFoot = { x: leftKnee.x - 5 * scale, y: leftKnee.y + limbLen };
+              const rightFoot = { x: rightKnee.x + 5 * scale, y: rightKnee.y + limbLen };
+  
+              // 1. Draw Skeleton
+              ctx.lineWidth = 4 * scale;
+              ctx.lineCap = 'round';
+              ctx.lineJoin = 'round';
+              ctx.strokeStyle = '#4a5568';
+  
+              ctx.beginPath();
+              // Torso
+              ctx.moveTo(neck.x, neck.y);
+              ctx.lineTo(hip.x, hip.y);
+              // Arms
+              ctx.moveTo(neck.x, neck.y); ctx.lineTo(leftShoulder.x, leftShoulder.y); ctx.lineTo(leftElbow.x, leftElbow.y); ctx.lineTo(leftWrist.x, leftWrist.y);
+              ctx.moveTo(neck.x, neck.y); ctx.lineTo(rightShoulder.x, rightShoulder.y); ctx.lineTo(rightElbow.x, rightElbow.y); ctx.lineTo(rightWrist.x, rightWrist.y);
+              // Legs
+              ctx.moveTo(hip.x, hip.y); ctx.lineTo(leftHip.x, leftHip.y); ctx.lineTo(leftKnee.x, leftKnee.y); ctx.lineTo(leftFoot.x, leftFoot.y);
+              ctx.moveTo(hip.x, hip.y); ctx.lineTo(rightHip.x, rightHip.y); ctx.lineTo(rightKnee.x, rightKnee.y); ctx.lineTo(rightFoot.x, rightFoot.y);
+              ctx.stroke();
+  
+              // 2. Draw Head
+              ctx.fillStyle = '#fff';
+              ctx.strokeStyle = '#2d3748';
+              ctx.beginPath();
+              ctx.arc(headCenter.x, headCenter.y, headRadius, 0, Math.PI * 2);
+              ctx.fill();
+              ctx.stroke();
+  
+              // 3. Draw Head Size Indicator
+              ctx.strokeStyle = '#cbd5e0';
+              ctx.lineWidth = 2;
+              ctx.setLineDash([4, 2]);
+              ctx.beginPath();
+              ctx.moveTo(headCenter.x - headRadius - 10, headCenter.y - headRadius);
+              ctx.lineTo(headCenter.x - headRadius - 10, headCenter.y + headRadius);
+              // Top tick
+              ctx.moveTo(headCenter.x - headRadius - 15, headCenter.y - headRadius);
+              ctx.lineTo(headCenter.x - headRadius - 5, headCenter.y - headRadius);
+              // Bottom tick
+              ctx.moveTo(headCenter.x - headRadius - 15, headCenter.y + headRadius);
+              ctx.lineTo(headCenter.x - headRadius - 5, headCenter.y + headRadius);
+              ctx.stroke();
+              ctx.setLineDash([]);
+  
+              // 4. Draw Threshold Circles (PCKh)
+              // Head Size typically refers to diagonal or height. Here we use Diameter.
+              const headSize = headRadius * 2;
+              const thresholdRadius = headSize * alpha;
+  
+              // Define points to show threshold on
+              const jointsToShow = [leftWrist, rightWrist, leftKnee, rightKnee];
+  
+              jointsToShow.forEach(joint => {
+                  // Fill
+                  ctx.beginPath();
+                  ctx.arc(joint.x, joint.y, thresholdRadius, 0, Math.PI * 2);
+                  ctx.fillStyle = 'rgba(102, 126, 234, 0.3)'; // Brand purple/blue
+                  ctx.fill();
+                  
+                  // Stroke
+                  ctx.lineWidth = 1;
+                  ctx.strokeStyle = 'rgba(102, 126, 234, 0.8)';
+                  ctx.stroke();
+  
+                  // Joint dot
+                  ctx.beginPath();
+                  ctx.arc(joint.x, joint.y, 3 * scale, 0, Math.PI * 2);
+                  ctx.fillStyle = '#2d3748';
+                  ctx.fill();
+              });
+              
+              // Label
+              ctx.font = `600 ${12}px sans-serif`;
+              ctx.fillStyle = "#718096";
+              ctx.textAlign = "center";
+              // ctx.fillText(`Head: ${Math.round(headSize)}px`, headCenter.x, headCenter.y - headRadius - 10);
+          }
+  
+          function draw() {
+          if (!syncCanvasSize()) {
+              requestAnimationFrame(draw);
+              return;
+          }
+              // Clear
+              ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+              // Grid background for depth feel
+              ctx.strokeStyle = '#f7fafc';
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              for(let i=0; i<canvasWidth; i+=40) { ctx.moveTo(i,0); ctx.lineTo(i, canvasHeight); }
+              for(let i=0; i<canvasHeight; i+=40) { ctx.moveTo(0,i); ctx.lineTo(canvasWidth, i); }
+              ctx.stroke();
+
+              // Ground line
+              ctx.beginPath();
+              ctx.moveTo(0, canvasHeight * 0.91);
+              ctx.lineTo(canvasWidth, canvasHeight * 0.91);
+              ctx.strokeStyle = '#e2e8f0';
+              ctx.lineWidth = 2;
+              ctx.stroke();
+
+              // Draw figures
+              figures.forEach(fig => {
+                  const x = canvasWidth * fig.xPercent;
+                  const y = canvasHeight * fig.yPercent;
+                  drawStickFigure(ctx, x, y, fig.scale);
+              });
+          }
+  
+          // Loop
+          function animate() {
+              draw();
+              requestAnimationFrame(animate);
+          }
+  
+          // Event Listeners
+          slider.addEventListener('input', (e) => {
+              alpha = parseFloat(e.target.value);
+              valueDisplay.textContent = alpha.toFixed(1);
+          });
+
+          // Handle resize
+          window.addEventListener('resize', () => {
+           syncCanvasSize();
+          });
+
+          // Initialize
+          syncCanvasSize();
+          animate();
+      })();
+      </script>
+  </div>
+    <p>By using PCKh, we ensure that our evaluation is fair regardless of how close or far the person is from the camera.</p>
+    
+    <div class="test-your-knowledge">
+        <h3>Test Your Knowledge</h3>
+        <h4>Why is PCKh considered 'scale invariant'?</h4>
+        <div class="multiple-choice">
+            <div class="choice-option" data-correct="false" onclick="selectChoice(this, false, 'It actually relies heavily on the head size.')">Because it ignores the head size.</div>
+            <div class="choice-option" data-correct="true" onclick="selectChoice(this, true, 'Correct! A 10-pixel error might be acceptable for a large subject but unacceptable for a small one. PCKh accounts for this.')">Because the allowed error scales relative to the person's size (specifically the head).</div>
+            <div class="choice-option" data-correct="false" onclick="selectChoice(this, false, 'Fixed pixel margins are not scale invariant.')">Because it always allows a 5-pixel margin of error.</div>
+        </div>
+    </div>
+    <div class="continue-button" id="continue-after-quiz-2" onclick="showNextSection(15)" style="display: none;">Continue</div>
+</section>
+
+<!-- SECTION 15: Review and Final Quiz -->
+<section id="section15">
+    <h2>Review and Reflect</h2>
+    <p>You've taken the first step into Human Pose Estimation. We've moved from simple bounding boxes to complex skeletons.</p>
+    <p>In this lesson, we established that HPE is about finding anatomical <strong>keypoints</strong>. We learned that this is complicated by inconsistent <strong>schemas</strong>, <strong>occlusion</strong>, and <strong>crowds</strong>. Finally, we discovered that to evaluate these models fairly, we need scale-invariant metrics like <strong>PCKh</strong> that adapt to the size of the subject.</p>
+    <p>In the next lesson, we will ditch the old method of guessing coordinates and see why modern AI prefers to 'paint' the location of joints using Heatmaps.</p>
+    
+    <div class="test-your-knowledge">
+        <h3>Final Check</h3>
+        <h4>Which of the following is an example of 'Truncation'?</h4>
+        <div class="multiple-choice">
+            <div class="choice-option" data-correct="false" onclick="selectChoice(this, false, 'That is occlusion (hidden by another object).')">A person standing behind a tree.</div>
+            <div class="choice-option" data-correct="true" onclick="selectChoice(this, true, 'Correct! Truncation occurs when the subject extends beyond the camera\'s field of view.')">A person whose legs are cut off by the bottom edge of the photo.</div>
+            <div class="choice-option" data-correct="false" onclick="selectChoice(this, false, 'This is likely an example of crowding or occlusion, but not necessarily truncation.')">Two people hugging.</div>
+        </div>
+    </div>
+</section>
+
+<button id="markCompletedBtn" class="mark-completed-button" onclick="toggleCompleted()">✓ Mark as Completed</button>
+</div>
+
+<script>
+let currentSection = 1;
+const totalSections = 15;
+
+updateProgress();
+// Check if starting at last section
+if (currentSection === totalSections) {
+    const completedButton = document.getElementById('markCompletedBtn');
+    if (completedButton) completedButton.classList.add('show');
+}
+
+function showNextSection(nextSectionId) {
+    const nextSectionElement = document.getElementById(`section${nextSectionId}`);
+    const currentButton = event && event.target;
+    if (!nextSectionElement) return;
+    
+    // Hide the button that was clicked
+    if (currentButton && currentButton.classList.contains('continue-button')) {
+        currentButton.style.display = 'none';
+    }
+    
+    nextSectionElement.classList.add('visible');
+    currentSection = nextSectionId;
+    updateProgress();
+    
+    // Show completed button if at end
+    if (currentSection === totalSections) {
+        // Wait for the final quiz interaction before showing button, or show immediately if it's just text.
+        // In this case section 15 has a quiz. The user should interact with it, but the button logic 
+        // in the previous lesson showed it immediately upon reaching the section. 
+        // We will stick to the template logic: show when reaching the section.
+        const completedButton = document.getElementById('markCompletedBtn');
+        if (completedButton) completedButton.classList.add('show');
+    }
+    
+    // Scroll
+    setTimeout(() => { nextSectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 200);
+}
+
+function updateProgress() {
+    const progressBar = document.getElementById('progressBar');
+    const progress = (currentSection / totalSections) * 100;
+    progressBar.style.width = `${progress}%`;
+}
+
+function revealAnswer(id) {
+    const revealText = document.getElementById(id);
+    const revealButton = event && event.target;
+    if (revealText) {
+        revealText.style.display = "block";
+        revealText.classList.add('animate-in');
+    }
+    if (revealButton) {
+        revealButton.style.display = "none";
+    }
+}
+
+function selectChoice(element, isCorrect, explanation) {
+    const choices = element.parentNode.querySelectorAll('.choice-option');
+    choices.forEach(choice => {
+        choice.classList.remove('selected', 'correct', 'incorrect');
+        const existing = choice.querySelector('.choice-explanation');
+        if (existing) existing.remove();
+    });
+    
+    element.classList.add('selected');
+    element.classList.add(isCorrect ? 'correct' : 'incorrect');
+    
+    const explanationDiv = document.createElement('div');
+    explanationDiv.className = 'choice-explanation';
+    explanationDiv.style.display = 'block';
+    explanationDiv.innerHTML = `<strong>${isCorrect ? 'Correct!' : 'Not quite.'}</strong> ${explanation}`;
+    element.appendChild(explanationDiv);
+    
+    // Only show continue button if answer is correct
+    if (!isCorrect) return;
+    
+    // Handle Continue button visibility for sections with quizzes
+    const parentSection = element.closest('section');
+    if (parentSection) {
+        // Find the specific continue button for this quiz section
+        let continueBtnId;
+        if (parentSection.id === 'section6') continueBtnId = 'continue-after-quiz-1';
+        if (parentSection.id === 'section14') continueBtnId = 'continue-after-quiz-2';
+        
+        if (continueBtnId) {
+            const continueButton = document.getElementById(continueBtnId);
+            if (continueButton && continueButton.style.display === 'none') {
+                setTimeout(() => {
+                    continueButton.style.display = 'block';
+                    continueButton.classList.add('show-with-animation');
+                }, 800);
+            }
+        }
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') {
+        const btn = document.querySelector(`#section${currentSection} .continue-button`);
+        if (btn && btn.style.display !== 'none') {
+            e.preventDefault();
+            btn.click();
+        }
+    }
+});
+
+document.documentElement.style.scrollBehavior = 'smooth';
+
+function toggleCompleted() {
+    const button = document.getElementById('markCompletedBtn');
+    if (!button) return;
+    const isCompleted = button.classList.contains('completed');
+    if (!isCompleted) {
+        try {
+            if (window.parent && window.parent.ProgressTracker) {
+                // Update these IDs for the specific course/module structure
+                let courseId = 'computer-vision';
+                let pathId = 'pose-estimation';
+                let moduleId = 'cv-ch20-m1-intro';
+                let lessonId = 'cv-ch20-l1-skeleton-in-machine';
+                
+                if (window.parent.currentRoute) {
+                    const route = window.parent.currentRoute;
+                    if (route.courseId) courseId = route.courseId;
+                    if (route.pathId) pathId = route.pathId;
+                    if (route.moduleId) moduleId = route.moduleId;
+                    if (route.lessonId) lessonId = route.lessonId;
+                }
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.get('course')) courseId = urlParams.get('course');
+                if (urlParams.get('path')) pathId = urlParams.get('path');
+                if (urlParams.get('module')) moduleId = urlParams.get('module');
+                if (urlParams.get('lesson')) lessonId = urlParams.get('lesson');
+                
+                window.parent.ProgressTracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
+            }
+        } catch (error) {
+            console.error('Error with ProgressTracker:', error);
+        }
+        button.classList.add('completed');
+        button.innerHTML = '✅ Completed!';
+        triggerCelebration();
+        localStorage.setItem('lesson_cv-ch20-l1_completed', 'true');
+    }
+}
+
+function triggerCelebration() {
+    createConfetti();
+    showSuccessMessage();
+}
+
+function createConfetti() {
+    const confettiContainer = document.createElement('div');
+    confettiContainer.className = 'confetti-container';
+    document.body.appendChild(confettiContainer);
+    const emojis = ['🎉', '🎊', '✨', '🌟', '🎈', '🏆', '👏', '🥳'];
+    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7'];
+    for (let i = 0; i < 40; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            if (Math.random() > 0.6) {
+                confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            } else {
+                confetti.innerHTML = '●';
+                confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.animationDelay = Math.random() * 2 + 's';
+            document.querySelector('.confetti-container').appendChild(confetti);
+        }, i * 50);
+    }
+    setTimeout(() => { if (confettiContainer.parentNode) confettiContainer.parentNode.removeChild(confettiContainer); }, 5000);
+}
+
+function showSuccessMessage() {
+    const successMessage = document.createElement('div');
+    successMessage.className = 'success-message';
+    successMessage.innerHTML = '🎉 Lesson Completed! Great Job! 🎉';
+    document.body.appendChild(successMessage);
+    setTimeout(() => { if (successMessage.parentNode) successMessage.parentNode.removeChild(successMessage); }, 2500);
+}
+
+window.addEventListener('load', function() {
+    const button = document.getElementById('markCompletedBtn');
+    if (!button) return;
+    
+    // Check local storage for completion
+    const isCompleted = localStorage.getItem('lesson_cv-ch20-l1_completed') === 'true';
+    if (isCompleted) {
+        button.classList.add('completed');
+        button.innerHTML = '✅ Completed!';
+    }
+});
+</script>
+</body>
+</html>
