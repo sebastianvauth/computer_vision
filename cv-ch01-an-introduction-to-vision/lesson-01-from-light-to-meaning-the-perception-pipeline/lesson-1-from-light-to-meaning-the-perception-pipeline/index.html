@@ -669,32 +669,60 @@ if (currentSection === totalSections) {
     if (completedButton) completedButton.classList.add('show');
 }
 
+/**
+ * SAFE cross-origin helpers:
+ * In Moodle/LTI ist parent cross-origin -> jeder Property-Zugriff kann werfen.
+ */
+function getParentProgressTracker() {
+    try {
+        return (window.parent && window.parent.ProgressTracker) ? window.parent.ProgressTracker : null;
+    } catch (e) {
+        return null;
+    }
+}
+
+function getParentCurrentRoute() {
+    try {
+        return (window.parent && window.parent.currentRoute) ? window.parent.currentRoute : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 function showNextSection(nextSectionId) {
     const nextSectionElement = document.getElementById(`section${nextSectionId}`);
-    const currentButton = event && event.target;
+    const currentButton = (typeof event !== 'undefined' && event) ? event.target : null;
+
     if (!nextSectionElement) return;
+
     if (currentButton && currentButton.classList.contains('continue-button')) {
         currentButton.style.display = 'none';
     }
+
     nextSectionElement.classList.add('visible');
     currentSection = nextSectionId;
     updateProgress();
+
     if (currentSection === totalSections) {
         const completedButton = document.getElementById('markCompletedBtn');
         if (completedButton) completedButton.classList.add('show');
     }
-    setTimeout(() => { nextSectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 200);
+
+    setTimeout(() => {
+        nextSectionElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 200);
 }
 
 function updateProgress() {
     const progressBar = document.getElementById('progressBar');
     const progress = (currentSection / totalSections) * 100;
-    progressBar.style.width = `${progress}%`;
+    if (progressBar) progressBar.style.width = `${progress}%`;
 }
 
 function revealAnswer(id) {
     const revealText = document.getElementById(id);
-    const revealButton = event && event.target;
+    const revealButton = (typeof event !== 'undefined' && event) ? event.target : null;
+
     if (revealText) {
         revealText.style.display = "block";
         revealText.classList.add('animate-in');
@@ -711,19 +739,20 @@ function selectChoice(element, isCorrect, explanation) {
         const existing = choice.querySelector('.choice-explanation');
         if (existing) existing.remove();
     });
+
     element.classList.add('selected');
     element.classList.add(isCorrect ? 'correct' : 'incorrect');
+
     const explanationDiv = document.createElement('div');
     explanationDiv.className = 'choice-explanation';
     explanationDiv.style.display = 'block';
     explanationDiv.innerHTML = `<strong>${isCorrect ? 'Correct!' : 'Not quite.'}</strong> ${explanation}`;
     element.appendChild(explanationDiv);
-    
-    // Only show continue button if answer is correct
+
     if (!isCorrect) return;
-    
-    // Logic for Section 7 specific continue button
+
     const parentSection = element.closest('section');
+
     if (parentSection && parentSection.id === 'section7') {
         const continueButton = document.getElementById('continue-after-bats');
         if (continueButton && continueButton.style.display === 'none') {
@@ -733,7 +762,7 @@ function selectChoice(element, isCorrect, explanation) {
             }, 800);
         }
     }
-    // Logic for Section 15 specific continue button
+
     if (parentSection && parentSection.id === 'section15') {
         const continueButton = document.getElementById('continue-after-test-knowledge');
         if (continueButton && continueButton.style.display === 'none') {
@@ -760,36 +789,47 @@ document.documentElement.style.scrollBehavior = 'smooth';
 function toggleCompleted() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
+
     const isCompleted = button.classList.contains('completed');
-    if (!isCompleted) {
-        try {
-            if (window.parent && window.parent.ProgressTracker) {
-                let courseId = 'computer-vision';
-                let pathId = 'foundations-of-perception';
-                let moduleId = 'cv-ch1-m1-pipeline';
-                let lessonId = 'cv-ch1-l1-light-to-meaning';
-                if (window.parent.currentRoute) {
-                    const route = window.parent.currentRoute;
-                    if (route.courseId) courseId = route.courseId;
-                    if (route.pathId) pathId = route.pathId;
-                    if (route.moduleId) moduleId = route.moduleId;
-                    if (route.lessonId) lessonId = route.lessonId;
-                }
-                const urlParams = new URLSearchParams(window.location.search);
-                if (urlParams.get('course')) courseId = urlParams.get('course');
-                if (urlParams.get('path')) pathId = urlParams.get('path');
-                if (urlParams.get('module')) moduleId = urlParams.get('module');
-                if (urlParams.get('lesson')) lessonId = urlParams.get('lesson');
-                window.parent.ProgressTracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
-            }
-        } catch (error) {
-            console.error('Error with ProgressTracker:', error);
-        }
-        button.classList.add('completed');
-        button.innerHTML = '✅ Completed!';
-        triggerCelebration();
-        localStorage.setItem('lesson_cv-ch1-l1_completed', 'true');
+    if (isCompleted) return;
+
+    // Default IDs (Fallback)
+    let courseId = 'computer-vision';
+    let pathId = 'foundations-of-perception';
+    let moduleId = 'cv-ch1-m1-pipeline';
+    let lessonId = 'cv-ch1-l1-light-to-meaning';
+
+    // Optional: take IDs from parent route (only if same-origin; otherwise null)
+    const route = getParentCurrentRoute();
+    if (route) {
+        if (route.courseId) courseId = route.courseId;
+        if (route.pathId) pathId = route.pathId;
+        if (route.moduleId) moduleId = route.moduleId;
+        if (route.lessonId) lessonId = route.lessonId;
     }
+
+    // Optional: take IDs from URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('course')) courseId = urlParams.get('course');
+    if (urlParams.get('path')) pathId = urlParams.get('path');
+    if (urlParams.get('module')) moduleId = urlParams.get('module');
+    if (urlParams.get('lesson')) lessonId = urlParams.get('lesson');
+
+    // Try ProgressTracker if available (same-origin only)
+    const PT = getParentProgressTracker();
+    if (PT && typeof PT.markLessonCompleted === 'function') {
+        try {
+            PT.markLessonCompleted(courseId, pathId, moduleId, lessonId);
+        } catch (e) {
+            console.error('ProgressTracker call failed:', e);
+        }
+    }
+
+    // Always keep local completion working
+    button.classList.add('completed');
+    button.innerHTML = '✅ Completed!';
+    triggerCelebration();
+    localStorage.setItem('lesson_cv-ch1-l1_completed', 'true');
 }
 
 function triggerCelebration() {
@@ -801,24 +841,33 @@ function createConfetti() {
     const confettiContainer = document.createElement('div');
     confettiContainer.className = 'confetti-container';
     document.body.appendChild(confettiContainer);
+
     const emojis = ['🎉', '🎊', '✨', '🌟', '🎈', '🏆', '👏', '🥳', '👁️', '🍎'];
     const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7'];
+
     for (let i = 0; i < 40; i++) {
         setTimeout(() => {
             const confetti = document.createElement('div');
             confetti.className = 'confetti';
+
             if (Math.random() > 0.6) {
                 confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
             } else {
                 confetti.innerHTML = '●';
                 confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
             }
+
             confetti.style.left = Math.random() * 100 + '%';
             confetti.style.animationDelay = Math.random() * 2 + 's';
-            document.querySelector('.confetti-container').appendChild(confetti);
+
+            const target = document.querySelector('.confetti-container');
+            if (target) target.appendChild(confetti);
         }, i * 50);
     }
-    setTimeout(() => { if (confettiContainer.parentNode) confettiContainer.parentNode.removeChild(confettiContainer); }, 5000);
+
+    setTimeout(() => {
+        if (confettiContainer.parentNode) confettiContainer.parentNode.removeChild(confettiContainer);
+    }, 5000);
 }
 
 function showSuccessMessage() {
@@ -826,25 +875,37 @@ function showSuccessMessage() {
     successMessage.className = 'success-message';
     successMessage.innerHTML = '🎉 Lesson Completed! Great Job! 🎉';
     document.body.appendChild(successMessage);
-    setTimeout(() => { if (successMessage.parentNode) successMessage.parentNode.removeChild(successMessage); }, 2500);
+
+    setTimeout(() => {
+        if (successMessage.parentNode) successMessage.parentNode.removeChild(successMessage);
+    }, 2500);
 }
 
 window.addEventListener('load', function() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
-    if (window.parent && window.parent.ProgressTracker) {
-        let courseId = 'computer-vision';
-        let pathId = 'foundations-of-perception';
-        let moduleId = 'cv-ch1-m1-pipeline';
-        let lessonId = 'cv-ch1-l1-light-to-meaning';
-        // Check params and parent logic similar to markCompleted...
-        const progress = window.parent.ProgressTracker.getLessonProgress(courseId, pathId, moduleId, lessonId);
-        if (progress.state === window.parent.ProgressTracker.STATES.COMPLETED) {
-            button.classList.add('completed');
-            button.innerHTML = '✅ Completed!';
-            return;
+
+    // Try to read completion state from parent ProgressTracker (safe)
+    const PT = getParentProgressTracker();
+    if (PT && typeof PT.getLessonProgress === 'function' && PT.STATES) {
+        try {
+            let courseId = 'computer-vision';
+            let pathId = 'foundations-of-perception';
+            let moduleId = 'cv-ch1-m1-pipeline';
+            let lessonId = 'cv-ch1-l1-light-to-meaning';
+
+            const progress = PT.getLessonProgress(courseId, pathId, moduleId, lessonId);
+            if (progress && progress.state === PT.STATES.COMPLETED) {
+                button.classList.add('completed');
+                button.innerHTML = '✅ Completed!';
+                return;
+            }
+        } catch (e) {
+            console.error('ProgressTracker read failed:', e);
         }
     }
+
+    // Fallback: localStorage
     const isCompleted = localStorage.getItem('lesson_cv-ch1-l1_completed') === 'true';
     if (isCompleted) {
         button.classList.add('completed');
@@ -852,5 +913,6 @@ window.addEventListener('load', function() {
     }
 });
 </script>
+
 </body>
 </html>
