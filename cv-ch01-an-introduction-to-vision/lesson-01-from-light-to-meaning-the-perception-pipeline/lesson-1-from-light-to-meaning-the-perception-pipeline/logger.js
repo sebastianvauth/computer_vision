@@ -1,6 +1,5 @@
 (function () {
     function getContentRoot() {
-        // Erstes Pfadsegment ist bei euch der ContentId-Ordner: /computer-vision/...
         const parts = (window.location.pathname || '').split('/').filter(Boolean);
         const contentId = parts[0] || 'computer-vision';
         return '/' + contentId + '/';
