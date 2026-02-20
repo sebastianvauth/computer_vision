@@ -588,6 +588,19 @@ document.addEventListener('keydown', function(e) {
 
 document.documentElement.style.scrollBehavior = 'smooth';
 
+function getParentProgressContext() {
+    try {
+        if (!window.parent || window.parent === window) return null;
+        return {
+            tracker: window.parent.ProgressTracker || null,
+            route: window.parent.currentRoute || null
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
+
 function toggleCompleted() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
@@ -595,9 +608,10 @@ function toggleCompleted() {
     if (!isCompleted) {
         // Here you would typically notify the parent LMS
         try {
-            if (window.parent && window.parent.ProgressTracker) {
+            const parentContext = getParentProgressContext();
+            if (parentContext && parentContext.tracker) {
                 // Placeholder IDs - these would be dynamic in a real app
-                window.parent.ProgressTracker.markLessonCompleted('computer-vision', 'foundations', 'image-processing', 'linear-transformations');
+                parentContext.tracker.markLessonCompleted('computer-vision', 'foundations', 'image-processing', 'linear-transformations');
             }
         } catch (error) {
             console.error('Error with ProgressTracker:', error);

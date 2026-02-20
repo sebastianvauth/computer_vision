@@ -527,6 +527,19 @@ document.addEventListener('keydown', function(e) {
 
 document.documentElement.style.scrollBehavior = 'smooth';
 
+function getParentProgressContext() {
+    try {
+        if (!window.parent || window.parent === window) return null;
+        return {
+            tracker: window.parent.ProgressTracker || null,
+            route: window.parent.currentRoute || null
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
+
 function toggleCompleted() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
@@ -534,14 +547,15 @@ function toggleCompleted() {
     if (!isCompleted) {
         // Attempt LMS communication if available
         try {
-            if (window.parent && window.parent.ProgressTracker) {
+            const parentContext = getParentProgressContext();
+            if (parentContext && parentContext.tracker) {
                 // Placeholder IDs - in a real app these would be dynamic
                 let courseId = 'computer-vision';
                 let pathId = 'pose-estimation';
                 let moduleId = 'cv-ch22-m1-top-down';
                 let lessonId = 'cv-ch22-l2-refining-pose';
                 
-                window.parent.ProgressTracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
+                parentContext.tracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
             }
         } catch (error) {
             console.error('Error with ProgressTracker:', error);

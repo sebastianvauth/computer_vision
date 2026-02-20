@@ -575,20 +575,34 @@ document.addEventListener('keydown', function(e) {
 
 document.documentElement.style.scrollBehavior = 'smooth';
 
+function getParentProgressContext() {
+    try {
+        if (!window.parent || window.parent === window) return null;
+        return {
+            tracker: window.parent.ProgressTracker || null,
+            route: window.parent.currentRoute || null
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
+
 function toggleCompleted() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
     const isCompleted = button.classList.contains('completed');
     if (!isCompleted) {
         try {
-            if (window.parent && window.parent.ProgressTracker) {
+            const parentContext = getParentProgressContext();
+            if (parentContext && parentContext.tracker) {
                 // Example IDs - in a real app these would be dynamic
                 let courseId = 'computer-vision';
                 let pathId = 'texture-analysis';
                 let moduleId = 'cv-ch3-m1-filters';
                 let lessonId = 'cv-ch3-l1-gabor';
                 
-                window.parent.ProgressTracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
+                parentContext.tracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
             }
         } catch (error) {
             console.error('Error with ProgressTracker:', error);

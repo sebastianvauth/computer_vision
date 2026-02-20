@@ -670,38 +670,6 @@ if (currentSection === totalSections) {
   if (completedButton) completedButton.classList.add('show');
 }
 
-/**
- * Same-origin gate:
- * In Moodle/LTI ist der Parent fast immer cross-origin.
- * Wir greifen nur dann auf window.parent.* zu, wenn wir sicher same-origin sind.
- */
-function isParentSameOrigin() {
-  try {
-    return !!(window.parent && window.parent.location && window.parent.location.origin === window.location.origin);
-  } catch (e) {
-    return false;
-  }
-}
-
-/** Safe getters (werden nur bei same-origin überhaupt probiert) */
-function getParentProgressTracker() {
-  if (!isParentSameOrigin()) return null;
-  try {
-    return window.parent.ProgressTracker || null;
-  } catch (e) {
-    return null;
-  }
-}
-
-function getParentCurrentRoute() {
-  if (!isParentSameOrigin()) return null;
-  try {
-    return window.parent.currentRoute || null;
-  } catch (e) {
-    return null;
-  }
-}
-
 function showNextSection(nextSectionId) {
   const nextSectionElement = document.getElementById(`section${nextSectionId}`);
   const currentButton = (typeof event !== 'undefined' && event) ? event.target : null;
@@ -799,11 +767,25 @@ document.addEventListener('keydown', function(e) {
 
 document.documentElement.style.scrollBehavior = 'smooth';
 
+function getParentProgressContext() {
+    try {
+        if (!window.parent || window.parent === window) return null;
+        return {
+            tracker: window.parent.ProgressTracker || null,
+            route: window.parent.currentRoute || null
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
+
 function toggleCompleted() {
   const button = document.getElementById('markCompletedBtn');
   if (!button) return;
 
   if (button.classList.contains('completed')) return;
+  const parentContext = getParentProgressContext();
 
   // Default IDs (Fallback)
   let courseId = 'computer-vision';
@@ -812,7 +794,7 @@ function toggleCompleted() {
   let lessonId = 'cv-ch1-l1-light-to-meaning';
 
   // Optional: IDs from parent route (nur wenn same-origin)
-  const route = getParentCurrentRoute();
+  const route = parentContext ? parentContext.route : null;
   if (route) {
     if (route.courseId) courseId = route.courseId;
     if (route.pathId) pathId = route.pathId;
@@ -828,7 +810,7 @@ function toggleCompleted() {
   if (urlParams.get('lesson')) lessonId = urlParams.get('lesson');
 
   // Parent ProgressTracker nur wenn same-origin (sonst garantiert null)
-  const PT = getParentProgressTracker();
+  const PT = parentContext ? parentContext.tracker : null;
   if (PT && typeof PT.markLessonCompleted === 'function') {
     try {
       PT.markLessonCompleted(courseId, pathId, moduleId, lessonId);
@@ -898,7 +880,8 @@ window.addEventListener('load', function() {
   if (!button) return;
 
   // Parent ProgressTracker nur wenn same-origin
-  const PT = getParentProgressTracker();
+  const parentContext = getParentProgressContext();
+  const PT = parentContext ? parentContext.tracker : null;
   if (PT && typeof PT.getLessonProgress === 'function' && PT.STATES) {
     try {
       let courseId = 'computer-vision';

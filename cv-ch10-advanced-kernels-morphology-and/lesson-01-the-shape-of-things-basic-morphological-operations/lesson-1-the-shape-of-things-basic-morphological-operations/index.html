@@ -534,21 +534,35 @@ document.addEventListener('keydown', function(e) {
 
 document.documentElement.style.scrollBehavior = 'smooth';
 
+function getParentProgressContext() {
+    try {
+        if (!window.parent || window.parent === window) return null;
+        return {
+            tracker: window.parent.ProgressTracker || null,
+            route: window.parent.currentRoute || null
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
+
 function toggleCompleted() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
     const isCompleted = button.classList.contains('completed');
     if (!isCompleted) {
         try {
-            if (window.parent && window.parent.ProgressTracker) {
+            const parentContext = getParentProgressContext();
+            if (parentContext && parentContext.tracker) {
                 // Update with appropriate ID for this new lesson
                 let courseId = 'computer-vision';
                 let pathId = 'morphological-operations'; 
                 let moduleId = 'cv-ch2-m1-foundations';
                 let lessonId = 'cv-ch2-l1-shape-of-things';
                 
-                if (window.parent.currentRoute) {
-                    const route = window.parent.currentRoute;
+                if (parentContext.route) {
+                    const route = parentContext.route;
                     if (route.courseId) courseId = route.courseId;
                     if (route.pathId) pathId = route.pathId;
                     if (route.moduleId) moduleId = route.moduleId;
@@ -561,7 +575,7 @@ function toggleCompleted() {
                 if (urlParams.get('module')) moduleId = urlParams.get('module');
                 if (urlParams.get('lesson')) lessonId = urlParams.get('lesson');
                 
-                window.parent.ProgressTracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
+                parentContext.tracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
             }
         } catch (error) {
             console.error('Error with ProgressTracker:', error);
@@ -614,7 +628,8 @@ window.addEventListener('load', function() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
     // Check LMS status
-    if (window.parent && window.parent.ProgressTracker) {
+    const parentContext = getParentProgressContext();
+    if (parentContext && parentContext.tracker) {
          // Same ID check as above
          // (Omitted for brevity in this specific block, but logically present)
     }

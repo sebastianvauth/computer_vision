@@ -413,15 +413,29 @@ document.addEventListener('keydown', function(e) {
 
 document.documentElement.style.scrollBehavior = 'smooth';
 
+function getParentProgressContext() {
+    try {
+        if (!window.parent || window.parent === window) return null;
+        return {
+            tracker: window.parent.ProgressTracker || null,
+            route: window.parent.currentRoute || null
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
+
 function toggleCompleted() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
     const isCompleted = button.classList.contains('completed');
     if (!isCompleted) {
         try {
-            if (window.parent && window.parent.ProgressTracker) {
+            const parentContext = getParentProgressContext();
+            if (parentContext && parentContext.tracker) {
                 // IDs would need to be dynamic in a real app, keeping generic for now
-                window.parent.ProgressTracker.markLessonCompleted('computer-vision', 'image-characteristics', 'cv-ch07-l1-mean-value', 'cv-ch07-l1-main');
+                parentContext.tracker.markLessonCompleted('computer-vision', 'image-characteristics', 'cv-ch07-l1-mean-value', 'cv-ch07-l1-main');
             }
         } catch (error) {
             console.error('Error with ProgressTracker:', error);

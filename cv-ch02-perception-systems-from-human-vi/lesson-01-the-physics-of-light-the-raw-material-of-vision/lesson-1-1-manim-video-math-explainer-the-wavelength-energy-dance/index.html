@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang='en'>
 <head>
 <meta charset='UTF-8'>
@@ -383,6 +383,18 @@ document.getElementById('lessonVideo').addEventListener('ended', function() {
 
 // --- Completion Logic ---
 
+function getParentProgressContext() {
+    try {
+        if (!window.parent || window.parent === window) return null;
+        return {
+            tracker: window.parent.ProgressTracker || null,
+            route: window.parent.currentRoute || null
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
 function toggleCompleted() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
@@ -390,22 +402,23 @@ function toggleCompleted() {
 
     if (!isCompleted) {
         try {
-            if (window.parent && window.parent.ProgressTracker) {
+            const parentContext = getParentProgressContext();
+            if (parentContext && parentContext.tracker) {
                 let courseId = 'computer-vision';
                 let pathId = 'perception-systems';
                 let moduleId = 'physics-of-light';
                 let lessonId = 'wavelength-energy-dance-video';
 
                 // Route override check
-                if (window.parent.currentRoute) {
-                    const route = window.parent.currentRoute;
+                if (parentContext.route) {
+                    const route = parentContext.route;
                     if (route.courseId) courseId = route.courseId;
                     if (route.pathId) pathId = route.pathId;
                     if (route.moduleId) moduleId = route.moduleId;
                     if (route.lessonId) lessonId = route.lessonId;
                 }
 
-                window.parent.ProgressTracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
+                parentContext.tracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
             }
         } catch (error) {
             console.error('Error with ProgressTracker:', error);
@@ -472,14 +485,15 @@ window.addEventListener('load', function() {
     if (!button) return;
 
     // Check parent tracker
-    if (window.parent && window.parent.ProgressTracker) {
+    const parentContext = getParentProgressContext();
+    if (parentContext && parentContext.tracker) {
         let courseId = 'computer-vision';
         let pathId = 'perception-systems';
         let moduleId = 'physics-of-light';
         let lessonId = 'wavelength-energy-dance-video';
 
-        if (window.parent.currentRoute) {
-            const route = window.parent.currentRoute;
+        if (parentContext.route) {
+            const route = parentContext.route;
             if (route.courseId) courseId = route.courseId;
             if (route.pathId) pathId = route.pathId;
             if (route.moduleId) moduleId = route.moduleId;
@@ -487,8 +501,8 @@ window.addEventListener('load', function() {
         }
 
         try {
-            const progress = window.parent.ProgressTracker.getLessonProgress(courseId, pathId, moduleId, lessonId);
-            if (progress && progress.state === window.parent.ProgressTracker.STATES.COMPLETED) {
+            const progress = parentContext.tracker.getLessonProgress(courseId, pathId, moduleId, lessonId);
+            if (progress && progress.state === parentContext.tracker.STATES.COMPLETED) {
                 button.classList.add('completed');
                 button.innerHTML = 'Completed!';
                 return;

@@ -619,6 +619,19 @@ document.addEventListener('keydown', function(e) {
 
 document.documentElement.style.scrollBehavior = 'smooth';
 
+function getParentProgressContext() {
+    try {
+        if (!window.parent || window.parent === window) return null;
+        return {
+            tracker: window.parent.ProgressTracker || null,
+            route: window.parent.currentRoute || null
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
+
 function toggleCompleted() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
@@ -626,9 +639,10 @@ function toggleCompleted() {
     if (!isCompleted) {
         try {
              // Mock LMS integration
-            if (window.parent && window.parent.ProgressTracker) {
+            const parentContext = getParentProgressContext();
+            if (parentContext && parentContext.tracker) {
                // Use appropriate IDs for this specific lesson
-                window.parent.ProgressTracker.markLessonCompleted('computer-vision', 'transformers', 'detr', 'cv-ch22-l1-detr');
+                parentContext.tracker.markLessonCompleted('computer-vision', 'transformers', 'detr', 'cv-ch22-l1-detr');
             }
         } catch (error) {
             console.error('Error with ProgressTracker:', error);

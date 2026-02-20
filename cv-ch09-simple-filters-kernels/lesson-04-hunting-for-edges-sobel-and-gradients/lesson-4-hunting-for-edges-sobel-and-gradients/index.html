@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang='en'>
 <head>
 <meta charset='UTF-8'>
@@ -570,21 +570,34 @@ document.addEventListener('keydown', function(e) {
 
 document.documentElement.style.scrollBehavior = 'smooth';
 
+function getParentProgressContext() {
+    try {
+        if (!window.parent || window.parent === window) return null;
+        return {
+            tracker: window.parent.ProgressTracker || null,
+            route: window.parent.currentRoute || null
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
 function toggleCompleted() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
     const isCompleted = button.classList.contains('completed');
     if (!isCompleted) {
         try {
-            if (window.parent && window.parent.ProgressTracker) {
+            const parentContext = getParentProgressContext();
+            if (parentContext && parentContext.tracker) {
                 // IDs customized for this lesson context
                 let courseId = 'computer-vision';
                 let pathId = 'simple-filters-kernels';
                 let moduleId = 'cv-ch09-l4-sobel-gradients';
                 let lessonId = 'cv-ch09-l4-main';
                 
-                if (window.parent.currentRoute) {
-                    const route = window.parent.currentRoute;
+                if (parentContext.route) {
+                    const route = parentContext.route;
                     if (route.courseId) courseId = route.courseId;
                     if (route.pathId) pathId = route.pathId;
                     if (route.moduleId) moduleId = route.moduleId;
@@ -597,7 +610,7 @@ function toggleCompleted() {
                 if (urlParams.get('module')) moduleId = urlParams.get('module');
                 if (urlParams.get('lesson')) lessonId = urlParams.get('lesson');
 
-                window.parent.ProgressTracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
+                parentContext.tracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
             }
         } catch (error) {
             console.error('Error with ProgressTracker:', error);
@@ -651,15 +664,16 @@ window.addEventListener('load', function() {
     if (!button) return;
     
     // Check Parent LMS
-    if (window.parent && window.parent.ProgressTracker) {
+    const parentContext = getParentProgressContext();
+    if (parentContext && parentContext.tracker) {
         // Reuse IDs from toggleCompleted
         let courseId = 'computer-vision';
         let pathId = 'simple-filters-kernels';
         let moduleId = 'cv-ch09-l4-sobel-gradients';
         let lessonId = 'cv-ch09-l4-main';
         
-        if (window.parent.currentRoute) {
-            const route = window.parent.currentRoute;
+        if (parentContext.route) {
+            const route = parentContext.route;
             if (route.courseId) courseId = route.courseId;
             if (route.pathId) pathId = route.pathId;
             if (route.moduleId) moduleId = route.moduleId;
@@ -671,8 +685,8 @@ window.addEventListener('load', function() {
         if (urlParams.get('module')) moduleId = urlParams.get('module');
         if (urlParams.get('lesson')) lessonId = urlParams.get('lesson');
 
-        const progress = window.parent.ProgressTracker.getLessonProgress(courseId, pathId, moduleId, lessonId);
-        if (progress.state === window.parent.ProgressTracker.STATES.COMPLETED) {
+            const progress = parentContext.tracker.getLessonProgress(courseId, pathId, moduleId, lessonId);
+            if (progress.state === parentContext.tracker.STATES.COMPLETED) {
             button.classList.add('completed');
             button.innerHTML = '✅ Completed!';
             return;

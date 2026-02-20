@@ -508,21 +508,35 @@ document.addEventListener('keydown', function(e) {
 
 document.documentElement.style.scrollBehavior = 'smooth';
 
+function getParentProgressContext() {
+    try {
+        if (!window.parent || window.parent === window) return null;
+        return {
+            tracker: window.parent.ProgressTracker || null,
+            route: window.parent.currentRoute || null
+        };
+    } catch (error) {
+        return null;
+    }
+}
+
+
 function toggleCompleted() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
     const isCompleted = button.classList.contains('completed');
     if (!isCompleted) {
         try {
-            if (window.parent && window.parent.ProgressTracker) {
+            const parentContext = getParentProgressContext();
+            if (parentContext && parentContext.tracker) {
                 // Update these IDs for the specific course/module structure
                 let courseId = 'computer-vision';
                 let pathId = 'pose-estimation';
                 let moduleId = 'cv-ch20-m1-intro';
                 let lessonId = 'cv-ch20-l1-skeleton-in-machine';
                 
-                if (window.parent.currentRoute) {
-                    const route = window.parent.currentRoute;
+                if (parentContext.route) {
+                    const route = parentContext.route;
                     if (route.courseId) courseId = route.courseId;
                     if (route.pathId) pathId = route.pathId;
                     if (route.moduleId) moduleId = route.moduleId;
@@ -534,7 +548,7 @@ function toggleCompleted() {
                 if (urlParams.get('module')) moduleId = urlParams.get('module');
                 if (urlParams.get('lesson')) lessonId = urlParams.get('lesson');
                 
-                window.parent.ProgressTracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
+                parentContext.tracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
             }
         } catch (error) {
             console.error('Error with ProgressTracker:', error);
