@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang='en'>
 <head>
 <meta charset='UTF-8'>
@@ -85,10 +85,54 @@ window.MathJax = {
     line-height: 1.5;
     text-align: left;
 }
+.fullscreen-button {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 2000;
+    border: 0;
+    border-radius: 8px;
+    background: #1f6feb;
+    color: #fff;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.fullscreen-button:hover {
+    background: #1557b0;
+}
+.fullscreen-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.fullscreen-message {
+    position: fixed;
+    top: 58px;
+    right: 12px;
+    z-index: 2000;
+    max-width: 320px;
+    background: rgba(15, 23, 42, 0.92);
+    color: #f8fafc;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    display: none;
+}
+.fullscreen-message.error {
+    border-left: 3px solid #ef4444;
+}
+.fullscreen-message.info {
+    border-left: 3px solid #3b82f6;
+}
 </style>
 </head>
 <body>
 <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+<button id="fullscreenToggleBtn" class="fullscreen-button" type="button" onclick="toggleFullscreenMode()">Enter Fullscreen</button>
+<div id="fullscreenMessage" class="fullscreen-message" role="status" aria-live="polite"></div>
 <div class="lesson-container">
 
 <section id="section1" class="visible">
@@ -682,6 +726,78 @@ function selectChoice(element, isCorrect, explanation) {
         }
     }
 }
+
+function setFullscreenMessage(message, type) {
+    const msg = document.getElementById('fullscreenMessage');
+    if (!msg) return;
+    if (!message) {
+        msg.style.display = 'none';
+        return;
+    }
+    msg.textContent = message;
+    msg.classList.remove('error', 'info');
+    msg.classList.add(type || 'info');
+    msg.style.display = 'block';
+}
+
+function supportsFullscreen() {
+    return !!(document.fullscreenEnabled || document.webkitFullscreenEnabled);
+}
+
+function getFullscreenElement() {
+    return document.fullscreenElement || document.webkitFullscreenElement || null;
+}
+
+function updateFullscreenButtonState() {
+    const button = document.getElementById('fullscreenToggleBtn');
+    if (!button) return;
+    button.textContent = getFullscreenElement() ? 'Exit Fullscreen' : 'Enter Fullscreen';
+}
+
+async function toggleFullscreenMode() {
+    const button = document.getElementById('fullscreenToggleBtn');
+    if (!button) return;
+
+    if (!supportsFullscreen()) {
+        button.disabled = true;
+        setFullscreenMessage(
+            'Fullscreen API is not available here. In Moodle, ensure the LTI iframe includes allowfullscreen.',
+            'error'
+        );
+        return;
+    }
+
+    try {
+        if (!getFullscreenElement()) {
+            const root = document.documentElement;
+            if (root.requestFullscreen) {
+                await root.requestFullscreen();
+            } else if (root.webkitRequestFullscreen) {
+                root.webkitRequestFullscreen();
+            }
+            setFullscreenMessage('Fullscreen enabled.', 'info');
+        } else if (document.exitFullscreen) {
+            await document.exitFullscreen();
+            setFullscreenMessage('Exited fullscreen.', 'info');
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+            setFullscreenMessage('Exited fullscreen.', 'info');
+        }
+    } catch (error) {
+        const inIframe = window.self !== window.top;
+        const hint = inIframe
+            ? ' This is likely blocked by iframe permissions. Moodle should render this LTI with allowfullscreen.'
+            : '';
+        setFullscreenMessage(`Could not enter fullscreen.${hint}`, 'error');
+        console.error('Fullscreen request failed:', error);
+    } finally {
+        updateFullscreenButtonState();
+    }
+}
+
+document.addEventListener('fullscreenchange', updateFullscreenButtonState);
+document.addEventListener('webkitfullscreenchange', updateFullscreenButtonState);
+updateFullscreenButtonState();
 
 document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowRight' || e.key === ' ') {
