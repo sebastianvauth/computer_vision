@@ -1,4 +1,12 @@
 (function () {
+    function getContentRoot() {
+        const parts = (window.location.pathname || '').split('/').filter(Boolean);
+        const contentId = parts[0] || 'computer-vision';
+        return '/' + contentId + '/';
+    }
+
+    const ROOT = getContentRoot();
+
     // Send a log entry to the LTI provider.
     // The relative URL resolves to /:contentId/log/<type> — correct within the LTI provider.
     // type       – log type, e.g. 'show', 'answer'
@@ -7,7 +15,7 @@
     function log(type, identifier, data) {
         const body = { identifier };
         if (data !== undefined) body.data = data;
-        fetch('log/' + type, {
+        fetch(ROOT + 'log/' + type, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)
@@ -26,7 +34,7 @@
     //
     // Silently falls back to an empty Set outside the LTI context.
     function init(types, prefix, callback) {
-        let url = 'logs?types=' + encodeURIComponent(types);
+        let url = ROOT + 'logs?types=' + encodeURIComponent(types);
         if (prefix) url += '&prefix=' + encodeURIComponent(prefix);
         fetch(url)
             .then(function (r) { return r.ok ? r.json() : { logs: [] }; })
