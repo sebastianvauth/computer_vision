@@ -6,8 +6,52 @@
   <base href="/computer-vision/cv-ch15-vision-transformer/lesson-01-the-transformer-blueprint/lesson-1-1-manim-math-explainer-the-geometry-of-attention/">
   <title>Lesson 1.1: Manim Math Explainer - The Geometry of Attention</title>
   <!-- Copy the inline CSS baseline from cv-ch02-m1-the-nature-of-light/l1.1-lesson-1-the-secret-ingredien.html before adding lesson content. -->
+<style>
+.fullscreen-button {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 2000;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.92);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s ease, background 0.2s ease;
+}
+.fullscreen-button:hover {
+    background: rgba(30, 41, 59, 0.95);
+    transform: translateY(-1px);
+}
+.fullscreen-button:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+}
+.fullscreen-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.fullscreen-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+</style>
 </head>
 <body>
+
+<button id="fullscreenToggleBtn" class="fullscreen-button" type="button" onclick="toggleFullscreenMode()" aria-label="Enter fullscreen" title="Enter fullscreen">
+    <svg class="fullscreen-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M3 9V3h6v2H5v4H3zm16-4h-4V3h6v6h-2V5zM5 15v4h4v2H3v-6h2zm14 4v-4h2v6h-6v-2h4z"></path>
+    </svg>
+</button>
+
   <main>
     <header>
       <p class="lesson-tag">Lesson 1.1</p>
@@ -17,7 +61,58 @@
       <p>This placeholder is ready for new content. Replace it with the finalized script, visuals, and interactions for Lesson 1.1: Manim Math Explainer - The Geometry of Attention.</p>
     </section>
   </main>
-<script src="logger.js"></script>
-<script src="init.js"></script>
+    <script src="logger.js?v=705ea6e"></script>
+    <script src="init.js?v=705ea6e"></script>
+
+<script>
+function supportsFullscreen() {
+    return !!(document.fullscreenEnabled || document.webkitFullscreenEnabled);
+}
+
+function getFullscreenElement() {
+    return document.fullscreenElement || document.webkitFullscreenElement || null;
+}
+
+function updateFullscreenButtonState() {
+    const button = document.getElementById('fullscreenToggleBtn');
+    if (!button) return;
+    const isFullscreen = !!getFullscreenElement();
+    const label = isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen';
+    button.setAttribute('aria-label', label);
+    button.setAttribute('title', label);
+}
+
+async function toggleFullscreenMode() {
+    const button = document.getElementById('fullscreenToggleBtn');
+    if (!button) return;
+    if (!supportsFullscreen()) {
+        button.disabled = true;
+        console.warn('Fullscreen API is not available. Ensure Moodle LTI iframe allows fullscreen.');
+        return;
+    }
+    try {
+        if (!getFullscreenElement()) {
+            const root = document.documentElement;
+            if (root.requestFullscreen) {
+                await root.requestFullscreen();
+            } else if (root.webkitRequestFullscreen) {
+                root.webkitRequestFullscreen();
+            }
+        } else if (document.exitFullscreen) {
+            await document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+    } catch (error) {
+        console.error('Fullscreen request failed:', error);
+    } finally {
+        updateFullscreenButtonState();
+    }
+}
+
+document.addEventListener('fullscreenchange', updateFullscreenButtonState);
+document.addEventListener('webkitfullscreenchange', updateFullscreenButtonState);
+updateFullscreenButtonState();
+</script>
 </body>
 </html>

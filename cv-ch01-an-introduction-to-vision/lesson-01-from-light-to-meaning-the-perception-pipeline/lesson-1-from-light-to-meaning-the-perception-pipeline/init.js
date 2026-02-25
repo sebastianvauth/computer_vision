@@ -9,21 +9,6 @@
 
 LTITracker.init('show', 'index', function (seen) {
 
-    // --- 1. Resume -------------------------------------------------------
-    // Make every section the user has already seen visible.
-    let lastSec = null;
-    seen.forEach(function (id) {
-        const match = id.match(/^index:(section\d+)$/);
-        if (match) {
-            const sec = document.getElementById(match[1]);
-            if (sec) { sec.classList.add('visible'); lastSec = sec; }
-        }
-    });
-
-    // Scroll to the last restored section (250ms lets the browser finish layout).
-    if (lastSec) setTimeout(function () {
-        lastSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 250);
 
     // --- 2. Observe -------------------------------------------------------
     // Watch for the 'visible' class appearing on any <section> and log it.
