@@ -6,6 +6,7 @@
     }
 
     const ROOT = getContentRoot();
+    const knownIdentifiers = new Set();
 
     function status(message, payload) {
         if (payload !== undefined) {
@@ -24,6 +25,10 @@
         if (data !== undefined) body.data = data;
         const url = ROOT + 'log/' + type;
         status('log:send', { type, identifier, url });
+        const wasKnown = knownIdentifiers.has(identifier);
+        if (type === 'show') {
+            status('log:novelty', { identifier, wasKnown, stage: 'before-send' });
+        }
         fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -33,6 +38,10 @@
                 status('log:response', { type, identifier, status: r.status, ok: r.ok });
                 if (!r.ok) {
                     console.warn('[LTITracker] log request failed', { type, identifier, status: r.status, url });
+                }
+                if (r.ok && type === 'show') {
+                    knownIdentifiers.add(identifier);
+                    status('log:novelty', { identifier, wasKnown, isKnownNow: true, stage: 'after-response' });
                 }
                 return r;
             })
@@ -68,6 +77,7 @@
             .then(function (data) {
                 const seen = new Set();
                 (data.logs || []).forEach(function (e) { seen.add(e.identifier); });
+                seen.forEach(function (id) { knownIdentifiers.add(id); });
                 status('init:loaded', { count: seen.size, types, prefix: prefix || null });
                 callback(seen);
             });
