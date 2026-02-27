@@ -8,6 +8,15 @@
 //      convention  'index:<sectionId>'  (file prefix : element id).
 
 LTITracker.init('show', 'index', function (seen) {
+    const expectedSections = document.querySelectorAll('section[id^="section"]').length;
+    const knownSectionCount = Array.from(seen).filter(function (id) {
+        return /^index:section\d+$/.test(id);
+    }).length;
+    console.info('[LTITracker]', 'progress:snapshot', {
+        knownSectionCount: knownSectionCount,
+        expectedSections: expectedSections,
+        complete: expectedSections > 0 ? knownSectionCount >= expectedSections : false
+    });
 
 
     // --- 2. Observe -------------------------------------------------------
