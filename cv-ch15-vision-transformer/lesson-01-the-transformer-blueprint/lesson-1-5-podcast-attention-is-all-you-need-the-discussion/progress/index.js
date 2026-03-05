@@ -83,5 +83,7 @@ module.exports = async function (contentId, identifier, progress, progressResult
     }
 
     debug('%s: seen %d / %d sections', contentId, seenSections, totalSections);
+    const computedScore = seenSections / totalSections;
+    debug('grade calc: contentId=%s identifier=%s seen=%d total=%d score=%s', contentId, identifier || '(all)', seenSections, totalSections, computedScore.toFixed(4));
     progressResult.add('sections', seenSections, totalSections);
 };
