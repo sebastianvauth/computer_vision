@@ -264,6 +264,32 @@ function getParentProgressContext() {
     }
 }
 
+function getLessonProgressIds() {
+    const parts = (window.location.pathname || '').split('/').filter(Boolean);
+    const ids = {
+        courseId: parts[0] || 'computer-vision',
+        pathId: parts[1] || 'unknown-path',
+        moduleId: parts[2] || 'unknown-module',
+        lessonId: parts[3] || 'unknown-lesson'
+    };
+
+    const parentContext = getParentProgressContext();
+    if (parentContext && parentContext.route) {
+        const route = parentContext.route;
+        if (route.courseId) ids.courseId = route.courseId;
+        if (route.pathId) ids.pathId = route.pathId;
+        if (route.moduleId) ids.moduleId = route.moduleId;
+        if (route.lessonId) ids.lessonId = route.lessonId;
+    }
+
+    return ids;
+}
+
+function getCompletionStorageKey(ids) {
+    return ['lesson', ids.courseId, ids.pathId, ids.moduleId, ids.lessonId, 'completed'].join('_');
+}
+
+
 function toggleCompleted() {
     const button = document.getElementById('markCompletedBtn');
     if (!button) return;
@@ -271,24 +297,11 @@ function toggleCompleted() {
     
     if (!isCompleted) {
         // [EDIT 5] LESSON IDs: Update these for LMS tracking
+        const ids = getLessonProgressIds();
         try {
             const parentContext = getParentProgressContext();
             if (parentContext && parentContext.tracker) {
-                let courseId = 'computer-vision';
-                let pathId = 'generative-adversarial-networks';
-                let moduleId = 'module-id';
-                let lessonId = 'unique-lesson-id'; // <--- IMPORTANT: Change this for each new podcast page
-                
-                // Route override check
-                if (parentContext.route) {
-                    const route = parentContext.route;
-                    if (route.courseId) courseId = route.courseId;
-                    if (route.pathId) pathId = route.pathId;
-                    if (route.moduleId) moduleId = route.moduleId;
-                    if (route.lessonId) lessonId = route.lessonId;
-                }
-                
-                parentContext.tracker.markLessonCompleted(courseId, pathId, moduleId, lessonId);
+                parentContext.tracker.markLessonCompleted(ids.courseId, ids.pathId, ids.moduleId, ids.lessonId);
             }
         } catch (error) {
             console.error('Error with ProgressTracker:', error);
@@ -299,7 +312,7 @@ function toggleCompleted() {
         triggerCelebration();
         
         // [EDIT 6] LOCAL STORAGE KEY: Change this key to match the lessonId above
-        localStorage.setItem('lesson_unique-id_completed', 'true');
+        localStorage.setItem(getCompletionStorageKey(ids), 'true');
     }
 }
 
@@ -357,22 +370,10 @@ window.addEventListener('load', function() {
 
     // Check parent tracker (uses same IDs as above)
     const parentContext = getParentProgressContext();
+    const ids = getLessonProgressIds();
     if (parentContext && parentContext.tracker) {
-        let courseId = 'computer-vision';
-        let pathId = 'generative-adversarial-networks';
-        let moduleId = 'module-id';
-        let lessonId = 'unique-lesson-id'; // <--- Update this to match
-
-        if (parentContext.route) {
-            const route = parentContext.route;
-            if (route.courseId) courseId = route.courseId;
-            if (route.pathId) pathId = route.pathId;
-            if (route.moduleId) moduleId = route.moduleId;
-            if (route.lessonId) lessonId = route.lessonId;
-        }
-
         try {
-            const progress = parentContext.tracker.getLessonProgress(courseId, pathId, moduleId, lessonId);
+            const progress = parentContext.tracker.getLessonProgress(ids.courseId, ids.pathId, ids.moduleId, ids.lessonId);
             if (progress && progress.state === parentContext.tracker.STATES.COMPLETED) {
                 button.classList.add('completed');
                 button.innerHTML = '✅ Completed!';
@@ -383,7 +384,7 @@ window.addEventListener('load', function() {
 
     // Check local storage fallback
     // [EDIT 7] Update this key to match [EDIT 6]
-    const isCompleted = localStorage.getItem('lesson_unique-id_completed') === 'true';
+    const isCompleted = localStorage.getItem(getCompletionStorageKey(ids)) === 'true';
     if (isCompleted) {
         button.classList.add('completed');
         button.innerHTML = '✅ Completed!';
