@@ -61,7 +61,7 @@ function showSuccessMessage(){const successMessage=document.createElement("div")
 window.addEventListener("load",function(){const button=document.getElementById("markCompletedBtn");if(!button)return;const parentContext=getParentProgressContext();const ids=getLessonProgressIds();if(parentContext&&parentContext.tracker){try{const progress=parentContext.tracker.getLessonProgress(ids.courseId,ids.pathId,ids.moduleId,ids.lessonId);if(progress&&progress.state===parentContext.tracker.STATES.COMPLETED){button.classList.add("completed");button.innerHTML="✅ Completed!";return;}}catch(e){console.log("Tracker error",e);}}const isCompleted=localStorage.getItem(getCompletionStorageKey(ids))==="true";if(isCompleted){button.classList.add("completed");button.innerHTML="✅ Completed!";}});
 </script>
 <script src="logger.js?v=705ea6e"></script>
-<script src="init.js?v=705ea6e"></script>
+<script src="init.js?v=20260312-root-progress"></script>
 <script>
 function supportsFullscreen(){return!!(document.fullscreenEnabled||document.webkitFullscreenEnabled);}
 function getFullscreenElement(){return document.fullscreenElement||document.webkitFullscreenElement||null;}

@@ -1,0 +1,3350 @@
+{
+  "generatedFrom": "lesson structure.json files",
+  "pageCount": 361,
+  "sectionCount": 1795,
+  "pages": {
+    "cv-ch01-an-introduction-to-vision:lesson-01-from-light-to-meaning-the-perception-pipeline:lesson-1-from-light-to-meaning-the-perception-pipeline": {
+      "path": "cv-ch01-an-introduction-to-vision/lesson-01-from-light-to-meaning-the-perception-pipeline/lesson-1-from-light-to-meaning-the-perception-pipeline",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch01-an-introduction-to-vision:lesson-02-the-constructive-brain-how-perception-deceives-us:lesson-2-the-constructive-brain-how-perception-deceives-us": {
+      "path": "cv-ch01-an-introduction-to-vision/lesson-02-the-constructive-brain-how-perception-deceives-us/lesson-2-the-constructive-brain-how-perception-deceives-us",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch01-an-introduction-to-vision:lesson-03-attention-pixels-and-the-machine-gap:lesson-3-attention-pixels-and-the-machine-gap": {
+      "path": "cv-ch01-an-introduction-to-vision/lesson-03-attention-pixels-and-the-machine-gap/lesson-3-attention-pixels-and-the-machine-gap",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18"
+      ]
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-01-the-physics-of-light-the-raw-material-of-vision:lesson-1-1-manim-video-math-explainer-the-wavelength-energy-dance": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-01-the-physics-of-light-the-raw-material-of-vision/lesson-1-1-manim-video-math-explainer-the-wavelength-energy-dance",
+      "sections": []
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-01-the-physics-of-light-the-raw-material-of-vision:lesson-1-2-coding-simulating-light-reflection": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-01-the-physics-of-light-the-raw-material-of-vision/lesson-1-2-coding-simulating-light-reflection",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19"
+      ]
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-01-the-physics-of-light-the-raw-material-of-vision:lesson-1-3-exercise-photons-and-pixels": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-01-the-physics-of-light-the-raw-material-of-vision/lesson-1-3-exercise-photons-and-pixels",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-01-the-physics-of-light-the-raw-material-of-vision:lesson-1-4-example-seeing-the-invisible-ndvi": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-01-the-physics-of-light-the-raw-material-of-vision/lesson-1-4-example-seeing-the-invisible-ndvi",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19"
+      ]
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-01-the-physics-of-light-the-raw-material-of-vision:lesson-1-5-experiment-the-virtual-spectrometer": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-01-the-physics-of-light-the-raw-material-of-vision/lesson-1-5-experiment-the-virtual-spectrometer",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17"
+      ]
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-01-the-physics-of-light-the-raw-material-of-vision:lesson-1-6-podcast-the-color-of-reality": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-01-the-physics-of-light-the-raw-material-of-vision/lesson-1-6-podcast-the-color-of-reality",
+      "sections": []
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-01-the-physics-of-light-the-raw-material-of-vision:lesson-1-the-physics-of-light-the-raw-material-of-vision": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-01-the-physics-of-light-the-raw-material-of-vision/lesson-1-the-physics-of-light-the-raw-material-of-vision",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13"
+      ]
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-02-biological-hardware-the-eye-and-retinal-processing:lesson-2-biological-hardware-the-eye-and-retinal-processing": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-02-biological-hardware-the-eye-and-retinal-processing/lesson-2-biological-hardware-the-eye-and-retinal-processing",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6"
+      ]
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-03-the-perception-pathway-seeing-with-the-brain:lesson-3-the-perception-pathway-seeing-with-the-brain": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-03-the-perception-pathway-seeing-with-the-brain/lesson-3-the-perception-pathway-seeing-with-the-brain",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-04-the-math-of-artificial-sight-pinhole-cameras-and-lenses:lesson-4-the-math-of-artificial-sight-pinhole-cameras-and-lenses": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-04-the-math-of-artificial-sight-pinhole-cameras-and-lenses/lesson-4-the-math-of-artificial-sight-pinhole-cameras-and-lenses",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20"
+      ]
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-05-digital-sensors-cmos-ccd-and-the-rolling-shutter:lesson-5-digital-sensors-cmos-ccd-and-the-rolling-shutter": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-05-digital-sensors-cmos-ccd-and-the-rolling-shutter/lesson-5-digital-sensors-cmos-ccd-and-the-rolling-shutter",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23"
+      ]
+    },
+    "cv-ch02-perception-systems-from-human-vi:lesson-06-digital-representation-from-signals-to-data:lesson-6-digital-representation-from-signals-to-data": {
+      "path": "cv-ch02-perception-systems-from-human-vi/lesson-06-digital-representation-from-signals-to-data/lesson-6-digital-representation-from-signals-to-data",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20"
+      ]
+    },
+    "cv-ch03-image-representation:lesson-01-from-real-world-to-digital-grid:lesson-1-from-real-world-to-digital-grid": {
+      "path": "cv-ch03-image-representation/lesson-01-from-real-world-to-digital-grid/lesson-1-from-real-world-to-digital-grid",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22"
+      ]
+    },
+    "cv-ch03-image-representation:lesson-02-quantizing-light-and-basic-color:lesson-2-quantizing-light-and-basic-color": {
+      "path": "cv-ch03-image-representation/lesson-02-quantizing-light-and-basic-color/lesson-2-quantizing-light-and-basic-color",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19"
+      ]
+    },
+    "cv-ch03-image-representation:lesson-03-mapping-the-rainbow-advanced-color-theory:lesson-3-mapping-the-rainbow-advanced-color-theory": {
+      "path": "cv-ch03-image-representation/lesson-03-mapping-the-rainbow-advanced-color-theory/lesson-3-mapping-the-rainbow-advanced-color-theory",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23"
+      ]
+    },
+    "cv-ch03-image-representation:lesson-04-brightness-contrast-and-hdr:lesson-4-brightness-contrast-and-hdr": {
+      "path": "cv-ch03-image-representation/lesson-04-brightness-contrast-and-hdr/lesson-4-brightness-contrast-and-hdr",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23"
+      ]
+    },
+    "cv-ch04-image-formation-transformations:lesson-01-the-hidden-dimension-homogeneous-coordinates:lesson-1-the-hidden-dimension-homogeneous-coordinates": {
+      "path": "cv-ch04-image-formation-transformations/lesson-01-the-hidden-dimension-homogeneous-coordinates/lesson-1-the-hidden-dimension-homogeneous-coordinates",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13"
+      ]
+    },
+    "cv-ch04-image-formation-transformations:lesson-02-moving-pictures-basic-2d-transformations:lesson-2-moving-pictures-basic-2d-transformations": {
+      "path": "cv-ch04-image-formation-transformations/lesson-02-moving-pictures-basic-2d-transformations/lesson-2-moving-pictures-basic-2d-transformations",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21"
+      ]
+    },
+    "cv-ch04-image-formation-transformations:lesson-03-warping-reality-affine-and-projective-transformations:lesson-3-warping-reality-affine-and-projective-transformations": {
+      "path": "cv-ch04-image-formation-transformations/lesson-03-warping-reality-affine-and-projective-transformations/lesson-3-warping-reality-affine-and-projective-transformations",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21"
+      ]
+    },
+    "cv-ch04-image-formation-transformations:lesson-04-inside-the-box-the-pinhole-camera-and-intrinsics:lesson-4-inside-the-box-the-pinhole-camera-and-intrinsics": {
+      "path": "cv-ch04-image-formation-transformations/lesson-04-inside-the-box-the-pinhole-camera-and-intrinsics/lesson-4-inside-the-box-the-pinhole-camera-and-intrinsics",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch04-image-formation-transformations:lesson-05-the-world-stage-extrinsics-and-the-full-matrix-p:lesson-5-the-world-stage-extrinsics-and-the-full-matrix-p": {
+      "path": "cv-ch04-image-formation-transformations/lesson-05-the-world-stage-extrinsics-and-the-full-matrix-p/lesson-5-the-world-stage-extrinsics-and-the-full-matrix-p",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19"
+      ]
+    },
+    "cv-ch04-image-formation-transformations:lesson-06-applications-synthetic-views-and-stereo-vision:lesson-6-applications-synthetic-views-and-stereo-vision": {
+      "path": "cv-ch04-image-formation-transformations/lesson-06-applications-synthetic-views-and-stereo-vision/lesson-6-applications-synthetic-views-and-stereo-vision",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14"
+      ]
+    },
+    "cv-ch05-general-fourier-transform:lesson-01-the-big-picture-time-frequency-and-superposition:lesson-1-1-manim-math-explainer-visualizing-the-circle-of-fifths": {
+      "path": "cv-ch05-general-fourier-transform/lesson-01-the-big-picture-time-frequency-and-superposition/lesson-1-1-manim-math-explainer-visualizing-the-circle-of-fifths",
+      "sections": []
+    },
+    "cv-ch05-general-fourier-transform:lesson-01-the-big-picture-time-frequency-and-superposition:lesson-1-2-experiment-the-sound-of-mathematics": {
+      "path": "cv-ch05-general-fourier-transform/lesson-01-the-big-picture-time-frequency-and-superposition/lesson-1-2-experiment-the-sound-of-mathematics",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch05-general-fourier-transform:lesson-01-the-big-picture-time-frequency-and-superposition:lesson-1-3-coding-constructing-waves-in-python": {
+      "path": "cv-ch05-general-fourier-transform/lesson-01-the-big-picture-time-frequency-and-superposition/lesson-1-3-coding-constructing-waves-in-python",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24"
+      ]
+    },
+    "cv-ch05-general-fourier-transform:lesson-01-the-big-picture-time-frequency-and-superposition:lesson-1-4-podcast-breaking-the-wave": {
+      "path": "cv-ch05-general-fourier-transform/lesson-01-the-big-picture-time-frequency-and-superposition/lesson-1-4-podcast-breaking-the-wave",
+      "sections": []
+    },
+    "cv-ch05-general-fourier-transform:lesson-01-the-big-picture-time-frequency-and-superposition:lesson-1-the-big-picture-time-frequency-and-superposition": {
+      "path": "cv-ch05-general-fourier-transform/lesson-01-the-big-picture-time-frequency-and-superposition/lesson-1-the-big-picture-time-frequency-and-superposition",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19"
+      ]
+    },
+    "cv-ch05-general-fourier-transform:lesson-02-the-intuition-how-to-probe-a-signal:lesson-2-the-intuition-how-to-probe-a-signal": {
+      "path": "cv-ch05-general-fourier-transform/lesson-02-the-intuition-how-to-probe-a-signal/lesson-2-the-intuition-how-to-probe-a-signal",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23"
+      ]
+    },
+    "cv-ch05-general-fourier-transform:lesson-03-the-math-toolkit-complex-numbers-and-oscillations:lesson-3-the-math-toolkit-complex-numbers-and-oscillations": {
+      "path": "cv-ch05-general-fourier-transform/lesson-03-the-math-toolkit-complex-numbers-and-oscillations/lesson-3-the-math-toolkit-complex-numbers-and-oscillations",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15"
+      ]
+    },
+    "cv-ch05-general-fourier-transform:lesson-04-defining-the-fourier-transform-and-series:lesson-4-defining-the-fourier-transform-and-series": {
+      "path": "cv-ch05-general-fourier-transform/lesson-04-defining-the-fourier-transform-and-series/lesson-4-defining-the-fourier-transform-and-series",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24",
+        "section25",
+        "section26",
+        "section27",
+        "section28",
+        "section29",
+        "section30",
+        "section31",
+        "section32",
+        "section33"
+      ]
+    },
+    "cv-ch05-general-fourier-transform:lesson-05-deep-dive-example-the-square-wave:lesson-5-deep-dive-example-the-square-wave": {
+      "path": "cv-ch05-general-fourier-transform/lesson-05-deep-dive-example-the-square-wave/lesson-5-deep-dive-example-the-square-wave",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24",
+        "section25",
+        "section26"
+      ]
+    },
+    "cv-ch05-general-fourier-transform:lesson-06-from-1d-signals-to-2d-images:lesson-6-from-1d-signals-to-2d-images": {
+      "path": "cv-ch05-general-fourier-transform/lesson-06-from-1d-signals-to-2d-images/lesson-6-from-1d-signals-to-2d-images",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21"
+      ]
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-01-seeing-images-as-signals:lesson-1-1-manim-math-explainer": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-01-seeing-images-as-signals/lesson-1-1-manim-math-explainer",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-01-seeing-images-as-signals:lesson-1-2-experiment-the-frequency-detective": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-01-seeing-images-as-signals/lesson-1-2-experiment-the-frequency-detective",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-01-seeing-images-as-signals:lesson-1-3-coding-hacking-the-row-python": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-01-seeing-images-as-signals/lesson-1-3-coding-hacking-the-row-python",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-01-seeing-images-as-signals:lesson-1-4-podcast-space-time-and-jpegs": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-01-seeing-images-as-signals/lesson-1-4-podcast-space-time-and-jpegs",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-01-seeing-images-as-signals:lesson-1-seeing-images-as-signals": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-01-seeing-images-as-signals/lesson-1-seeing-images-as-signals",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19"
+      ]
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-02-decoding-the-frequency-grid:lesson-2-2-experiment-the-frequency-chef": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-02-decoding-the-frequency-grid/lesson-2-2-experiment-the-frequency-chef",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-02-decoding-the-frequency-grid:lesson-2-3-exercise-manual-decoding": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-02-decoding-the-frequency-grid/lesson-2-3-exercise-manual-decoding",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-02-decoding-the-frequency-grid:lesson-2-4-coding-coding-a-frequency-mask": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-02-decoding-the-frequency-grid/lesson-2-4-coding-coding-a-frequency-mask",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-02-decoding-the-frequency-grid:lesson-2-5-podcast-the-periodic-table-of-patterns": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-02-decoding-the-frequency-grid/lesson-2-5-podcast-the-periodic-table-of-patterns",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-02-decoding-the-frequency-grid:lesson-2-decoding-the-frequency-grid": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-02-decoding-the-frequency-grid/lesson-2-decoding-the-frequency-grid",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21"
+      ]
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-03-the-art-of-compression-jpeg-part-i:lesson-3-1-manim-math-explainer-the-geometry-of-color-rgb-to-ycbcr": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-03-the-art-of-compression-jpeg-part-i/lesson-3-1-manim-math-explainer-the-geometry-of-color-rgb-to-ycbcr",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-03-the-art-of-compression-jpeg-part-i:lesson-3-2-experiment-the-chroma-subsampling-playground": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-03-the-art-of-compression-jpeg-part-i/lesson-3-2-experiment-the-chroma-subsampling-playground",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-03-the-art-of-compression-jpeg-part-i:lesson-3-3-coding-building-the-pipeline-rgb-to-ycbcr-in-python": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-03-the-art-of-compression-jpeg-part-i/lesson-3-3-coding-building-the-pipeline-rgb-to-ycbcr-in-python",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-03-the-art-of-compression-jpeg-part-i:lesson-3-4-exercise-the-bandwidth-accountant": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-03-the-art-of-compression-jpeg-part-i/lesson-3-4-exercise-the-bandwidth-accountant",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-03-the-art-of-compression-jpeg-part-i:lesson-3-5-example-why-green-screens-are-green": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-03-the-art-of-compression-jpeg-part-i/lesson-3-5-example-why-green-screens-are-green",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-03-the-art-of-compression-jpeg-part-i:lesson-3-6-podcast-hacking-the-human-eye": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-03-the-art-of-compression-jpeg-part-i/lesson-3-6-podcast-hacking-the-human-eye",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-03-the-art-of-compression-jpeg-part-i:lesson-3-the-art-of-compression-jpeg-part-i": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-03-the-art-of-compression-jpeg-part-i/lesson-3-the-art-of-compression-jpeg-part-i",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11"
+      ]
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-04-quantization-and-artifacts-jpeg-part-ii:lesson-4-1-manim-video-visualizing-the-math-of-loss": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-04-quantization-and-artifacts-jpeg-part-ii/lesson-4-1-manim-video-visualizing-the-math-of-loss",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-04-quantization-and-artifacts-jpeg-part-ii:lesson-4-2-exercise-crunching-the-numbers": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-04-quantization-and-artifacts-jpeg-part-ii/lesson-4-2-exercise-crunching-the-numbers",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-04-quantization-and-artifacts-jpeg-part-ii:lesson-4-3-coding-building-the-quantizer": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-04-quantization-and-artifacts-jpeg-part-ii/lesson-4-3-coding-building-the-quantizer",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-04-quantization-and-artifacts-jpeg-part-ii:lesson-4-4-example-when-artifacts-reveal-the-truth-jpeg-forensics": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-04-quantization-and-artifacts-jpeg-part-ii/lesson-4-4-example-when-artifacts-reveal-the-truth-jpeg-forensics",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-04-quantization-and-artifacts-jpeg-part-ii:lesson-4-5-podcast-the-deep-fried-discussion": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-04-quantization-and-artifacts-jpeg-part-ii/lesson-4-5-podcast-the-deep-fried-discussion",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-04-quantization-and-artifacts-jpeg-part-ii:lesson-4-quantization-and-artifacts-jpeg-part-ii": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-04-quantization-and-artifacts-jpeg-part-ii/lesson-4-quantization-and-artifacts-jpeg-part-ii",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12"
+      ]
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-05-from-light-to-bytes-summary:lesson-5-1-manim-video-visualizing-the-sum-of-cosines": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-05-from-light-to-bytes-summary/lesson-5-1-manim-video-visualizing-the-sum-of-cosines",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-05-from-light-to-bytes-summary:lesson-5-2-experiment-the-build-a-block-workshop": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-05-from-light-to-bytes-summary/lesson-5-2-experiment-the-build-a-block-workshop",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-05-from-light-to-bytes-summary:lesson-5-3-exercise-crunching-the-numbers-quantization": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-05-from-light-to-bytes-summary/lesson-5-3-exercise-crunching-the-numbers-quantization",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-05-from-light-to-bytes-summary:lesson-5-4-coding-coding-a-jpeg-compressor": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-05-from-light-to-bytes-summary/lesson-5-4-coding-coding-a-jpeg-compressor",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-05-from-light-to-bytes-summary:lesson-5-5-example-digital-forensics": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-05-from-light-to-bytes-summary/lesson-5-5-example-digital-forensics",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-05-from-light-to-bytes-summary:lesson-5-6-podcast-the-art-of-throwing-things-away": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-05-from-light-to-bytes-summary/lesson-5-6-podcast-the-art-of-throwing-things-away",
+      "sections": []
+    },
+    "cv-ch06-fourier-transform-and-images:lesson-05-from-light-to-bytes-summary:lesson-5-from-light-to-bytes-summary": {
+      "path": "cv-ch06-fourier-transform-and-images/lesson-05-from-light-to-bytes-summary/lesson-5-from-light-to-bytes-summary",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13"
+      ]
+    },
+    "cv-ch07-image-characteristics:lesson-01-the-average-picture-mean-value-test-images:lesson-1-1-visualizing-the-mean-manim-video": {
+      "path": "cv-ch07-image-characteristics/lesson-01-the-average-picture-mean-value-test-images/lesson-1-1-visualizing-the-mean-manim-video",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-01-the-average-picture-mean-value-test-images:lesson-1-2-crunching-the-numbers-calculations": {
+      "path": "cv-ch07-image-characteristics/lesson-01-the-average-picture-mean-value-test-images/lesson-1-2-crunching-the-numbers-calculations",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-01-the-average-picture-mean-value-test-images:lesson-1-3-python-pixel-analysis": {
+      "path": "cv-ch07-image-characteristics/lesson-01-the-average-picture-mean-value-test-images/lesson-1-3-python-pixel-analysis",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-01-the-average-picture-mean-value-test-images:lesson-1-4-the-mean-matcher-playground": {
+      "path": "cv-ch07-image-characteristics/lesson-01-the-average-picture-mean-value-test-images/lesson-1-4-the-mean-matcher-playground",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-01-the-average-picture-mean-value-test-images:lesson-1-5-podcast-the-mean-meaning": {
+      "path": "cv-ch07-image-characteristics/lesson-01-the-average-picture-mean-value-test-images/lesson-1-5-podcast-the-mean-meaning",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-01-the-average-picture-mean-value-test-images:lesson-1-the-average-picture-mean-value-test-images": {
+      "path": "cv-ch07-image-characteristics/lesson-01-the-average-picture-mean-value-test-images/lesson-1-the-average-picture-mean-value-test-images",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5"
+      ]
+    },
+    "cv-ch07-image-characteristics:lesson-02-measuring-contrast-variance-standard-deviation:lesson-2-1-manim-math-explainer-visualizing-variance": {
+      "path": "cv-ch07-image-characteristics/lesson-02-measuring-contrast-variance-standard-deviation/lesson-2-1-manim-math-explainer-visualizing-variance",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-02-measuring-contrast-variance-standard-deviation:lesson-2-2-paper-pen-crunching-the-contrast": {
+      "path": "cv-ch07-image-characteristics/lesson-02-measuring-contrast-variance-standard-deviation/lesson-2-2-paper-pen-crunching-the-contrast",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-02-measuring-contrast-variance-standard-deviation:lesson-2-3-coding-the-metrics-numpy-from-scratch": {
+      "path": "cv-ch07-image-characteristics/lesson-02-measuring-contrast-variance-standard-deviation/lesson-2-3-coding-the-metrics-numpy-from-scratch",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-02-measuring-contrast-variance-standard-deviation:lesson-2-4-podcast-the-tale-of-two-images": {
+      "path": "cv-ch07-image-characteristics/lesson-02-measuring-contrast-variance-standard-deviation/lesson-2-4-podcast-the-tale-of-two-images",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-02-measuring-contrast-variance-standard-deviation:lesson-2-measuring-contrast-variance-standard-deviation": {
+      "path": "cv-ch07-image-characteristics/lesson-02-measuring-contrast-variance-standard-deviation/lesson-2-measuring-contrast-variance-standard-deviation",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5"
+      ]
+    },
+    "cv-ch07-image-characteristics:lesson-03-the-shape-of-the-image-histograms:lesson-3-1-visualizing-the-math-from-pixels-to-bars-manim-video": {
+      "path": "cv-ch07-image-characteristics/lesson-03-the-shape-of-the-image-histograms/lesson-3-1-visualizing-the-math-from-pixels-to-bars-manim-video",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-03-the-shape-of-the-image-histograms:lesson-3-2-the-thresholding-detective-experiment": {
+      "path": "cv-ch07-image-characteristics/lesson-03-the-shape-of-the-image-histograms/lesson-3-2-the-thresholding-detective-experiment",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-03-the-shape-of-the-image-histograms:lesson-3-3-pen-and-paper-computing-the-distribution-exercise": {
+      "path": "cv-ch07-image-characteristics/lesson-03-the-shape-of-the-image-histograms/lesson-3-3-pen-and-paper-computing-the-distribution-exercise",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-03-the-shape-of-the-image-histograms:lesson-3-4-coding-histograms-in-python-coding": {
+      "path": "cv-ch07-image-characteristics/lesson-03-the-shape-of-the-image-histograms/lesson-3-4-coding-histograms-in-python-coding",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-03-the-shape-of-the-image-histograms:lesson-3-5-photography-the-histogram-real-life-example": {
+      "path": "cv-ch07-image-characteristics/lesson-03-the-shape-of-the-image-histograms/lesson-3-5-photography-the-histogram-real-life-example",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-03-the-shape-of-the-image-histograms:lesson-3-6-the-census-of-pixels-podcast": {
+      "path": "cv-ch07-image-characteristics/lesson-03-the-shape-of-the-image-histograms/lesson-3-6-the-census-of-pixels-podcast",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-03-the-shape-of-the-image-histograms:lesson-3-the-shape-of-the-image-histograms": {
+      "path": "cv-ch07-image-characteristics/lesson-03-the-shape-of-the-image-histograms/lesson-3-the-shape-of-the-image-histograms",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15"
+      ]
+    },
+    "cv-ch07-image-characteristics:lesson-04-chaos-and-clean-data-entropy-normalization:lesson-4-1-visualizing-entropy-manim-video-lesson": {
+      "path": "cv-ch07-image-characteristics/lesson-04-chaos-and-clean-data-entropy-normalization/lesson-4-1-visualizing-entropy-manim-video-lesson",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-04-chaos-and-clean-data-entropy-normalization:lesson-4-2-crunching-the-numbers-exercise-lesson": {
+      "path": "cv-ch07-image-characteristics/lesson-04-chaos-and-clean-data-entropy-normalization/lesson-4-2-crunching-the-numbers-exercise-lesson",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-04-chaos-and-clean-data-entropy-normalization:lesson-4-3-image-statistics-in-python-coding-lesson": {
+      "path": "cv-ch07-image-characteristics/lesson-04-chaos-and-clean-data-entropy-normalization/lesson-4-3-image-statistics-in-python-coding-lesson",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-04-chaos-and-clean-data-entropy-normalization:lesson-4-4-the-histogram-doctor-experiment-lesson": {
+      "path": "cv-ch07-image-characteristics/lesson-04-chaos-and-clean-data-entropy-normalization/lesson-4-4-the-histogram-doctor-experiment-lesson",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-04-chaos-and-clean-data-entropy-normalization:lesson-4-5-why-robots-hate-pixels-podcast-lesson": {
+      "path": "cv-ch07-image-characteristics/lesson-04-chaos-and-clean-data-entropy-normalization/lesson-4-5-why-robots-hate-pixels-podcast-lesson",
+      "sections": []
+    },
+    "cv-ch07-image-characteristics:lesson-04-chaos-and-clean-data-entropy-normalization:lesson-4-chaos-and-clean-data-entropy-normalization": {
+      "path": "cv-ch07-image-characteristics/lesson-04-chaos-and-clean-data-entropy-normalization/lesson-4-chaos-and-clean-data-entropy-normalization",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14"
+      ]
+    },
+    "cv-ch08-image-modifications:lesson-01-the-why-and-how-of-modifying-pixels:lesson-1-the-why-and-how-of-modifying-pixels": {
+      "path": "cv-ch08-image-modifications/lesson-01-the-why-and-how-of-modifying-pixels/lesson-1-the-why-and-how-of-modifying-pixels",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18"
+      ]
+    },
+    "cv-ch08-image-modifications:lesson-02-mastering-brightness-and-contrast-linear-transformations:lesson-2-mastering-brightness-and-contrast-linear-transformations": {
+      "path": "cv-ch08-image-modifications/lesson-02-mastering-brightness-and-contrast-linear-transformations/lesson-2-mastering-brightness-and-contrast-linear-transformations",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13"
+      ]
+    },
+    "cv-ch08-image-modifications:lesson-03-the-human-eye-and-gamma-correction:lesson-3-the-human-eye-and-gamma-correction": {
+      "path": "cv-ch08-image-modifications/lesson-03-the-human-eye-and-gamma-correction/lesson-3-the-human-eye-and-gamma-correction",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14"
+      ]
+    },
+    "cv-ch08-image-modifications:lesson-04-histogram-equalization-he:lesson-4-histogram-equalization-he": {
+      "path": "cv-ch08-image-modifications/lesson-04-histogram-equalization-he/lesson-4-histogram-equalization-he",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13"
+      ]
+    },
+    "cv-ch09-simple-filters-kernels:lesson-01-the-mathematics-of-neighborhoods-the-convolution-operation:lesson-1-the-mathematics-of-neighborhoods-the-convolution-operation": {
+      "path": "cv-ch09-simple-filters-kernels/lesson-01-the-mathematics-of-neighborhoods-the-convolution-operation/lesson-1-the-mathematics-of-neighborhoods-the-convolution-operation",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24"
+      ]
+    },
+    "cv-ch09-simple-filters-kernels:lesson-02-living-on-the-edge-handling-image-borders:lesson-2-1-manim-video-explainer-the-mechanics-of-convolution": {
+      "path": "cv-ch09-simple-filters-kernels/lesson-02-living-on-the-edge-handling-image-borders/lesson-2-1-manim-video-explainer-the-mechanics-of-convolution",
+      "sections": []
+    },
+    "cv-ch09-simple-filters-kernels:lesson-02-living-on-the-edge-handling-image-borders:lesson-2-2-experiment-the-kernel-laboratory": {
+      "path": "cv-ch09-simple-filters-kernels/lesson-02-living-on-the-edge-handling-image-borders/lesson-2-2-experiment-the-kernel-laboratory",
+      "sections": []
+    },
+    "cv-ch09-simple-filters-kernels:lesson-02-living-on-the-edge-handling-image-borders:lesson-2-3-exercise-crunching-the-numbers": {
+      "path": "cv-ch09-simple-filters-kernels/lesson-02-living-on-the-edge-handling-image-borders/lesson-2-3-exercise-crunching-the-numbers",
+      "sections": []
+    },
+    "cv-ch09-simple-filters-kernels:lesson-02-living-on-the-edge-handling-image-borders:lesson-2-4-coding-building-filters-in-python": {
+      "path": "cv-ch09-simple-filters-kernels/lesson-02-living-on-the-edge-handling-image-borders/lesson-2-4-coding-building-filters-in-python",
+      "sections": []
+    },
+    "cv-ch09-simple-filters-kernels:lesson-02-living-on-the-edge-handling-image-borders:lesson-2-5-podcast-the-recap-why-neighborhoods-matter": {
+      "path": "cv-ch09-simple-filters-kernels/lesson-02-living-on-the-edge-handling-image-borders/lesson-2-5-podcast-the-recap-why-neighborhoods-matter",
+      "sections": []
+    },
+    "cv-ch09-simple-filters-kernels:lesson-02-living-on-the-edge-handling-image-borders:lesson-2-living-on-the-edge-handling-image-borders": {
+      "path": "cv-ch09-simple-filters-kernels/lesson-02-living-on-the-edge-handling-image-borders/lesson-2-living-on-the-edge-handling-image-borders",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15"
+      ]
+    },
+    "cv-ch09-simple-filters-kernels:lesson-03-the-art-of-blur-and-sharpen:lesson-3-the-art-of-blur-and-sharpen": {
+      "path": "cv-ch09-simple-filters-kernels/lesson-03-the-art-of-blur-and-sharpen/lesson-3-the-art-of-blur-and-sharpen",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7"
+      ]
+    },
+    "cv-ch09-simple-filters-kernels:lesson-04-hunting-for-edges-sobel-and-gradients:lesson-4-hunting-for-edges-sobel-and-gradients": {
+      "path": "cv-ch09-simple-filters-kernels/lesson-04-hunting-for-edges-sobel-and-gradients/lesson-4-hunting-for-edges-sobel-and-gradients",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24",
+        "section25",
+        "section26",
+        "section27",
+        "section28",
+        "section29",
+        "section30",
+        "section31",
+        "section32"
+      ]
+    },
+    "cv-ch09-simple-filters-kernels:lesson-05-the-big-picture-from-handcrafted-to-learned:lesson-5-the-big-picture-from-handcrafted-to-learned": {
+      "path": "cv-ch09-simple-filters-kernels/lesson-05-the-big-picture-from-handcrafted-to-learned/lesson-5-the-big-picture-from-handcrafted-to-learned",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch10-advanced-kernels-morphology-and:lesson-01-the-shape-of-things-basic-morphological-operations:lesson-1-the-shape-of-things-basic-morphological-operations": {
+      "path": "cv-ch10-advanced-kernels-morphology-and/lesson-01-the-shape-of-things-basic-morphological-operations/lesson-1-the-shape-of-things-basic-morphological-operations",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7"
+      ]
+    },
+    "cv-ch10-advanced-kernels-morphology-and:lesson-02-cleaning-up-the-mess-compound-operations-and-noise-removal:lesson-2-cleaning-up-the-mess-compound-operations-and-noise-removal": {
+      "path": "cv-ch10-advanced-kernels-morphology-and/lesson-02-cleaning-up-the-mess-compound-operations-and-noise-removal/lesson-2-cleaning-up-the-mess-compound-operations-and-noise-removal",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17"
+      ]
+    },
+    "cv-ch10-advanced-kernels-morphology-and:lesson-03-understanding-texture-the-gabor-filter:lesson-3-understanding-texture-the-gabor-filter": {
+      "path": "cv-ch10-advanced-kernels-morphology-and/lesson-03-understanding-texture-the-gabor-filter/lesson-3-understanding-texture-the-gabor-filter",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17"
+      ]
+    },
+    "cv-ch11-convolutional-neural-networks:lesson-01-why-traditional-networks-fail-on-images:lesson-1-why-traditional-networks-fail-on-images": {
+      "path": "cv-ch11-convolutional-neural-networks/lesson-01-why-traditional-networks-fail-on-images/lesson-1-why-traditional-networks-fail-on-images",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19"
+      ]
+    },
+    "cv-ch11-convolutional-neural-networks:lesson-02-the-cnn-paradigm-local-connectivity-and-shared-weights:lesson-2-the-cnn-paradigm-local-connectivity-and-shared-weights": {
+      "path": "cv-ch11-convolutional-neural-networks/lesson-02-the-cnn-paradigm-local-connectivity-and-shared-weights/lesson-2-the-cnn-paradigm-local-connectivity-and-shared-weights",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19"
+      ]
+    },
+    "cv-ch11-convolutional-neural-networks:lesson-03-the-mathematics-of-convolution:lesson-3-the-mathematics-of-convolution": {
+      "path": "cv-ch11-convolutional-neural-networks/lesson-03-the-mathematics-of-convolution/lesson-3-the-mathematics-of-convolution",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11"
+      ]
+    },
+    "cv-ch11-convolutional-neural-networks:lesson-04-tuning-the-engine-stride-and-padding:lesson-4-tuning-the-engine-stride-and-padding": {
+      "path": "cv-ch11-convolutional-neural-networks/lesson-04-tuning-the-engine-stride-and-padding/lesson-4-tuning-the-engine-stride-and-padding",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch11-convolutional-neural-networks:lesson-05-pooling-hierarchy-and-interpretation:lesson-5-pooling-hierarchy-and-interpretation": {
+      "path": "cv-ch11-convolutional-neural-networks/lesson-05-pooling-hierarchy-and-interpretation/lesson-5-pooling-hierarchy-and-interpretation",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch12-the-alexnet-revolution:lesson-01-the-spark-that-lit-the-fire-history-and-dataset:lesson-1-the-spark-that-lit-the-fire-history-and-dataset": {
+      "path": "cv-ch12-the-alexnet-revolution/lesson-01-the-spark-that-lit-the-fire-history-and-dataset/lesson-1-the-spark-that-lit-the-fire-history-and-dataset",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18"
+      ]
+    },
+    "cv-ch12-the-alexnet-revolution:lesson-02-more-data-from-thin-air-data-augmentation:lesson-2-more-data-from-thin-air-data-augmentation": {
+      "path": "cv-ch12-the-alexnet-revolution/lesson-02-more-data-from-thin-air-data-augmentation/lesson-2-more-data-from-thin-air-data-augmentation",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24"
+      ]
+    },
+    "cv-ch12-the-alexnet-revolution:lesson-03-anatomy-of-a-winner-the-architecture:lesson-3-anatomy-of-a-winner-the-architecture": {
+      "path": "cv-ch12-the-alexnet-revolution/lesson-03-anatomy-of-a-winner-the-architecture/lesson-3-anatomy-of-a-winner-the-architecture",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13"
+      ]
+    },
+    "cv-ch12-the-alexnet-revolution:lesson-04-training-the-beast-and-the-aftermath:lesson-4-training-the-beast-and-the-aftermath": {
+      "path": "cv-ch12-the-alexnet-revolution/lesson-04-training-the-beast-and-the-aftermath/lesson-4-training-the-beast-and-the-aftermath",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23"
+      ]
+    },
+    "cv-ch13-the-evolution-of-cnn-architectur:lesson-01-setting-the-stage-preprocessing-and-the-race-to-depth:lesson-1-setting-the-stage-preprocessing-and-the-race-to-depth": {
+      "path": "cv-ch13-the-evolution-of-cnn-architectur/lesson-01-setting-the-stage-preprocessing-and-the-race-to-depth/lesson-1-setting-the-stage-preprocessing-and-the-race-to-depth",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24",
+        "section25",
+        "section26",
+        "section27",
+        "section28",
+        "section29",
+        "section30",
+        "section31"
+      ]
+    },
+    "cv-ch13-the-evolution-of-cnn-architectur:lesson-02-the-power-of-simplicity-lenet-and-vggnet:lesson-2-the-power-of-simplicity-lenet-and-vggnet": {
+      "path": "cv-ch13-the-evolution-of-cnn-architectur/lesson-02-the-power-of-simplicity-lenet-and-vggnet/lesson-2-the-power-of-simplicity-lenet-and-vggnet",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15"
+      ]
+    },
+    "cv-ch13-the-evolution-of-cnn-architectur:lesson-03-going-wide-and-efficient-googlenet-and-inception:lesson-3-going-wide-and-efficient-googlenet-and-inception": {
+      "path": "cv-ch13-the-evolution-of-cnn-architectur/lesson-03-going-wide-and-efficient-googlenet-and-inception/lesson-3-going-wide-and-efficient-googlenet-and-inception",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19"
+      ]
+    },
+    "cv-ch13-the-evolution-of-cnn-architectur:lesson-04-solving-the-paradox-of-depth-resnet:lesson-4-solving-the-paradox-of-depth-resnet": {
+      "path": "cv-ch13-the-evolution-of-cnn-architectur/lesson-04-solving-the-paradox-of-depth-resnet/lesson-4-solving-the-paradox-of-depth-resnet",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17"
+      ]
+    },
+    "cv-ch13-the-evolution-of-cnn-architectur:lesson-05-the-modern-era-width-attention-and-scaling:lesson-5-the-modern-era-width-attention-and-scaling": {
+      "path": "cv-ch13-the-evolution-of-cnn-architectur/lesson-05-the-modern-era-width-attention-and-scaling/lesson-5-the-modern-era-width-attention-and-scaling",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14"
+      ]
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-1-concept-lesson-the-limits-of-local-vision": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-1-concept-lesson-the-limits-of-local-vision",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-10-concept-lesson-the-problem-of-order": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-10-concept-lesson-the-problem-of-order",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-11-experiment-lesson-the-wave-check": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-11-experiment-lesson-the-wave-check",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-12-concept-lesson-building-the-transformer": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-12-concept-lesson-building-the-transformer",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-13-concept-lesson-a-new-paradigm-attention-vs-convolution": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-13-concept-lesson-a-new-paradigm-attention-vs-convolution",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-14-example-lesson-the-vit-revolution": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-14-example-lesson-the-vit-revolution",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-15-podcast-lesson-the-day-convolutions-died": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-15-podcast-lesson-the-day-convolutions-died",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-2-experiment-lesson-the-receptive-field-calculator": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-2-experiment-lesson-the-receptive-field-calculator",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-3-concept-lesson-a-detour-into-language": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-3-concept-lesson-a-detour-into-language",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-4-coding-lesson-breaking-an-rnn": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-4-coding-lesson-breaking-an-rnn",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-5-concept-lesson-the-search-engine-of-the-mind": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-5-concept-lesson-the-search-engine-of-the-mind",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-6-concept-lesson-under-the-hood-the-math-of-attention": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-6-concept-lesson-under-the-hood-the-math-of-attention",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-7-manim-video-lesson-visualizing-the-dot-product": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-7-manim-video-lesson-visualizing-the-dot-product",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-8-exercise-lesson-calculating-attention-by-hand": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-8-exercise-lesson-calculating-attention-by-hand",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-9-coding-lesson-implementing-self-attention-from-scratch": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-9-coding-lesson-implementing-self-attention-from-scratch",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-01-the-limits-of-local-vision:lesson-1-the-limits-of-local-vision": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-01-the-limits-of-local-vision/lesson-1-the-limits-of-local-vision",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13"
+      ]
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-02-a-detour-into-language-the-rnn-bottleneck:lesson-2-1-manim-video-math-explainer-the-vanishing-vector": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-02-a-detour-into-language-the-rnn-bottleneck/lesson-2-1-manim-video-math-explainer-the-vanishing-vector",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-02-a-detour-into-language-the-rnn-bottleneck:lesson-2-2-experiment-the-digital-telephone-game": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-02-a-detour-into-language-the-rnn-bottleneck/lesson-2-2-experiment-the-digital-telephone-game",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-02-a-detour-into-language-the-rnn-bottleneck:lesson-2-3-coding-coding-the-rnn-loop": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-02-a-detour-into-language-the-rnn-bottleneck/lesson-2-3-coding-coding-the-rnn-loop",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-02-a-detour-into-language-the-rnn-bottleneck:lesson-2-4-podcast-the-amnesiac-robot": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-02-a-detour-into-language-the-rnn-bottleneck/lesson-2-4-podcast-the-amnesiac-robot",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-02-a-detour-into-language-the-rnn-bottleneck:lesson-2-a-detour-into-language-the-rnn-bottleneck": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-02-a-detour-into-language-the-rnn-bottleneck/lesson-2-a-detour-into-language-the-rnn-bottleneck",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17"
+      ]
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-03-the-search-engine-of-the-mind-q-k-v:lesson-3-1-manim-video-visual-explainer": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-03-the-search-engine-of-the-mind-q-k-v/lesson-3-1-manim-video-visual-explainer",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-03-the-search-engine-of-the-mind-q-k-v:lesson-3-2-exercise-the-context-detective": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-03-the-search-engine-of-the-mind-q-k-v/lesson-3-2-exercise-the-context-detective",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-03-the-search-engine-of-the-mind-q-k-v:lesson-3-3-coding-coding-the-ingredients": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-03-the-search-engine-of-the-mind-q-k-v/lesson-3-3-coding-coding-the-ingredients",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-03-the-search-engine-of-the-mind-q-k-v:lesson-3-4-podcast-the-library-in-the-matrix": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-03-the-search-engine-of-the-mind-q-k-v/lesson-3-4-podcast-the-library-in-the-matrix",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-03-the-search-engine-of-the-mind-q-k-v:lesson-3-the-search-engine-of-the-mind-q-k-v": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-03-the-search-engine-of-the-mind-q-k-v/lesson-3-the-search-engine-of-the-mind-q-k-v",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18"
+      ]
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-04-under-the-hood-the-math-of-attention:lesson-4-1-manim-math-explainer-visualizing-the-matrix-dance": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-04-under-the-hood-the-math-of-attention/lesson-4-1-manim-math-explainer-visualizing-the-matrix-dance",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-04-under-the-hood-the-math-of-attention:lesson-4-2-exercise-pen-paper-calculating-context": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-04-under-the-hood-the-math-of-attention/lesson-4-2-exercise-pen-paper-calculating-context",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-04-under-the-hood-the-math-of-attention:lesson-4-3-coding-code-it-self-attention-from-scratch": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-04-under-the-hood-the-math-of-attention/lesson-4-3-coding-code-it-self-attention-from-scratch",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-04-under-the-hood-the-math-of-attention:lesson-4-4-podcast-the-soft-in-softmax": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-04-under-the-hood-the-math-of-attention/lesson-4-4-podcast-the-soft-in-softmax",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-04-under-the-hood-the-math-of-attention:lesson-4-under-the-hood-the-math-of-attention": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-04-under-the-hood-the-math-of-attention/lesson-4-under-the-hood-the-math-of-attention",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12"
+      ]
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-1-concept-the-limits-of-local-vision": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-1-concept-the-limits-of-local-vision",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-10-concept-the-problem-of-order": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-10-concept-the-problem-of-order",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-11-manim-video-waves-of-order": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-11-manim-video-waves-of-order",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-12-coding-generating-the-waves": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-12-coding-generating-the-waves",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-13-concept-building-the-transformer": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-13-concept-building-the-transformer",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-14-experiment-inside-the-heads": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-14-experiment-inside-the-heads",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-15-concept-a-new-paradigm": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-15-concept-a-new-paradigm",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-16-podcast-the-attention-revolution": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-16-podcast-the-attention-revolution",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-2-real-world-example-context-is-king": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-2-real-world-example-context-is-king",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-3-concept-a-detour-into-language": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-3-concept-a-detour-into-language",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-4-concept-the-search-engine-of-the-mind": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-4-concept-the-search-engine-of-the-mind",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-5-manim-video-visualizing-q-k-and-v": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-5-manim-video-visualizing-q-k-and-v",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-6-concept-under-the-hood-the-math-of-attention": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-6-concept-under-the-hood-the-math-of-attention",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-7-manim-video-the-mechanics-of-the-matrix": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-7-manim-video-the-mechanics-of-the-matrix",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-8-exercise-cranking-the-numbers": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-8-exercise-cranking-the-numbers",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-9-coding-coding-self-attention": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-9-coding-coding-self-attention",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-05-the-problem-of-order-positional-encoding:lesson-5-the-problem-of-order-positional-encoding": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-05-the-problem-of-order-positional-encoding/lesson-5-the-problem-of-order-positional-encoding",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11"
+      ]
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-06-building-the-transformer-mhsa-blocks:lesson-6-1-manim-video-explainer-the-dimensionality-dance": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-06-building-the-transformer-mhsa-blocks/lesson-6-1-manim-video-explainer-the-dimensionality-dance",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-06-building-the-transformer-mhsa-blocks:lesson-6-2-exercise-transformer-architect": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-06-building-the-transformer-mhsa-blocks/lesson-6-2-exercise-transformer-architect",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-06-building-the-transformer-mhsa-blocks:lesson-6-3-coding-building-the-multi-head-monster": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-06-building-the-transformer-mhsa-blocks/lesson-6-3-coding-building-the-multi-head-monster",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-06-building-the-transformer-mhsa-blocks:lesson-6-4-podcast-attention-is-all-you-need": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-06-building-the-transformer-mhsa-blocks/lesson-6-4-podcast-attention-is-all-you-need",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-06-building-the-transformer-mhsa-blocks:lesson-6-building-the-transformer-mhsa-blocks": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-06-building-the-transformer-mhsa-blocks/lesson-6-building-the-transformer-mhsa-blocks",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15"
+      ]
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-07-a-new-paradigm-attention-vs-convolution:lesson-7-1-manim-video-the-dance-of-matrices": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-07-a-new-paradigm-attention-vs-convolution/lesson-7-1-manim-video-the-dance-of-matrices",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-07-a-new-paradigm-attention-vs-convolution:lesson-7-2-exercise-crunching-the-attention-scores": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-07-a-new-paradigm-attention-vs-convolution/lesson-7-2-exercise-crunching-the-attention-scores",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-07-a-new-paradigm-attention-vs-convolution:lesson-7-3-coding-building-self-attention-from-scratch": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-07-a-new-paradigm-attention-vs-convolution/lesson-7-3-coding-building-self-attention-from-scratch",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-07-a-new-paradigm-attention-vs-convolution:lesson-7-4-podcast-the-transformer-revolution": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-07-a-new-paradigm-attention-vs-convolution/lesson-7-4-podcast-the-transformer-revolution",
+      "sections": []
+    },
+    "cv-ch14-attention-and-its-application-to:lesson-07-a-new-paradigm-attention-vs-convolution:lesson-7-a-new-paradigm-attention-vs-convolution": {
+      "path": "cv-ch14-attention-and-its-application-to/lesson-07-a-new-paradigm-attention-vs-convolution/lesson-7-a-new-paradigm-attention-vs-convolution",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18"
+      ]
+    },
+    "cv-ch15-vision-transformer:lesson-01-the-transformer-blueprint:lesson-1-1-manim-math-explainer-the-geometry-of-attention": {
+      "path": "cv-ch15-vision-transformer/lesson-01-the-transformer-blueprint/lesson-1-1-manim-math-explainer-the-geometry-of-attention",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-01-the-transformer-blueprint:lesson-1-2-coding-building-self-attention-from-scratch": {
+      "path": "cv-ch15-vision-transformer/lesson-01-the-transformer-blueprint/lesson-1-2-coding-building-self-attention-from-scratch",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-01-the-transformer-blueprint:lesson-1-3-experiment-the-positional-encoding-playground": {
+      "path": "cv-ch15-vision-transformer/lesson-01-the-transformer-blueprint/lesson-1-3-experiment-the-positional-encoding-playground",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-01-the-transformer-blueprint:lesson-1-4-exercise-tracing-the-tensor-shapes": {
+      "path": "cv-ch15-vision-transformer/lesson-01-the-transformer-blueprint/lesson-1-4-exercise-tracing-the-tensor-shapes",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-01-the-transformer-blueprint:lesson-1-5-podcast-attention-is-all-you-need-the-discussion": {
+      "path": "cv-ch15-vision-transformer/lesson-01-the-transformer-blueprint/lesson-1-5-podcast-attention-is-all-you-need-the-discussion",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-01-the-transformer-blueprint:lesson-1-the-transformer-blueprint": {
+      "path": "cv-ch15-vision-transformer/lesson-01-the-transformer-blueprint/lesson-1-the-transformer-blueprint",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17"
+      ]
+    },
+    "cv-ch15-vision-transformer:lesson-02-from-text-to-pixels-the-vision-transformer-vit:lesson-2-1-exercise-the-mathematics-of-attention-vs-convolution": {
+      "path": "cv-ch15-vision-transformer/lesson-02-from-text-to-pixels-the-vision-transformer-vit/lesson-2-1-exercise-the-mathematics-of-attention-vs-convolution",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-02-from-text-to-pixels-the-vision-transformer-vit:lesson-2-2-coding-building-the-patch-embedding-layer": {
+      "path": "cv-ch15-vision-transformer/lesson-02-from-text-to-pixels-the-vision-transformer-vit/lesson-2-2-coding-building-the-patch-embedding-layer",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-02-from-text-to-pixels-the-vision-transformer-vit:lesson-2-3-manim-video-visualizing-the-complexity-explosion": {
+      "path": "cv-ch15-vision-transformer/lesson-02-from-text-to-pixels-the-vision-transformer-vit/lesson-2-3-manim-video-visualizing-the-complexity-explosion",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-02-from-text-to-pixels-the-vision-transformer-vit:lesson-2-4-experiment-the-attention-playground": {
+      "path": "cv-ch15-vision-transformer/lesson-02-from-text-to-pixels-the-vision-transformer-vit/lesson-2-4-experiment-the-attention-playground",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-02-from-text-to-pixels-the-vision-transformer-vit:lesson-2-5-podcast-did-we-just-turn-images-into-language": {
+      "path": "cv-ch15-vision-transformer/lesson-02-from-text-to-pixels-the-vision-transformer-vit/lesson-2-5-podcast-did-we-just-turn-images-into-language",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-02-from-text-to-pixels-the-vision-transformer-vit:lesson-2-from-text-to-pixels-the-vision-transformer-vit": {
+      "path": "cv-ch15-vision-transformer/lesson-02-from-text-to-pixels-the-vision-transformer-vit/lesson-2-from-text-to-pixels-the-vision-transformer-vit",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18"
+      ]
+    },
+    "cv-ch15-vision-transformer:lesson-03-the-data-hunger-games-inductive-bias:lesson-3-1-manim-math-explainer-visualizing-bias": {
+      "path": "cv-ch15-vision-transformer/lesson-03-the-data-hunger-games-inductive-bias/lesson-3-1-manim-math-explainer-visualizing-bias",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-03-the-data-hunger-games-inductive-bias:lesson-3-2-the-training-ground-cnn-vs-vit": {
+      "path": "cv-ch15-vision-transformer/lesson-03-the-data-hunger-games-inductive-bias/lesson-3-2-the-training-ground-cnn-vs-vit",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-03-the-data-hunger-games-inductive-bias:lesson-3-3-visualizing-the-global-eye": {
+      "path": "cv-ch15-vision-transformer/lesson-03-the-data-hunger-games-inductive-bias/lesson-3-3-visualizing-the-global-eye",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-03-the-data-hunger-games-inductive-bias:lesson-3-4-receptive-field-arithmetic": {
+      "path": "cv-ch15-vision-transformer/lesson-03-the-data-hunger-games-inductive-bias/lesson-3-4-receptive-field-arithmetic",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-03-the-data-hunger-games-inductive-bias:lesson-3-5-podcast-the-bitter-lesson": {
+      "path": "cv-ch15-vision-transformer/lesson-03-the-data-hunger-games-inductive-bias/lesson-3-5-podcast-the-bitter-lesson",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-03-the-data-hunger-games-inductive-bias:lesson-3-the-data-hunger-games-inductive-bias": {
+      "path": "cv-ch15-vision-transformer/lesson-03-the-data-hunger-games-inductive-bias/lesson-3-the-data-hunger-games-inductive-bias",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch15-vision-transformer:lesson-04-evolution-the-swin-transformer:lesson-4-1-manim-video-visualizing-the-quadratic-explosion": {
+      "path": "cv-ch15-vision-transformer/lesson-04-evolution-the-swin-transformer/lesson-4-1-manim-video-visualizing-the-quadratic-explosion",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-04-evolution-the-swin-transformer:lesson-4-2-coding-building-the-patch-embedding-layer": {
+      "path": "cv-ch15-vision-transformer/lesson-04-evolution-the-swin-transformer/lesson-4-2-coding-building-the-patch-embedding-layer",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-04-evolution-the-swin-transformer:lesson-4-3-exercise-calculating-attention-output": {
+      "path": "cv-ch15-vision-transformer/lesson-04-evolution-the-swin-transformer/lesson-4-3-exercise-calculating-attention-output",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-04-evolution-the-swin-transformer:lesson-4-4-experiment-the-inductive-bias-playground": {
+      "path": "cv-ch15-vision-transformer/lesson-04-evolution-the-swin-transformer/lesson-4-4-experiment-the-inductive-bias-playground",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-04-evolution-the-swin-transformer:lesson-4-5-example-dino-and-the-emerging-object": {
+      "path": "cv-ch15-vision-transformer/lesson-04-evolution-the-swin-transformer/lesson-4-5-example-dino-and-the-emerging-object",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-04-evolution-the-swin-transformer:lesson-4-6-coding-swin-window-shifting": {
+      "path": "cv-ch15-vision-transformer/lesson-04-evolution-the-swin-transformer/lesson-4-6-coding-swin-window-shifting",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-04-evolution-the-swin-transformer:lesson-4-7-podcast-are-convolutions-dead": {
+      "path": "cv-ch15-vision-transformer/lesson-04-evolution-the-swin-transformer/lesson-4-7-podcast-are-convolutions-dead",
+      "sections": []
+    },
+    "cv-ch15-vision-transformer:lesson-04-evolution-the-swin-transformer:lesson-4-evolution-the-swin-transformer": {
+      "path": "cv-ch15-vision-transformer/lesson-04-evolution-the-swin-transformer/lesson-4-evolution-the-swin-transformer",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23"
+      ]
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-01-the-object-detection-paradox-iou:lesson-1-1-manim-video-visualizing-intersection-over-union": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-01-the-object-detection-paradox-iou/lesson-1-1-manim-video-visualizing-intersection-over-union",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-01-the-object-detection-paradox-iou:lesson-1-2-exercise-the-iou-gym": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-01-the-object-detection-paradox-iou/lesson-1-2-exercise-the-iou-gym",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-01-the-object-detection-paradox-iou:lesson-1-3-coding-implementing-the-jaccard-index": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-01-the-object-detection-paradox-iou/lesson-1-3-coding-implementing-the-jaccard-index",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-01-the-object-detection-paradox-iou:lesson-1-4-podcast-the-box-paradox": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-01-the-object-detection-paradox-iou/lesson-1-4-podcast-the-box-paradox",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-01-the-object-detection-paradox-iou:lesson-1-the-object-detection-paradox-iou": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-01-the-object-detection-paradox-iou/lesson-1-the-object-detection-paradox-iou",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15"
+      ]
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-02-the-scorecard-ap-and-map:lesson-2-1-manim-video-visualizing-the-area-under-the-curve": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-02-the-scorecard-ap-and-map/lesson-2-1-manim-video-visualizing-the-area-under-the-curve",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-02-the-scorecard-ap-and-map:lesson-2-2-experiment-the-confidence-slider": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-02-the-scorecard-ap-and-map/lesson-2-2-experiment-the-confidence-slider",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-02-the-scorecard-ap-and-map:lesson-2-3-exercise-calculating-the-score": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-02-the-scorecard-ap-and-map/lesson-2-3-exercise-calculating-the-score",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-02-the-scorecard-ap-and-map:lesson-2-4-coding-implementing-average-precision": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-02-the-scorecard-ap-and-map/lesson-2-4-coding-implementing-average-precision",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-02-the-scorecard-ap-and-map:lesson-2-5-podcast-the-metric-trap": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-02-the-scorecard-ap-and-map/lesson-2-5-podcast-the-metric-trap",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-02-the-scorecard-ap-and-map:lesson-2-the-scorecard-ap-and-map": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-02-the-scorecard-ap-and-map/lesson-2-the-scorecard-ap-and-map",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11"
+      ]
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-03-the-region-based-revolution-r-cnn:lesson-3-1-manim-math-explainer-the-geometry-of-iou": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-03-the-region-based-revolution-r-cnn/lesson-3-1-manim-math-explainer-the-geometry-of-iou",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-03-the-region-based-revolution-r-cnn:lesson-3-2-coding-implementing-iou-from-scratch": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-03-the-region-based-revolution-r-cnn/lesson-3-2-coding-implementing-iou-from-scratch",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-03-the-region-based-revolution-r-cnn:lesson-3-3-experiment-the-selective-search-playground": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-03-the-region-based-revolution-r-cnn/lesson-3-3-experiment-the-selective-search-playground",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-03-the-region-based-revolution-r-cnn:lesson-3-4-exercise-the-cost-of-computation": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-03-the-region-based-revolution-r-cnn/lesson-3-4-exercise-the-cost-of-computation",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-03-the-region-based-revolution-r-cnn:lesson-3-5-podcast-the-object-detection-big-bang": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-03-the-region-based-revolution-r-cnn/lesson-3-5-podcast-the-object-detection-big-bang",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-03-the-region-based-revolution-r-cnn:lesson-3-the-region-based-revolution-r-cnn": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-03-the-region-based-revolution-r-cnn/lesson-3-the-region-based-revolution-r-cnn",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24"
+      ]
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-04-speeding-up-nms-and-fast-r-cnn:lesson-4-1-manim-video-math-explainer-visualizing-map": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-04-speeding-up-nms-and-fast-r-cnn/lesson-4-1-manim-video-math-explainer-visualizing-map",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-04-speeding-up-nms-and-fast-r-cnn:lesson-4-2-exercise-pen-paper-the-object-detection-gym": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-04-speeding-up-nms-and-fast-r-cnn/lesson-4-2-exercise-pen-paper-the-object-detection-gym",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-04-speeding-up-nms-and-fast-r-cnn:lesson-4-3-coding-code-lab-implementing-nms-from-scratch": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-04-speeding-up-nms-and-fast-r-cnn/lesson-4-3-coding-code-lab-implementing-nms-from-scratch",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-04-speeding-up-nms-and-fast-r-cnn:lesson-4-4-experiment-the-threshold-sandbox": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-04-speeding-up-nms-and-fast-r-cnn/lesson-4-4-experiment-the-threshold-sandbox",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-04-speeding-up-nms-and-fast-r-cnn:lesson-4-5-example-real-world-the-self-driving-car-dilemma": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-04-speeding-up-nms-and-fast-r-cnn/lesson-4-5-example-real-world-the-self-driving-car-dilemma",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-04-speeding-up-nms-and-fast-r-cnn:lesson-4-6-podcast-the-evolution-of-looking": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-04-speeding-up-nms-and-fast-r-cnn/lesson-4-6-podcast-the-evolution-of-looking",
+      "sections": []
+    },
+    "cv-ch16-object-detection-fundamentals:lesson-04-speeding-up-nms-and-fast-r-cnn:lesson-4-speeding-up-nms-and-fast-r-cnn": {
+      "path": "cv-ch16-object-detection-fundamentals/lesson-04-speeding-up-nms-and-fast-r-cnn/lesson-4-speeding-up-nms-and-fast-r-cnn",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-01-closing-the-loop-faster-r-cnn-and-the-rpn:lesson-1-1-manim-video-the-geometry-of-detection": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-01-closing-the-loop-faster-r-cnn-and-the-rpn/lesson-1-1-manim-video-the-geometry-of-detection",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-01-closing-the-loop-faster-r-cnn-and-the-rpn:lesson-1-2-exercise-the-iou-challenge": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-01-closing-the-loop-faster-r-cnn-and-the-rpn/lesson-1-2-exercise-the-iou-challenge",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-01-closing-the-loop-faster-r-cnn-and-the-rpn:lesson-1-3-coding-building-the-rpn-s-judge": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-01-closing-the-loop-faster-r-cnn-and-the-rpn/lesson-1-3-coding-building-the-rpn-s-judge",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-01-closing-the-loop-faster-r-cnn-and-the-rpn:lesson-1-4-podcast-the-speed-of-sight": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-01-closing-the-loop-faster-r-cnn-and-the-rpn/lesson-1-4-podcast-the-speed-of-sight",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-01-closing-the-loop-faster-r-cnn-and-the-rpn:lesson-1-closing-the-loop-faster-r-cnn-and-the-rpn": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-01-closing-the-loop-faster-r-cnn-and-the-rpn/lesson-1-closing-the-loop-faster-r-cnn-and-the-rpn",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24"
+      ]
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-02-speed-freaks-the-yolo-revolution:lesson-2-1-manim-math-explainer-visualizing-iou-and-confidence": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-02-speed-freaks-the-yolo-revolution/lesson-2-1-manim-math-explainer-visualizing-iou-and-confidence",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-02-speed-freaks-the-yolo-revolution:lesson-2-2-experiment-the-grid-responsibility-playground": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-02-speed-freaks-the-yolo-revolution/lesson-2-2-experiment-the-grid-responsibility-playground",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-02-speed-freaks-the-yolo-revolution:lesson-2-3-exercise-tensors-and-thresholds": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-02-speed-freaks-the-yolo-revolution/lesson-2-3-exercise-tensors-and-thresholds",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-02-speed-freaks-the-yolo-revolution:lesson-2-4-coding-decoding-the-box": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-02-speed-freaks-the-yolo-revolution/lesson-2-4-coding-decoding-the-box",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-02-speed-freaks-the-yolo-revolution:lesson-2-5-podcast-the-speed-trap": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-02-speed-freaks-the-yolo-revolution/lesson-2-5-podcast-the-speed-trap",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-02-speed-freaks-the-yolo-revolution:lesson-2-speed-freaks-the-yolo-revolution": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-02-speed-freaks-the-yolo-revolution/lesson-2-speed-freaks-the-yolo-revolution",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14"
+      ]
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-03-the-problem-of-scale-feature-pyramid-networks-fpn:lesson-3-1-manim-video-visualizing-the-math": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-03-the-problem-of-scale-feature-pyramid-networks-fpn/lesson-3-1-manim-video-visualizing-the-math",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-03-the-problem-of-scale-feature-pyramid-networks-fpn:lesson-3-2-exercises-crunching-the-numbers": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-03-the-problem-of-scale-feature-pyramid-networks-fpn/lesson-3-2-exercises-crunching-the-numbers",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-03-the-problem-of-scale-feature-pyramid-networks-fpn:lesson-3-3-coding-coding-the-pyramid-building-an-fpn-block": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-03-the-problem-of-scale-feature-pyramid-networks-fpn/lesson-3-3-coding-coding-the-pyramid-building-an-fpn-block",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-03-the-problem-of-scale-feature-pyramid-networks-fpn:lesson-3-4-podcast-the-semantic-gap": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-03-the-problem-of-scale-feature-pyramid-networks-fpn/lesson-3-4-podcast-the-semantic-gap",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-03-the-problem-of-scale-feature-pyramid-networks-fpn:lesson-3-the-problem-of-scale-feature-pyramid-networks-fpn": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-03-the-problem-of-scale-feature-pyramid-networks-fpn/lesson-3-the-problem-of-scale-feature-pyramid-networks-fpn",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13"
+      ]
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-04-the-transformer-era-detr:lesson-4-1-manim-video-visualizing-the-hungarian-algorithm": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-04-the-transformer-era-detr/lesson-4-1-manim-video-visualizing-the-hungarian-algorithm",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-04-the-transformer-era-detr:lesson-4-2-coding-building-the-hungarian-matcher": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-04-the-transformer-era-detr/lesson-4-2-coding-building-the-hungarian-matcher",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-04-the-transformer-era-detr:lesson-4-3-experiment-inside-the-transformer-s-mind": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-04-the-transformer-era-detr/lesson-4-3-experiment-inside-the-transformer-s-mind",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-04-the-transformer-era-detr:lesson-4-4-exercise-calculating-the-cost": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-04-the-transformer-era-detr/lesson-4-4-exercise-calculating-the-cost",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-04-the-transformer-era-detr:lesson-4-5-podcast-the-end-of-hand-crafting": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-04-the-transformer-era-detr/lesson-4-5-podcast-the-end-of-hand-crafting",
+      "sections": []
+    },
+    "cv-ch17-object-detection-ii-single-shot:lesson-04-the-transformer-era-detr:lesson-4-the-transformer-era-detr": {
+      "path": "cv-ch17-object-detection-ii-single-shot/lesson-04-the-transformer-era-detr/lesson-4-the-transformer-era-detr",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17"
+      ]
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-01-the-what-and-why-of-semantic-segmentation:lesson-1-1-experiment-the-human-annotator": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-01-the-what-and-why-of-semantic-segmentation/lesson-1-1-experiment-the-human-annotator",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-01-the-what-and-why-of-semantic-segmentation:lesson-1-2-manim-video-explainer-visualizing-dense-predictions": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-01-the-what-and-why-of-semantic-segmentation/lesson-1-2-manim-video-explainer-visualizing-dense-predictions",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-01-the-what-and-why-of-semantic-segmentation:lesson-1-3-exercise-the-shape-of-predictions": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-01-the-what-and-why-of-semantic-segmentation/lesson-1-3-exercise-the-shape-of-predictions",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-01-the-what-and-why-of-semantic-segmentation:lesson-1-4-coding-hello-mask": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-01-the-what-and-why-of-semantic-segmentation/lesson-1-4-coding-hello-mask",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-01-the-what-and-why-of-semantic-segmentation:lesson-1-5-example-the-cityscapes-benchmark": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-01-the-what-and-why-of-semantic-segmentation/lesson-1-5-example-the-cityscapes-benchmark",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-01-the-what-and-why-of-semantic-segmentation:lesson-1-6-podcast-the-pixel-perspective": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-01-the-what-and-why-of-semantic-segmentation/lesson-1-6-podcast-the-pixel-perspective",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-01-the-what-and-why-of-semantic-segmentation:lesson-1-the-what-and-why-of-semantic-segmentation": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-01-the-what-and-why-of-semantic-segmentation/lesson-1-the-what-and-why-of-semantic-segmentation",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13"
+      ]
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-02-measuring-success-the-math-of-iou:lesson-2-1-manim-video-explainer-visualizing-the-overlap": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-02-measuring-success-the-math-of-iou/lesson-2-1-manim-video-explainer-visualizing-the-overlap",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-02-measuring-success-the-math-of-iou:lesson-2-2-exercise-the-iou-gym": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-02-measuring-success-the-math-of-iou/lesson-2-2-exercise-the-iou-gym",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-02-measuring-success-the-math-of-iou:lesson-2-3-coding-implementing-iou-from-scratch": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-02-measuring-success-the-math-of-iou/lesson-2-3-coding-implementing-iou-from-scratch",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-02-measuring-success-the-math-of-iou:lesson-2-4-podcast-the-metric-trap": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-02-measuring-success-the-math-of-iou/lesson-2-4-podcast-the-metric-trap",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-02-measuring-success-the-math-of-iou:lesson-2-measuring-success-the-math-of-iou": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-02-measuring-success-the-math-of-iou/lesson-2-measuring-success-the-math-of-iou",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-03-the-blueprint-encoder-decoder-and-fcns:lesson-3-1-manim-video-explainer-the-shape-of-data": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-03-the-blueprint-encoder-decoder-and-fcns/lesson-3-1-manim-video-explainer-the-shape-of-data",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-03-the-blueprint-encoder-decoder-and-fcns:lesson-3-2-experiment-the-skip-connection-playground": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-03-the-blueprint-encoder-decoder-and-fcns/lesson-3-2-experiment-the-skip-connection-playground",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-03-the-blueprint-encoder-decoder-and-fcns:lesson-3-3-coding-building-the-hourglass-in-pytorch": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-03-the-blueprint-encoder-decoder-and-fcns/lesson-3-3-coding-building-the-hourglass-in-pytorch",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-03-the-blueprint-encoder-decoder-and-fcns:lesson-3-4-exercise-tensor-arithmetic": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-03-the-blueprint-encoder-decoder-and-fcns/lesson-3-4-exercise-tensor-arithmetic",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-03-the-blueprint-encoder-decoder-and-fcns:lesson-3-5-podcast-the-day-we-killed-the-fully-connected-layer": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-03-the-blueprint-encoder-decoder-and-fcns/lesson-3-5-podcast-the-day-we-killed-the-fully-connected-layer",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-03-the-blueprint-encoder-decoder-and-fcns:lesson-3-the-blueprint-encoder-decoder-and-fcns": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-03-the-blueprint-encoder-decoder-and-fcns/lesson-3-the-blueprint-encoder-decoder-and-fcns",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18"
+      ]
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-04-the-math-of-upsampling-transposed-convolutions:lesson-4-1-manim-video-explainer-visualizing-the-spread": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-04-the-math-of-upsampling-transposed-convolutions/lesson-4-1-manim-video-explainer-visualizing-the-spread",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-04-the-math-of-upsampling-transposed-convolutions:lesson-4-2-exercise-the-human-decoder": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-04-the-math-of-upsampling-transposed-convolutions/lesson-4-2-exercise-the-human-decoder",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-04-the-math-of-upsampling-transposed-convolutions:lesson-4-3-coding-building-convtranspose2d-from-scratch": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-04-the-math-of-upsampling-transposed-convolutions/lesson-4-3-coding-building-convtranspose2d-from-scratch",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-04-the-math-of-upsampling-transposed-convolutions:lesson-4-4-podcast-the-deconvolution-debate": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-04-the-math-of-upsampling-transposed-convolutions/lesson-4-4-podcast-the-deconvolution-debate",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-04-the-math-of-upsampling-transposed-convolutions:lesson-4-the-math-of-upsampling-transposed-convolutions": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-04-the-math-of-upsampling-transposed-convolutions/lesson-4-the-math-of-upsampling-transposed-convolutions",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17"
+      ]
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-05-the-gold-standard-u-net:lesson-5-1-manim-video-explainer-visualizing-the-math": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-05-the-gold-standard-u-net/lesson-5-1-manim-video-explainer-visualizing-the-math",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-05-the-gold-standard-u-net:lesson-5-2-coding-the-u-net-in-pytorch": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-05-the-gold-standard-u-net/lesson-5-2-coding-the-u-net-in-pytorch",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-05-the-gold-standard-u-net:lesson-5-3-exercise-architectural-arithmetic": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-05-the-gold-standard-u-net/lesson-5-3-exercise-architectural-arithmetic",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-05-the-gold-standard-u-net:lesson-5-4-podcast-the-architecture-that-changed-medicine": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-05-the-gold-standard-u-net/lesson-5-4-podcast-the-architecture-that-changed-medicine",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-05-the-gold-standard-u-net:lesson-5-the-gold-standard-u-net": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-05-the-gold-standard-u-net/lesson-5-the-gold-standard-u-net",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21"
+      ]
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-06-context-and-boundaries-advanced-refinements:lesson-6-1-exercise-the-metric-master-calculating-iou": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-06-context-and-boundaries-advanced-refinements/lesson-6-1-exercise-the-metric-master-calculating-iou",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-06-context-and-boundaries-advanced-refinements:lesson-6-2-manim-video-explainer-visualizing-the-upsample": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-06-context-and-boundaries-advanced-refinements/lesson-6-2-manim-video-explainer-visualizing-the-upsample",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-06-context-and-boundaries-advanced-refinements:lesson-6-3-example-the-cityscapes-dataset-and-autonomous-driving": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-06-context-and-boundaries-advanced-refinements/lesson-6-3-example-the-cityscapes-dataset-and-autonomous-driving",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-06-context-and-boundaries-advanced-refinements:lesson-6-4-coding-building-a-u-net-in-pytorch": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-06-context-and-boundaries-advanced-refinements/lesson-6-4-coding-building-a-u-net-in-pytorch",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-06-context-and-boundaries-advanced-refinements:lesson-6-5-experiment-the-receptive-field-and-dilation-lab": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-06-context-and-boundaries-advanced-refinements/lesson-6-5-experiment-the-receptive-field-and-dilation-lab",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-06-context-and-boundaries-advanced-refinements:lesson-6-6-podcast-the-segmentation-saga": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-06-context-and-boundaries-advanced-refinements/lesson-6-6-podcast-the-segmentation-saga",
+      "sections": []
+    },
+    "cv-ch18-semantic-segmentation-a-pixel-le:lesson-06-context-and-boundaries-advanced-refinements:lesson-6-context-and-boundaries-advanced-refinements": {
+      "path": "cv-ch18-semantic-segmentation-a-pixel-le/lesson-06-context-and-boundaries-advanced-refinements/lesson-6-context-and-boundaries-advanced-refinements",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12"
+      ]
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-01-the-context-challenge-deeplab-and-aspp:lesson-1-1-manim-video-explainer-visualizing-atrous-convolution": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-01-the-context-challenge-deeplab-and-aspp/lesson-1-1-manim-video-explainer-visualizing-atrous-convolution",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-01-the-context-challenge-deeplab-and-aspp:lesson-1-2-coding-lab-building-aspp-in-pytorch": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-01-the-context-challenge-deeplab-and-aspp/lesson-1-2-coding-lab-building-aspp-in-pytorch",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-01-the-context-challenge-deeplab-and-aspp:lesson-1-3-experiment-the-receptive-field-tuner": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-01-the-context-challenge-deeplab-and-aspp/lesson-1-3-experiment-the-receptive-field-tuner",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-01-the-context-challenge-deeplab-and-aspp:lesson-1-4-exercise-receptive-field-arithmetic": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-01-the-context-challenge-deeplab-and-aspp/lesson-1-4-exercise-receptive-field-arithmetic",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-01-the-context-challenge-deeplab-and-aspp:lesson-1-5-real-world-example-cityscapes-and-the-pole-problem": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-01-the-context-challenge-deeplab-and-aspp/lesson-1-5-real-world-example-cityscapes-and-the-pole-problem",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-01-the-context-challenge-deeplab-and-aspp:lesson-1-6-podcast-the-holy-cheese-of-deep-learning": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-01-the-context-challenge-deeplab-and-aspp/lesson-1-6-podcast-the-holy-cheese-of-deep-learning",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-01-the-context-challenge-deeplab-and-aspp:lesson-1-the-context-challenge-deeplab-and-aspp": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-01-the-context-challenge-deeplab-and-aspp/lesson-1-the-context-challenge-deeplab-and-aspp",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14"
+      ]
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic:lesson-2-1-experiment-the-annotation-station": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic/lesson-2-1-experiment-the-annotation-station",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic:lesson-2-2-coding-the-panoptic-merger": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic/lesson-2-2-coding-the-panoptic-merger",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic:lesson-2-3-manim-video-explainer-the-pixel-conflict": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic/lesson-2-3-manim-video-explainer-the-pixel-conflict",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic:lesson-2-4-example-the-tesla-vision-stack": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic/lesson-2-4-example-the-tesla-vision-stack",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic:lesson-2-5-podcast-things-stuff-and-the-holy-grail": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic/lesson-2-5-podcast-things-stuff-and-the-holy-grail",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic:lesson-2-the-segmentation-taxonomy-semantic-instance-and-panoptic": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-02-the-segmentation-taxonomy-semantic-instance-and-panoptic/lesson-2-the-segmentation-taxonomy-semantic-instance-and-panoptic",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24",
+        "section25"
+      ]
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-03-mask-r-cnn-and-the-alignment-problem:lesson-3-1-manim-video-explainer-the-geometry-of-roialign": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-03-mask-r-cnn-and-the-alignment-problem/lesson-3-1-manim-video-explainer-the-geometry-of-roialign",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-03-mask-r-cnn-and-the-alignment-problem:lesson-3-2-exercise-the-mathematics-of-masks": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-03-mask-r-cnn-and-the-alignment-problem/lesson-3-2-exercise-the-mathematics-of-masks",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-03-mask-r-cnn-and-the-alignment-problem:lesson-3-3-coding-running-mask-r-cnn-in-pytorch": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-03-mask-r-cnn-and-the-alignment-problem/lesson-3-3-coding-running-mask-r-cnn-in-pytorch",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-03-mask-r-cnn-and-the-alignment-problem:lesson-3-4-podcast-the-mask-revolution": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-03-mask-r-cnn-and-the-alignment-problem/lesson-3-4-podcast-the-mask-revolution",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-03-mask-r-cnn-and-the-alignment-problem:lesson-3-mask-r-cnn-and-the-alignment-problem": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-03-mask-r-cnn-and-the-alignment-problem/lesson-3-mask-r-cnn-and-the-alignment-problem",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19"
+      ]
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-04-the-modern-era-transformers-and-foundation-models:lesson-4-1-manim-video-explainer-the-geometry-of-roialign": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-04-the-modern-era-transformers-and-foundation-models/lesson-4-1-manim-video-explainer-the-geometry-of-roialign",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-04-the-modern-era-transformers-and-foundation-models:lesson-4-2-exercise-calculating-with-dilation": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-04-the-modern-era-transformers-and-foundation-models/lesson-4-2-exercise-calculating-with-dilation",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-04-the-modern-era-transformers-and-foundation-models:lesson-4-3-coding-instance-segmentation-with-pytorch": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-04-the-modern-era-transformers-and-foundation-models/lesson-4-3-coding-instance-segmentation-with-pytorch",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-04-the-modern-era-transformers-and-foundation-models:lesson-4-4-experiment-the-prompt-engineer-playground": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-04-the-modern-era-transformers-and-foundation-models/lesson-4-4-experiment-the-prompt-engineer-playground",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-04-the-modern-era-transformers-and-foundation-models:lesson-4-5-real-world-example-the-self-driving-cars-eye": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-04-the-modern-era-transformers-and-foundation-models/lesson-4-5-real-world-example-the-self-driving-cars-eye",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-04-the-modern-era-transformers-and-foundation-models:lesson-4-6-podcast-the-death-of-the-specialist-model": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-04-the-modern-era-transformers-and-foundation-models/lesson-4-6-podcast-the-death-of-the-specialist-model",
+      "sections": []
+    },
+    "cv-ch19-advanced-segmentation-instances:lesson-04-the-modern-era-transformers-and-foundation-models:lesson-4-the-modern-era-transformers-and-foundation-models": {
+      "path": "cv-ch19-advanced-segmentation-instances/lesson-04-the-modern-era-transformers-and-foundation-models/lesson-4-the-modern-era-transformers-and-foundation-models",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18"
+      ]
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-01-the-skeleton-in-the-machine:lesson-1-1-experiment-the-pckh-playground": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-01-the-skeleton-in-the-machine/lesson-1-1-experiment-the-pckh-playground",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-01-the-skeleton-in-the-machine:lesson-1-2-coding-loading-and-visualizing-keypoints-python-colab": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-01-the-skeleton-in-the-machine/lesson-1-2-coding-loading-and-visualizing-keypoints-python-colab",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-01-the-skeleton-in-the-machine:lesson-1-3-example-the-history-of-mocap-motion-capture": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-01-the-skeleton-in-the-machine/lesson-1-3-example-the-history-of-mocap-motion-capture",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-01-the-skeleton-in-the-machine:lesson-1-4-manim-video-explainer-the-math-of-scale-invariance": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-01-the-skeleton-in-the-machine/lesson-1-4-manim-video-explainer-the-math-of-scale-invariance",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-01-the-skeleton-in-the-machine:lesson-1-5-podcast-the-body-language-of-machines": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-01-the-skeleton-in-the-machine/lesson-1-5-podcast-the-body-language-of-machines",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-01-the-skeleton-in-the-machine:lesson-1-the-skeleton-in-the-machine": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-01-the-skeleton-in-the-machine/lesson-1-the-skeleton-in-the-machine",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15"
+      ]
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-02-paradigms-of-perception:lesson-2-1-manim-video-explainer-the-gaussian-mountain-visualizing-belief-maps": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-02-paradigms-of-perception/lesson-2-1-manim-video-explainer-the-gaussian-mountain-visualizing-belief-maps",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-02-paradigms-of-perception:lesson-2-2-coding-lab-painting-with-probabilities": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-02-paradigms-of-perception/lesson-2-2-coding-lab-painting-with-probabilities",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-02-paradigms-of-perception:lesson-2-3-experiment-the-crowd-efficiency-challenge": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-02-paradigms-of-perception/lesson-2-3-experiment-the-crowd-efficiency-challenge",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-02-paradigms-of-perception:lesson-2-4-podcast-techtalk-why-coordinates-are-out-and-heatmaps-are-in": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-02-paradigms-of-perception/lesson-2-4-podcast-techtalk-why-coordinates-are-out-and-heatmaps-are-in",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-02-paradigms-of-perception:lesson-2-paradigms-of-perception": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-02-paradigms-of-perception/lesson-2-paradigms-of-perception",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-03-refining-the-pose-top-down-architectures:lesson-3-1-manim-video-explainer-the-expanding-field-of-view": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-03-refining-the-pose-top-down-architectures/lesson-3-1-manim-video-explainer-the-expanding-field-of-view",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-03-refining-the-pose-top-down-architectures:lesson-3-2-experiment-the-cpm-refinement-playground": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-03-refining-the-pose-top-down-architectures/lesson-3-2-experiment-the-cpm-refinement-playground",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-03-refining-the-pose-top-down-architectures:lesson-3-3-coding-building-an-hourglass-block": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-03-refining-the-pose-top-down-architectures/lesson-3-3-coding-building-an-hourglass-block",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-03-refining-the-pose-top-down-architectures:lesson-3-4-exercise-architectural-arithmetic": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-03-refining-the-pose-top-down-architectures/lesson-3-4-exercise-architectural-arithmetic",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-03-refining-the-pose-top-down-architectures:lesson-3-5-podcast-brute-force-vs-elegance": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-03-refining-the-pose-top-down-architectures/lesson-3-5-podcast-brute-force-vs-elegance",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-03-refining-the-pose-top-down-architectures:lesson-3-refining-the-pose-top-down-architectures": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-03-refining-the-pose-top-down-architectures/lesson-3-refining-the-pose-top-down-architectures",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16"
+      ]
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-04-connecting-the-dots-bottom-up-and-future:lesson-4-1-manim-video-explainer-the-line-integral-visualization": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-04-connecting-the-dots-bottom-up-and-future/lesson-4-1-manim-video-explainer-the-line-integral-visualization",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-04-connecting-the-dots-bottom-up-and-future:lesson-4-2-exercise-manual-matching": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-04-connecting-the-dots-bottom-up-and-future/lesson-4-2-exercise-manual-matching",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-04-connecting-the-dots-bottom-up-and-future:lesson-4-3-coding-building-the-paf-scorer": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-04-connecting-the-dots-bottom-up-and-future/lesson-4-3-coding-building-the-paf-scorer",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-04-connecting-the-dots-bottom-up-and-future:lesson-4-4-podcast-the-vector-revolution": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-04-connecting-the-dots-bottom-up-and-future/lesson-4-4-podcast-the-vector-revolution",
+      "sections": []
+    },
+    "cv-ch20-human-pose-estimation-from-heatm:lesson-04-connecting-the-dots-bottom-up-and-future:lesson-4-connecting-the-dots-bottom-up-and-future": {
+      "path": "cv-ch20-human-pose-estimation-from-heatm/lesson-04-connecting-the-dots-bottom-up-and-future/lesson-4-connecting-the-dots-bottom-up-and-future",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24",
+        "section25",
+        "section26"
+      ]
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-01-entering-the-creative-universe:lesson-1-1-manim-video-explainer-the-math-of-distributions": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-01-entering-the-creative-universe/lesson-1-1-manim-video-explainer-the-math-of-distributions",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-01-entering-the-creative-universe:lesson-1-2-coding-lab-sampling-vs-classifying": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-01-entering-the-creative-universe/lesson-1-2-coding-lab-sampling-vs-classifying",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-01-entering-the-creative-universe:lesson-1-3-real-world-scenarios": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-01-entering-the-creative-universe/lesson-1-3-real-world-scenarios",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-01-entering-the-creative-universe:lesson-1-4-podcast-the-shift-to-creativity": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-01-entering-the-creative-universe/lesson-1-4-podcast-the-shift-to-creativity",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-01-entering-the-creative-universe:lesson-1-entering-the-creative-universe": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-01-entering-the-creative-universe/lesson-1-entering-the-creative-universe",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13"
+      ]
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-02-the-two-player-game-framework-and-math:lesson-2-1-manim-video-explainer-visualizing-the-minimax-tug-of-war": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-02-the-two-player-game-framework-and-math/lesson-2-1-manim-video-explainer-visualizing-the-minimax-tug-of-war",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-02-the-two-player-game-framework-and-math:lesson-2-2-coding-the-adversaries-building-the-players-in-pytorch": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-02-the-two-player-game-framework-and-math/lesson-2-2-coding-the-adversaries-building-the-players-in-pytorch",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-02-the-two-player-game-framework-and-math:lesson-2-3-calculating-the-standoff-crunching-the-adversarial-numbers": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-02-the-two-player-game-framework-and-math/lesson-2-3-calculating-the-standoff-crunching-the-adversarial-numbers",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-02-the-two-player-game-framework-and-math:lesson-2-4-real-world-example-the-art-auction-and-the-algorithm": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-02-the-two-player-game-framework-and-math/lesson-2-4-real-world-example-the-art-auction-and-the-algorithm",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-02-the-two-player-game-framework-and-math:lesson-2-5-podcast-review-the-art-of-war-between-networks": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-02-the-two-player-game-framework-and-math/lesson-2-5-podcast-review-the-art-of-war-between-networks",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-02-the-two-player-game-framework-and-math:lesson-2-the-two-player-game-framework-and-math": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-02-the-two-player-game-framework-and-math/lesson-2-the-two-player-game-framework-and-math",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20"
+      ]
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-03-the-delicate-dance-of-training:lesson-3-1-manim-video-explainer-the-minimax-landscape": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-03-the-delicate-dance-of-training/lesson-3-1-manim-video-explainer-the-minimax-landscape",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-03-the-delicate-dance-of-training:lesson-3-2-coding-orchestrating-the-loop-pytorch": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-03-the-delicate-dance-of-training/lesson-3-2-coding-orchestrating-the-loop-pytorch",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-03-the-delicate-dance-of-training:lesson-3-3-experiment-the-mode-collapse-lab": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-03-the-delicate-dance-of-training/lesson-3-3-experiment-the-mode-collapse-lab",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-03-the-delicate-dance-of-training:lesson-3-4-exercise-calculating-the-steps": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-03-the-delicate-dance-of-training/lesson-3-4-exercise-calculating-the-steps",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-03-the-delicate-dance-of-training:lesson-3-5-podcast-war-stories-from-the-training-loop": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-03-the-delicate-dance-of-training/lesson-3-5-podcast-war-stories-from-the-training-loop",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-03-the-delicate-dance-of-training:lesson-3-the-delicate-dance-of-training": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-03-the-delicate-dance-of-training/lesson-3-the-delicate-dance-of-training",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17"
+      ]
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-04-judging-the-art-evaluation-metrics:lesson-4-1-manim-video-explainer-the-geometry-of-fid": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-04-judging-the-art-evaluation-metrics/lesson-4-1-manim-video-explainer-the-geometry-of-fid",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-04-judging-the-art-evaluation-metrics:lesson-4-2-experiment-the-evaluators-dashboard": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-04-judging-the-art-evaluation-metrics/lesson-4-2-experiment-the-evaluators-dashboard",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-04-judging-the-art-evaluation-metrics:lesson-4-3-coding-calculating-fid-from-scratch": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-04-judging-the-art-evaluation-metrics/lesson-4-3-coding-calculating-fid-from-scratch",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-04-judging-the-art-evaluation-metrics:lesson-4-4-podcast-the-art-critic-in-the-machine": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-04-judging-the-art-evaluation-metrics/lesson-4-4-podcast-the-art-critic-in-the-machine",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-04-judging-the-art-evaluation-metrics:lesson-4-judging-the-art-evaluation-metrics": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-04-judging-the-art-evaluation-metrics/lesson-4-judging-the-art-evaluation-metrics",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13",
+        "section14",
+        "section15",
+        "section16",
+        "section17",
+        "section18",
+        "section19",
+        "section20",
+        "section21",
+        "section22",
+        "section23",
+        "section24"
+      ]
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-05-evolving-architectures-and-the-future:lesson-5-1-manim-video-explainer-visualizing-the-saddle-point": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-05-evolving-architectures-and-the-future/lesson-5-1-manim-video-explainer-visualizing-the-saddle-point",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-05-evolving-architectures-and-the-future:lesson-5-2-coding-building-a-dcgan-for-mnist": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-05-evolving-architectures-and-the-future/lesson-5-2-coding-building-a-dcgan-for-mnist",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-05-evolving-architectures-and-the-future:lesson-5-3-experiment-the-gan-playground": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-05-evolving-architectures-and-the-future/lesson-5-3-experiment-the-gan-playground",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-05-evolving-architectures-and-the-future:lesson-5-4-exercise-calculation-and-evaluation": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-05-evolving-architectures-and-the-future/lesson-5-4-exercise-calculation-and-evaluation",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-05-evolving-architectures-and-the-future:lesson-5-5-example-the-art-of-deception-deepfakes-and-super-resolution": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-05-evolving-architectures-and-the-future/lesson-5-5-example-the-art-of-deception-deepfakes-and-super-resolution",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-05-evolving-architectures-and-the-future:lesson-5-6-podcast-the-forger-and-the-detective": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-05-evolving-architectures-and-the-future/lesson-5-6-podcast-the-forger-and-the-detective",
+      "sections": []
+    },
+    "cv-ch21-generative-adversarial-networks:lesson-05-evolving-architectures-and-the-future:lesson-5-evolving-architectures-and-the-future": {
+      "path": "cv-ch21-generative-adversarial-networks/lesson-05-evolving-architectures-and-the-future/lesson-5-evolving-architectures-and-the-future",
+      "sections": [
+        "section1",
+        "section2",
+        "section3",
+        "section4",
+        "section5",
+        "section6",
+        "section7",
+        "section8",
+        "section9",
+        "section10",
+        "section11",
+        "section12",
+        "section13"
+      ]
+    }
+  }
+}
