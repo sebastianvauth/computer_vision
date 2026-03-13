@@ -6,28 +6,15 @@
 // progress script can compute Moodle grades across the full package.
 
 (function () {
-    function getPagePrefix() {
-        const pathParts = (window.location.pathname || '').split('/').filter(Boolean);
-        const contentRelativeParts = pathParts.slice(1);
-
-        if (contentRelativeParts.length && /\.[a-z0-9]+$/i.test(contentRelativeParts[contentRelativeParts.length - 1])) {
-            contentRelativeParts.pop();
-        }
-
-        if (!contentRelativeParts.length) {
-            return 'index';
-        }
-
-        return contentRelativeParts.join(':');
-    }
-
-    function escapeRegex(value) {
-        return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
-
-    const pagePrefix = getPagePrefix();
+    const pagePrefix = 'cv-ch18-semantic-segmentation-a-pixel-le:lesson-01-the-what-and-why-of-semantic-segmentation:lesson-1-the-what-and-why-of-semantic-segmentation';
     const sectionPrefix = pagePrefix + ':';
-    const sectionPattern = new RegExp('^' + escapeRegex(sectionPrefix) + 'section\\d+$');
+
+    function isTrackedSectionIdentifier(identifier) {
+        if (typeof identifier !== 'string' || !identifier.startsWith(sectionPrefix)) {
+            return false;
+        }
+        return /^section\d+$/.test(identifier.slice(sectionPrefix.length));
+    }
 
     function logVisibleSection(el) {
         if (!el || !el.id) return;
@@ -37,7 +24,7 @@
     LTITracker.init('show', pagePrefix, function (seen) {
         const expectedSections = document.querySelectorAll('section[id^="section"]').length;
         const knownSectionCount = Array.from(seen).filter(function (id) {
-            return sectionPattern.test(id);
+            return isTrackedSectionIdentifier(id);
         }).length;
 
         console.info('[LTITracker]', 'progress:snapshot', {
