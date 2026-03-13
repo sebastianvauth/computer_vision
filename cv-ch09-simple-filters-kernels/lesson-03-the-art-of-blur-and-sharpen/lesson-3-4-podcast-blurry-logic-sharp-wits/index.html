@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/computer-vision/cv-ch09-simple-filters-kernels/lesson-03-the-art-of-blur-and-sharpen/lesson-3-4-podcast-blurry-logic-sharp-wits/">
+  <title>Lesson 3.4: Podcast - Blurry Logic, Sharp Wits</title>
+<style>
+.fullscreen-button {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 2000;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.92);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s ease, background 0.2s ease;
+}
+.fullscreen-button:hover {
+    background: rgba(30, 41, 59, 0.95);
+    transform: translateY(-1px);
+}
+.fullscreen-button:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
+}
+.fullscreen-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.fullscreen-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+    color: #0f172a;
+}
+main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 96px 24px 48px;
+}
+header {
+    margin-bottom: 24px;
+}
+.lesson-tag {
+    margin: 0 0 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #475569;
+}
+h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+}
+.podcast-card {
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+.podcast-card p {
+    margin: 0 0 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #334155;
+}
+.podcast-label {
+    display: inline-block;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7c3aed;
+}
+audio {
+    width: 100%;
+}
+</style>
+</head>
+<body>
+<button id="fullscreenToggleBtn" class="fullscreen-button" type="button" onclick="toggleFullscreenMode()" aria-label="Enter fullscreen" title="Enter fullscreen">
+    <svg class="fullscreen-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M3 9V3h6v2H5v4H3zm16-4h-4V3h6v6h-2V5zM5 15v4h4v2H3v-6h2zm14 4v-4h2v6h-6v-2h4z"></path>
+    </svg>
+</button>
+
+<main>
+    <header>
+        <p class="lesson-tag">Lesson 3.4</p>
+        <h1>Lesson 3.4: Podcast - Blurry Logic, Sharp Wits</h1>
+    </header>
+    <section class="podcast-card">
+        <span class="podcast-label">Podcast Audio</span>
+        <p>Listen to Lesson 3.4, "Blurry Logic, Sharp Wits", using the embedded audio player below.</p>
+        <audio controls preload="metadata">
+            <source src="audio/blurrylogicandsharpwits.wav" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+</main>
+    <script src="logger.js?v=705ea6e"></script>
+    <script src="init.js?v=20260312-static-page-prefix-v3"></script>
+
+<script>
+function supportsFullscreen() {
+    return !!(document.fullscreenEnabled || document.webkitFullscreenEnabled);
+}
+
+function getFullscreenElement() {
+    return document.fullscreenElement || document.webkitFullscreenElement || null;
+}
+
+function updateFullscreenButtonState() {
+    const button = document.getElementById('fullscreenToggleBtn');
+    if (!button) return;
+    const isFullscreen = !!getFullscreenElement();
+    const label = isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen';
+    button.setAttribute('aria-label', label);
+    button.setAttribute('title', label);
+}
+
+async function toggleFullscreenMode() {
+    const button = document.getElementById('fullscreenToggleBtn');
+    if (!button) return;
+    if (!supportsFullscreen()) {
+        button.disabled = true;
+        console.warn('Fullscreen API is not available. Ensure Moodle LTI iframe allows fullscreen.');
+        return;
+    }
+    try {
+        if (!getFullscreenElement()) {
+            const root = document.documentElement;
+            if (root.requestFullscreen) {
+                await root.requestFullscreen();
+            } else if (root.webkitRequestFullscreen) {
+                root.webkitRequestFullscreen();
+            }
+        } else if (document.exitFullscreen) {
+            await document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+    } catch (error) {
+        console.error('Fullscreen request failed:', error);
+    } finally {
+        updateFullscreenButtonState();
+    }
+}
+
+document.addEventListener('fullscreenchange', updateFullscreenButtonState);
+document.addEventListener('webkitfullscreenchange', updateFullscreenButtonState);
+updateFullscreenButtonState();
+</script>
+</body>
+</html>

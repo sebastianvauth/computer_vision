@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -42,6 +42,58 @@
     height: 20px;
     fill: currentColor;
 }
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+    color: #0f172a;
+}
+main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 96px 24px 48px;
+}
+header {
+    margin-bottom: 24px;
+}
+.lesson-tag {
+    margin: 0 0 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #475569;
+}
+h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+}
+.podcast-card {
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+.podcast-card p {
+    margin: 0 0 16px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #334155;
+}
+.podcast-label {
+    display: inline-block;
+    margin-bottom: 16px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7c3aed;
+}
+audio {
+    width: 100%;
+}
 </style>
 </head>
 <body>
@@ -57,8 +109,13 @@
       <p class="lesson-tag">Lesson 3.6</p>
       <h1>Lesson 3.6: "The Census of Pixels" (Podcast)</h1>
     </header>
-    <section>
-      <p>This placeholder is ready for new content. Replace it with the finalized script, visuals, and interactions for Lesson 3.6: "The Census of Pixels" (Podcast).</p>
+    <section class="podcast-card">
+      <span class="podcast-label">Podcast Audio</span>
+      <p>Listen to Lesson 3.6, "The Census of Pixels", using the embedded audio player below.</p>
+      <audio controls preload="metadata">
+        <source src="audio/thecensusofpixels.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio>
     </section>
   </main>
     <script src="logger.js?v=705ea6e"></script>
